@@ -6,32 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ae77acc8-c77e-45bf-b6ce-a128d6a734c7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/Map.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/Npc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/Spielfigur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/Steuerung.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/ZeichenFlaeche14$Bild.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/ZeichenFlaeche14$Elipse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/ZeichenFlaeche14$GefuellteElipse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/ZeichenFlaeche14$GefuelltesRechteck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/ZeichenFlaeche14$Linie.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/ZeichenFlaeche14$Punkt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/ZeichenFlaeche14$Rechteck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/ZeichenFlaeche14$Renderer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/ZeichenFlaeche14$Text.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/ZeichenFlaeche14$ZuZeichnendesObjekt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/ZeichenFlaeche14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/img/figuren/joschua.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/img/figuren/spieler.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/img/maps/druckplattenraum.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/img/maps/hauptraum.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/src/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Escape JOSCHUA/src/Map.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Npc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Npc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Spielfigur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spielfigur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Steuerung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steuerung.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ZeichenFlaeche14.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ZeichenFlaeche14.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/maps/hauptraum.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,27 +33,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.src.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nicob/Filr/Meine Dateien/2BKI2/Projektarbeit/Escape JOSCHUA",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.src.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicob/Filr/Meine Dateien/2BKI2/Projektarbeit/Escape JOSCHUA&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.src.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -137,6 +114,8 @@
       <workItem from="1729613868960" duration="1854000" />
       <workItem from="1729748534710" duration="530000" />
       <workItem from="1729752610589" duration="1015000" />
+      <workItem from="1729756967850" duration="2990000" />
+      <workItem from="1729761035600" duration="251000" />
     </task>
     <servers />
   </component>

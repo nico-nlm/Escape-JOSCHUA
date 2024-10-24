@@ -24,6 +24,7 @@ public class Steuerung implements KeyListener {
         aktuellesLevel = m.hauptraum;
         aktuellesLevelInt = 1;
         aktuellesLevelImg = m.getHauptraumImg();
+        naechstesLevel = 2;
     }
 
     public void starten() {

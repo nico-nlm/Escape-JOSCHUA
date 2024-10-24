@@ -19,8 +19,8 @@ public class Map {
         } catch (IOException e) {
             System.err.println("Hauptraum konnte nicht geladen werden");
         }
-        hauptraumStartX = 9;
-        hauptraumStartY = 4;
+        hauptraumStartX = 8;
+        hauptraumStartY = 11;
         try {
             druckplattenImg = ImageIO.read(new File("src/img/maps/druckplattenraum.png"));
         } catch (IOException e) {

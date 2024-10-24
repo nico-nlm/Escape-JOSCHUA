@@ -20,9 +20,9 @@ public class Steuerung implements KeyListener {
 
     public Steuerung() {
         zf = new ZeichenFlaeche14();
-        spieler = new Spielfigur(9, 14, 35, 35, 2);
-        npc = new Npc(200, 200, 70, 70, 3);
         m = new Map();
+        spieler = new Spielfigur(8, 11, 35, 35, 2);
+        npc = new Npc(200, 200, 70, 70, 3);
         aktuellesLevel = m.hauptraum;
         aktuellesLevelInt = 1;
         aktuellesLevelImg = m.getHauptraumImg();
@@ -53,8 +53,6 @@ public class Steuerung implements KeyListener {
                     spieler.setX(m.getHauptraumStartX());
                     spieler.setY(m.getHauptraumStartY());
                     naechstesLevel = 2;
-                    m.setDruckplatteStartX(9);
-                    m.setDruckplatteStartY(15);
                     break;
                 case 2:
                     aktuellesLevel = m.druckplatte;

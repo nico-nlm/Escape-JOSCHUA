@@ -18,7 +18,7 @@ public class Spielfigur {
         this.hoehe = hoehe;
         this.id = id;
         try {
-            figur = ImageIO.read(new File("Escape JOSCHUA/img/figuren/spieler.png"));
+            figur = ImageIO.read(new File("img/figuren/spieler.png"));
 
         } catch (IOException e) {
             System.err.println("Bild konnte nicht geladen werden");

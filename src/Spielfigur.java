@@ -1,3 +1,5 @@
+package src;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
@@ -18,7 +20,7 @@ public class Spielfigur {
         this.hoehe = hoehe;
         this.id = id;
         try {
-            figur = ImageIO.read(new File("img/figuren/spieler.png"));
+            figur = ImageIO.read(new File("src/img/figuren/spieler.png"));
 
         } catch (IOException e) {
             System.err.println("Bild konnte nicht geladen werden");

@@ -1,3 +1,5 @@
+package src;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -17,38 +19,38 @@ import javax.swing.JPanel;
 
 /**
  *
- * <p>Diese Klasse stellt eine einfache Zeichenfläche zur Verfügung.</p>
+ * <p>Diese Klasse stellt eine einfache Zeichenflï¿½che zur Verfï¿½gung.</p>
  * 
- * <p>Zunächst muss dazu eine Instanz dieser Klasse erzeugt werden:</p>
+ * <p>Zunï¿½chst muss dazu eine Instanz dieser Klasse erzeugt werden:</p>
  * <p>ZeichenFlaeche meineZeichenFlaeche = new ZeichenFlaeche();</p>
  * 
- * <p>Dann muss ein Fenster mit leerem weißen Hintergrund erzeugt werden. Dazu dient die Methode
+ * <p>Dann muss ein Fenster mit leerem weiï¿½en Hintergrund erzeugt werden. Dazu dient die Methode
  * macheZeichenFlaecheSichtbar():</p>
  * <p>meineZeichenFlaeche.macheZeichenFlaecheSichtbar();</p>
  * 
  * <p></p>
- * <p>Alle Objekte, die gezeichnet werden sollen, müssen mit einer ID erzeugt werden.</p>
- * <p>Die ID ermöglicht das gezielte Löschen einzelner Objekte oder ganzer Gruppen von Objekten, falls diese die gleiche ID besitzen.</p>
- * <p>Außerdem werden die Objekte in der Reihenfolge der ID gezeichnet. Das heißt das Objekt mit der größeren ID wird ein Objekt mit der kleineren ID verdecken.</p>
+ * <p>Alle Objekte, die gezeichnet werden sollen, mï¿½ssen mit einer ID erzeugt werden.</p>
+ * <p>Die ID ermï¿½glicht das gezielte Lï¿½schen einzelner Objekte oder ganzer Gruppen von Objekten, falls diese die gleiche ID besitzen.</p>
+ * <p>Auï¿½erdem werden die Objekte in der Reihenfolge der ID gezeichnet. Das heiï¿½t das Objekt mit der grï¿½ï¿½eren ID wird ein Objekt mit der kleineren ID verdecken.</p>
  * <p></p>
  * 
  * <p></p>
- * <p>Außerdem ist es wichtig zu wissen, dass es zwei Möglichkeiten gibt, den Zeitpunkt des Zeichnens zu steuern.</p>
+ * <p>Auï¿½erdem ist es wichtig zu wissen, dass es zwei Mï¿½glichkeiten gibt, den Zeitpunkt des Zeichnens zu steuern.</p>
  * <p></p>
- * <p>1. Das automatische Zeichnen. In diesem Modus zeichnet die Zeichenfläche automatisch und der Benutzer</p>
- * <p>   muss sich nicht darum kümmern.</p>
- * <p>   Anfänger können diesen Modus benutzen, es ist der Standardmodus.</p>
- * <p>   Dieser Modus hat aber einen Nachteil. Wenn der Benutze ein Objekt auf der Zeichenfläche bewegen möchte,</p>
- * <p>   so muss er es erst vom alten Ort löschen und es dann am neuen Ort zeichnen. Wenn das automatische Zeichnen</p>
- * <p>   genau in dem Moment zeichnet, wenn das Objekt gelöscht ist, aber noch nicht neu gezeichnet wurde, so</p>
- * <p>   bleibt das Objekt bis zum nächsten Zeichnen unsichtbar. Der Zeitpunkt des nächsten Zeichnens ist in diesem</p>
+ * <p>1. Das automatische Zeichnen. In diesem Modus zeichnet die Zeichenflï¿½che automatisch und der Benutzer</p>
+ * <p>   muss sich nicht darum kï¿½mmern.</p>
+ * <p>   Anfï¿½nger kï¿½nnen diesen Modus benutzen, es ist der Standardmodus.</p>
+ * <p>   Dieser Modus hat aber einen Nachteil. Wenn der Benutze ein Objekt auf der Zeichenflï¿½che bewegen mï¿½chte,</p>
+ * <p>   so muss er es erst vom alten Ort lï¿½schen und es dann am neuen Ort zeichnen. Wenn das automatische Zeichnen</p>
+ * <p>   genau in dem Moment zeichnet, wenn das Objekt gelï¿½scht ist, aber noch nicht neu gezeichnet wurde, so</p>
+ * <p>   bleibt das Objekt bis zum nï¿½chsten Zeichnen unsichtbar. Der Zeitpunkt des nï¿½chsten Zeichnens ist in diesem</p>
  * <p>   Modus aber nicht von Benutzer steuerbar. Es kann in diesem Modus also zum Flickern von Objekten auf</p>
- * <p>   der Zeichenfläche kommen.</p>
+ * <p>   der Zeichenflï¿½che kommen.</p>
  * <p>2. Das manuelle Zeichnen. Um in diesen Modus zu gelangen, muss die Methode</p>
  * <p></p>
  * <p>   stopAutomatischesZeichnen();</p>
  * <p></p>
- * <p>   aufgerufen werden. Danach zeichet die Zeichenfläche nur noch nach manuellem Aufruf des Benutzers.</p>
+ * <p>   aufgerufen werden. Danach zeichet die Zeichenflï¿½che nur noch nach manuellem Aufruf des Benutzers.</p>
  * <p>   Das manuelle Zeichnen geschieht durch das Aufrufen der Methode</p>
  * <p></p>
  * <p>   manualPaint();</p>
@@ -80,7 +82,7 @@ import javax.swing.JPanel;
 
 // This version 7.0 has a paintComponent without bufferImage (same as version 6.0).
 // In addition it corrects a big fault from previous versions: The selective drawing does not work!!
-// Previously ALL elements where only drawn if an element was deleted of the size of the zeichenfläche had changed.
+// Previously ALL elements where only drawn if an element was deleted of the size of the zeichenflï¿½che had changed.
 // This DOES NOT WORK!! Always all elements have to be drawn!!
 // --> removed esWurdeEinObjektGeloescht, alteBreite, alteHoehe
 
@@ -152,9 +154,9 @@ public class ZeichenFlaeche14 extends JPanel{
 
 
 	/**
-	 * <p>Diese Methode muß aufgerufen werden, um die Zeichenfläche auf dem
+	 * <p>Diese Methode muï¿½ aufgerufen werden, um die Zeichenflï¿½che auf dem
 	 * Bildschirm sichtbar zu machen. Nach dem Aufruf dieser Methode ist
-	 * die Zeichenfläche leer.</p>
+	 * die Zeichenflï¿½che leer.</p>
 	 */
 	public void macheZeichenFlaecheSichtbar(){
 		
@@ -162,7 +164,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		
 		fenster = new JFrame();
 		fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		fenster.setTitle("Zeichenfläche");
+		fenster.setTitle("Zeichenflï¿½che");
 		fenster.setBackground(aktuelleHintergrundfarbe);
 		
 		this.setPreferredSize(new Dimension(800,600));
@@ -182,15 +184,15 @@ public class ZeichenFlaeche14 extends JPanel{
 												new ThreadPoolExecutor.DiscardPolicy());
 		renderThread.prestartAllCoreThreads();
 
-		// Die Timer-Funktion für das zeichnen (auch wenn es nicht so aussieht...).
+		// Die Timer-Funktion fï¿½r das zeichnen (auch wenn es nicht so aussieht...).
 		timer = new ScheduledThreadPoolExecutor(1);
 		timer.scheduleAtFixedRate(renderEngine, 50, 16, TimeUnit.MILLISECONDS);
 	}
 
 	/**
-	 * <p>Diese Methode muß aufgerufen werden, um die Zeichenfläche auf dem
+	 * <p>Diese Methode muï¿½ aufgerufen werden, um die Zeichenflï¿½che auf dem
 	 * Bildschirm sichtbar zu machen. Nach dem Aufruf dieser Methode ist
-	 * die Zeichenfläche leer.</p>
+	 * die Zeichenflï¿½che leer.</p>
 	 */
 	public void macheZeichenFlaecheSichtbar(int breite, int hoehe){
 		
@@ -198,7 +200,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		
 		fenster = new JFrame();
 		fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		fenster.setTitle("Zeichenfläche");
+		fenster.setTitle("Zeichenflï¿½che");
 		fenster.setBackground(aktuelleHintergrundfarbe);
 		
 		this.setPreferredSize(new Dimension(breite,hoehe));
@@ -218,7 +220,7 @@ public class ZeichenFlaeche14 extends JPanel{
 												new ThreadPoolExecutor.DiscardPolicy());
 		renderThread.prestartAllCoreThreads();
 
-		// Die Timer-Funktion für das zeichnen (auch wenn es nicht so aussieht...).
+		// Die Timer-Funktion fï¿½r das zeichnen (auch wenn es nicht so aussieht...).
 		timer = new ScheduledThreadPoolExecutor(1);
 		timer.scheduleAtFixedRate(renderEngine, 50, 16, TimeUnit.MILLISECONDS);
 	}
@@ -242,10 +244,10 @@ public class ZeichenFlaeche14 extends JPanel{
 
 	
 	/**
-	 * <p>Setzen der Zeichenfarbe für die Zeichenfläche.</p>
-	 * <p>Alles, was im folgenden auf der Zeichenfläche gezeichnet wird, wird in der hier gesetzten Farbe gezeichnet.</p>
-	 * <p>Um auf die ursprüngliche Farbe (meist "BLACK") zurückzustellen, muss die resetFarbe() Methode aufgerufen werden.</p>
-	 * <p>Zulässige Farbennamen können in der Java-API in der Klasse "Color" nachgesehen werden.</p>
+	 * <p>Setzen der Zeichenfarbe fï¿½r die Zeichenflï¿½che.</p>
+	 * <p>Alles, was im folgenden auf der Zeichenflï¿½che gezeichnet wird, wird in der hier gesetzten Farbe gezeichnet.</p>
+	 * <p>Um auf die ursprï¿½ngliche Farbe (meist "BLACK") zurï¿½ckzustellen, muss die resetFarbe() Methode aufgerufen werden.</p>
+	 * <p>Zulï¿½ssige Farbennamen kï¿½nnen in der Java-API in der Klasse "Color" nachgesehen werden.</p>
 	 * @param farbeString Der Farbenname als String (z.B. "YELLOW", "RED", usw.)
 	 */
 	// The use of this color system is NOT thread safe!
@@ -260,7 +262,7 @@ public class ZeichenFlaeche14 extends JPanel{
 	}
 	
 	/**
-	 * <p>Zurücksetzen der Zeichenfarbe für die Zeichenfläche auf den Standardwert.</p>
+	 * <p>Zurï¿½cksetzen der Zeichenfarbe fï¿½r die Zeichenflï¿½che auf den Standardwert.</p>
 	 * <p>(Meist "BLACK")</p>
 	 */
 	public void resetFarbe(){
@@ -269,10 +271,10 @@ public class ZeichenFlaeche14 extends JPanel{
 	}
 	
 	/**
-	 * <p>Setzen eines Punktes auf der Zeichenfläche.</p>
-	 * @param id Die ID des Punktes. Anhand der ID kann der Punkt später gelöscht werden.
-	 * @param gegebenexKoordinate Die X-Koordinate, auf die der Punkt auf der Zeichenfläche gesetzt werden soll.
-	 * @param gegebeneyKoordinate Die Y-Koordinate, auf die der Punkt auf der Zeichenfläche gesetzt werden soll.
+	 * <p>Setzen eines Punktes auf der Zeichenflï¿½che.</p>
+	 * @param id Die ID des Punktes. Anhand der ID kann der Punkt spï¿½ter gelï¿½scht werden.
+	 * @param gegebenexKoordinate Die X-Koordinate, auf die der Punkt auf der Zeichenflï¿½che gesetzt werden soll.
+	 * @param gegebeneyKoordinate Die Y-Koordinate, auf die der Punkt auf der Zeichenflï¿½che gesetzt werden soll.
 	 */
 	public void setzePunkt(int id, double gegebenexKoordinate, double gegebeneyKoordinate){
 		
@@ -281,12 +283,12 @@ public class ZeichenFlaeche14 extends JPanel{
 		renderEngine.hinzufuegen(neuerPunkt);
 	}
 	/**
-	 * <p>Setzen eines Punktes auf der Zeichenfläche.</p>
-	 * <p>Der Punkt ist wieder löschbar. Löschen mit der loeschen(int id) Methode.</p>
-	 * @param id Die ID des Punktes. Anhand der ID kann der Punkt später gelöscht werden.
-	 * @param gegebenexKoordinate Die X-Koordinate, auf die der Punkt auf der Zeichenfläche gesetzt werden soll.
-	 * @param gegebeneyKoordinate Die Y-Koordinate, auf die der Punkt auf der Zeichenfläche gesetzt werden soll.
-	 * @param farbe Die Farbe, mit der der Punkt auf der Zeichenfläche gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
+	 * <p>Setzen eines Punktes auf der Zeichenflï¿½che.</p>
+	 * <p>Der Punkt ist wieder lï¿½schbar. Lï¿½schen mit der loeschen(int id) Methode.</p>
+	 * @param id Die ID des Punktes. Anhand der ID kann der Punkt spï¿½ter gelï¿½scht werden.
+	 * @param gegebenexKoordinate Die X-Koordinate, auf die der Punkt auf der Zeichenflï¿½che gesetzt werden soll.
+	 * @param gegebeneyKoordinate Die Y-Koordinate, auf die der Punkt auf der Zeichenflï¿½che gesetzt werden soll.
+	 * @param farbe Die Farbe, mit der der Punkt auf der Zeichenflï¿½che gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
 	 */
 	public void setzePunkt(int id, double gegebenexKoordinate, double gegebeneyKoordinate, Color farbe){
 		
@@ -296,7 +298,7 @@ public class ZeichenFlaeche14 extends JPanel{
 	}
 
 	/**
-	 * <p>Setzen einer Linie auf der Zeichenfläche.</p>
+	 * <p>Setzen einer Linie auf der Zeichenflï¿½che.</p>
 	 * @param x1 Die X-Koordinate des Ausgangspunktes.
 	 * @param y1 Die Y-Koordinate des Ausgangspunktes.
 	 * @param x2 Die X-Koordinate des Zielpunktes.
@@ -309,14 +311,14 @@ public class ZeichenFlaeche14 extends JPanel{
 		renderEngine.hinzufuegen(neueLinie);
 	}
 	/**
-	 * <p>Setzen einer Linie auf der Zeichenfläche.</p>
-	 * <p>Die Linie ist wieder löschbar. Löschen mit der loeschen(int id) Methode.</p>
-	 * @param id Die ID der Linie. Anhand der ID kann die Linie später gelöscht werden.
+	 * <p>Setzen einer Linie auf der Zeichenflï¿½che.</p>
+	 * <p>Die Linie ist wieder lï¿½schbar. Lï¿½schen mit der loeschen(int id) Methode.</p>
+	 * @param id Die ID der Linie. Anhand der ID kann die Linie spï¿½ter gelï¿½scht werden.
 	 * @param x1 Die X-Koordinate des Ausgangspunktes.
 	 * @param y1 Die Y-Koordinate des Ausgangspunktes.
 	 * @param x2 Die X-Koordinate des Zielpunktes.
 	 * @param y2 Die Y-Koordinate des Zielpunktes.
-	 * @param farbe Die Farbe, mit der die Linie auf der Zeichenfläche gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
+	 * @param farbe Die Farbe, mit der die Linie auf der Zeichenflï¿½che gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
 	 */
 	public void setzeLinie(int id, double x1, double y1, double x2, double y2, Color farbe){
 		
@@ -326,14 +328,14 @@ public class ZeichenFlaeche14 extends JPanel{
 	}
 
 	/**
-	 * <p>Zeichnen einer Elipse auf der Zeichenfläche.</p>
-	 * <p>Es wird eine Elipse gezeichnet, der genau in das Rechteck paßt, welches durch die Koordinaten
-	 * definiert wird. Die Koordinaten geben die linke obere Ecke und die Breite und Höhe des Rechtecks an.</p>
+	 * <p>Zeichnen einer Elipse auf der Zeichenflï¿½che.</p>
+	 * <p>Es wird eine Elipse gezeichnet, der genau in das Rechteck paï¿½t, welches durch die Koordinaten
+	 * definiert wird. Die Koordinaten geben die linke obere Ecke und die Breite und Hï¿½he des Rechtecks an.</p>
 	 * <p>Werden die Koordinaten so gesetzt, dass das Rechteck ein Quadrat ist, so wird ein Kreis gezeichnet.</p>
 	 * @param x Die X-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param y Die Y-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param breite Die Breite des Rechtecks.
-	 * @param hoehe Die Höhe des Rechtecks.
+	 * @param hoehe Die Hï¿½he des Rechtecks.
 	 */
 	public void setzeElipse(int id, double x, double y, double breite, double hoehe){
 		
@@ -342,17 +344,17 @@ public class ZeichenFlaeche14 extends JPanel{
 		renderEngine.hinzufuegen(neueElipse);
 	}
 	/**
-	 * <p>Zeichnen einer Elipse auf der Zeichenfläche.</p>
-	 * <p>Es wird eine Elipse gezeichnet, der genau in das Rechteck paßt, welches durch die Koordinaten
-	 * definiert wird. Die Koordinaten geben die linke obere Ecke und die Breite und Höhe des Rechtecks an.</p>
+	 * <p>Zeichnen einer Elipse auf der Zeichenflï¿½che.</p>
+	 * <p>Es wird eine Elipse gezeichnet, der genau in das Rechteck paï¿½t, welches durch die Koordinaten
+	 * definiert wird. Die Koordinaten geben die linke obere Ecke und die Breite und Hï¿½he des Rechtecks an.</p>
 	 * <p>Werden die Koordinaten so gesetzt, dass das Rechteck ein Quadrat ist, so wird ein Kreis gezeichnet.</p>
-	 * <p>Die Elipse ist wieder löschbar. Löschen mit der loeschen(int id) Methode.</p>
-	 * @param id Die ID der Elipse. Anhand der ID kann die Elipse später gelöscht werden.
+	 * <p>Die Elipse ist wieder lï¿½schbar. Lï¿½schen mit der loeschen(int id) Methode.</p>
+	 * @param id Die ID der Elipse. Anhand der ID kann die Elipse spï¿½ter gelï¿½scht werden.
 	 * @param x Die X-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param y Die Y-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param breite Die Breite des Rechtecks.
-	 * @param hoehe Die Höhe des Rechtecks.
-	 * @param farbe Die Farbe, mit der die Linie auf der Zeichenfläche gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
+	 * @param hoehe Die Hï¿½he des Rechtecks.
+	 * @param farbe Die Farbe, mit der die Linie auf der Zeichenflï¿½che gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
 	 */
 	public void setzeElipse(int id, double x, double y, double breite, double hoehe, Color farbe){
 		
@@ -362,14 +364,14 @@ public class ZeichenFlaeche14 extends JPanel{
 	}
 
 	/**
-	 * <p>Zeichnen einer ausgefüllten Elipse auf der Zeichenfläche.</p>
-	 * <p>Es wird eine Elipse gezeichnet, der genau in das Rechteck paßt, welches durch die Koordinaten
-	 * definiert wird. Die Koordinaten geben die linke obere Ecke und die Breite und Höhe des Rechtecks an.</p>
+	 * <p>Zeichnen einer ausgefï¿½llten Elipse auf der Zeichenflï¿½che.</p>
+	 * <p>Es wird eine Elipse gezeichnet, der genau in das Rechteck paï¿½t, welches durch die Koordinaten
+	 * definiert wird. Die Koordinaten geben die linke obere Ecke und die Breite und Hï¿½he des Rechtecks an.</p>
 	 * <p>Werden die Koordinaten so gesetzt, dass das Rechteck ein Quadrat ist, so wird ein Kreis gezeichnet.</p>
 	 * @param x Die X-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param y Die Y-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param breite Die Breite des Rechtecks.
-	 * @param hoehe Die Höhe des Rechtecks.
+	 * @param hoehe Die Hï¿½he des Rechtecks.
 	 */
 	public void setzeGefuellteElipse(int id, double x, double y, double breite, double hoehe){
 		
@@ -378,17 +380,17 @@ public class ZeichenFlaeche14 extends JPanel{
 		renderEngine.hinzufuegen(neueGefuellteElipse);
 	}
 	/**
-	 * <p>Zeichnen einer ausgefüllten Elipse auf der Zeichenfläche.</p>
-	 * <p>Es wird eine Elipse gezeichnet, der genau in das Rechteck paßt, welches durch die Koordinaten
-	 * definiert wird. Die Koordinaten geben die linke obere Ecke und die Breite und Höhe des Rechtecks an.</p>
+	 * <p>Zeichnen einer ausgefï¿½llten Elipse auf der Zeichenflï¿½che.</p>
+	 * <p>Es wird eine Elipse gezeichnet, der genau in das Rechteck paï¿½t, welches durch die Koordinaten
+	 * definiert wird. Die Koordinaten geben die linke obere Ecke und die Breite und Hï¿½he des Rechtecks an.</p>
 	 * <p>Werden die Koordinaten so gesetzt, dass das Rechteck ein Quadrat ist, so wird ein Kreis gezeichnet.</p>
-	 * <p>Die Elipse ist wieder löschbar. Löschen mit der loeschen(int id) Methode.</p>
-	 * @param id Die ID der Elipse. Anhand der ID kann die Elipse später gelöscht werden.
+	 * <p>Die Elipse ist wieder lï¿½schbar. Lï¿½schen mit der loeschen(int id) Methode.</p>
+	 * @param id Die ID der Elipse. Anhand der ID kann die Elipse spï¿½ter gelï¿½scht werden.
 	 * @param x Die X-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param y Die Y-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param breite Die Breite des Rechtecks.
-	 * @param hoehe Die Höhe des Rechtecks.
-	 * @param farbe Die Farbe, mit der die Elipse auf der Zeichenfläche gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
+	 * @param hoehe Die Hï¿½he des Rechtecks.
+	 * @param farbe Die Farbe, mit der die Elipse auf der Zeichenflï¿½che gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
 	 */
 	public void setzeGefuellteElipse(int id, double x, double y, double breite, double hoehe, Color farbe){
 		
@@ -398,12 +400,12 @@ public class ZeichenFlaeche14 extends JPanel{
 	}
 	
 	/**
-	 * <p>Zeichnen eines Rechtecks auf der Zeichenfläche.</p>
+	 * <p>Zeichnen eines Rechtecks auf der Zeichenflï¿½che.</p>
 	 * <p>Es wird ein Rechteck gezeichnet. Die Koordinaten geben die linke obere Ecke des Rechtecks an.</p>
 	 * @param x Die X-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param y Die Y-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param breite Die Breite des Rechtecks.
-	 * @param hoehe Die Höhe des Rechtecks.
+	 * @param hoehe Die Hï¿½he des Rechtecks.
 	 */
 	public void setzeRechteck(int id, double x, double y, double breite, double hoehe){
 		
@@ -412,15 +414,15 @@ public class ZeichenFlaeche14 extends JPanel{
 		renderEngine.hinzufuegen(neuesRechteck);
 	}
 	/**
-	 * <p>Zeichnen eines Rechtecks auf der Zeichenfläche.</p>
+	 * <p>Zeichnen eines Rechtecks auf der Zeichenflï¿½che.</p>
 	 * <p>Es wird ein Rechteck gezeichnet. Die Koordinaten geben die linke obere Ecke des Rechtecks an.</p>
-	 * <p>Das Rechteck ist wieder löschbar. Löschen mit der loeschen(int id) Methode.</p>
-	 * @param id Die ID des Rechtecks. Anhand der ID kann das Rechteck später gelöscht werden.
+	 * <p>Das Rechteck ist wieder lï¿½schbar. Lï¿½schen mit der loeschen(int id) Methode.</p>
+	 * @param id Die ID des Rechtecks. Anhand der ID kann das Rechteck spï¿½ter gelï¿½scht werden.
 	 * @param x Die X-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param y Die Y-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param breite Die Breite des Rechtecks.
-	 * @param hoehe Die Höhe des Rechtecks.
-	 * @param farbe Die Farbe, mit der das Rechteck auf der Zeichenfläche gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
+	 * @param hoehe Die Hï¿½he des Rechtecks.
+	 * @param farbe Die Farbe, mit der das Rechteck auf der Zeichenflï¿½che gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
 	 */
 	public void setzeRechteck(int id, double x, double y, double breite, double hoehe, Color farbe){
 		
@@ -430,12 +432,12 @@ public class ZeichenFlaeche14 extends JPanel{
 	}
 
 	/**
-	 * <p>Zeichnen eines ausgefuellten Rechtecks auf der Zeichenfläche.</p>
+	 * <p>Zeichnen eines ausgefuellten Rechtecks auf der Zeichenflï¿½che.</p>
 	 * <p>Es wird ein Rechteck gezeichnet. Die Koordinaten geben die linke obere Ecke des Rechtecks an.</p>
 	 * @param x Die X-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param y Die Y-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param breite Die Breite des Rechtecks.
-	 * @param hoehe Die Höhe des Rechtecks.
+	 * @param hoehe Die Hï¿½he des Rechtecks.
 	 */
 	public void setzeGefuelltesRechteck(int id, double x, double y, double breite, double hoehe){
 		
@@ -444,15 +446,15 @@ public class ZeichenFlaeche14 extends JPanel{
 		renderEngine.hinzufuegen(neuesGefuelltesRechteck);
 	}
 	/**
-	 * <p>Zeichnen eines ausgefuellten Rechtecks auf der Zeichenfläche.</p>
+	 * <p>Zeichnen eines ausgefuellten Rechtecks auf der Zeichenflï¿½che.</p>
 	 * <p>Es wird ein Rechteck gezeichnet. Die Koordinaten geben die linke obere Ecke des Rechtecks an.</p>
-	 * <p>Das Rechteck ist wieder löschbar. Löschen mit der loeschen(int id) Methode.</p>
-	 * @param id Die ID des Rechtecks. Anhand der ID kann das Rechteck später gelöscht werden.
+	 * <p>Das Rechteck ist wieder lï¿½schbar. Lï¿½schen mit der loeschen(int id) Methode.</p>
+	 * @param id Die ID des Rechtecks. Anhand der ID kann das Rechteck spï¿½ter gelï¿½scht werden.
 	 * @param x Die X-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param y Die Y-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param breite Die Breite des Rechtecks.
-	 * @param hoehe Die Höhe des Rechtecks.
-	 * @param farbe Die Farbe, mit der das Rechteck auf der Zeichenfläche gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
+	 * @param hoehe Die Hï¿½he des Rechtecks.
+	 * @param farbe Die Farbe, mit der das Rechteck auf der Zeichenflï¿½che gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
 	 */
 	public void setzeGefuelltesRechteck(int id, double x, double y, double breite, double hoehe, Color farbe){
 		
@@ -462,12 +464,12 @@ public class ZeichenFlaeche14 extends JPanel{
 	}
 
 	/**
-	 * <p>Zeichnen von Text auf der Zeichenfläche.</p>
-	 * <p>Der Text ist wieder löschbar. Löschen mit der loeschen(int id) Methode.</p>
-	 * @param id Die ID des Textes. Anhand der ID kann der Text später gelöscht werden.
+	 * <p>Zeichnen von Text auf der Zeichenflï¿½che.</p>
+	 * <p>Der Text ist wieder lï¿½schbar. Lï¿½schen mit der loeschen(int id) Methode.</p>
+	 * @param id Die ID des Textes. Anhand der ID kann der Text spï¿½ter gelï¿½scht werden.
 	 * @param x Die X-Koordinate der linken Seite des Textes.
 	 * @param y Die Y-Koordinate der Grundlinie des Textes.
-	 * @param groesse Die Größe der Buchstaben.
+	 * @param groesse Die Grï¿½ï¿½e der Buchstaben.
 	 */
 	public void setzeText(int id, String text, double x, double y, int groesse){
 		
@@ -476,13 +478,13 @@ public class ZeichenFlaeche14 extends JPanel{
 		renderEngine.hinzufuegen(neuerText);
 	}
 	/**
-	 * <p>Zeichnen von Text auf der Zeichenfläche.</p>
-	 * <p>Der Text ist wieder löschbar. Löschen mit der loeschen(int id) Methode.</p>
-	 * @param id Die ID des Textes. Anhand der ID kann der Text später gelöscht werden.
+	 * <p>Zeichnen von Text auf der Zeichenflï¿½che.</p>
+	 * <p>Der Text ist wieder lï¿½schbar. Lï¿½schen mit der loeschen(int id) Methode.</p>
+	 * @param id Die ID des Textes. Anhand der ID kann der Text spï¿½ter gelï¿½scht werden.
 	 * @param x Die X-Koordinate der linken Seite des Textes.
 	 * @param y Die Y-Koordinate der Grundlinie des Textes.
-	 * @param groesse Die Größe der Buchstaben.
-	 * @param farbe Die Farbe, mit der der Text auf der Zeichenfläche gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
+	 * @param groesse Die Grï¿½ï¿½e der Buchstaben.
+	 * @param farbe Die Farbe, mit der der Text auf der Zeichenflï¿½che gesetzt werden soll (z.B. Color.BLACK oder Color.RED).
 	 */
 	public void setzeText(int id, String text, double x, double y, double groesse, Color farbe){
 		
@@ -492,16 +494,16 @@ public class ZeichenFlaeche14 extends JPanel{
 	}
 	
 	/**
-	 * <p>Zeichnen eines Bildes auf der Zeichenfläche.</p>
+	 * <p>Zeichnen eines Bildes auf der Zeichenflï¿½che.</p>
 	 * <p>Es wird ein Bild gezeichnet. Die Koordinaten geben die linke obere Ecke des Bildes an.</p>
-	 * <p>Das Bild wird so skaliert, dass es in die Vorgegebene Breite und Höhe passt.</p>
-	 * <p>Das Bild ist wieder löschbar. Löschen mit der loeschen(int id) Methode.</p>
-	 * @param id Die ID des Rechtecks. Anhand der ID kann das Rechteck später gelöscht werden.
+	 * <p>Das Bild wird so skaliert, dass es in die Vorgegebene Breite und Hï¿½he passt.</p>
+	 * <p>Das Bild ist wieder lï¿½schbar. Lï¿½schen mit der loeschen(int id) Methode.</p>
+	 * @param id Die ID des Rechtecks. Anhand der ID kann das Rechteck spï¿½ter gelï¿½scht werden.
 	 * @param bild Das Bild, dass gezeichnet werden soll.
 	 * @param x Die X-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param y Die Y-Koordinate der linken oberen Ecke des Rechtecks.
 	 * @param breite Die Breite des Rechtecks.
-	 * @param hoehe Die Höhe des Rechtecks.
+	 * @param hoehe Die Hï¿½he des Rechtecks.
 	 */
 	public void setzeBild(int id, Image bild, double x, double y, double breite, double hoehe){
 		
@@ -512,9 +514,9 @@ public class ZeichenFlaeche14 extends JPanel{
 	
 
 	/**
-	 * <p>Ändert die Position aller Objekte mit einer bestimmten ID auf der Zeichenfläche.</p>
-	 * <p>Werden mehreren Objekten die gleiche ID zugewiesen, so ist es möglich diese Objekte als Gruppe auf einmal zu bewegen.</p>
-	 * @param id Die ID des zu löschenden Objektes.
+	 * <p>ï¿½ndert die Position aller Objekte mit einer bestimmten ID auf der Zeichenflï¿½che.</p>
+	 * <p>Werden mehreren Objekten die gleiche ID zugewiesen, so ist es mï¿½glich diese Objekte als Gruppe auf einmal zu bewegen.</p>
+	 * @param id Die ID des zu lï¿½schenden Objektes.
 	 * @param deltaX Anzahl Pixel um die das Objekt verschoben wird.
 	 * @param deltaY Anzahl Pixel um die das Objekt verschoben wird.
 	 */
@@ -524,9 +526,9 @@ public class ZeichenFlaeche14 extends JPanel{
 	}
 	
 	/**
-	 * <p>Löschen aller Objekte mit einer bestimmten ID von der Zeichenfläche.</p>
-	 * <p>Werden mehreren Objekten die gleiche ID zugewiesen, so ist es möglich diese Objekte als Gruppe auf einmal zu löschen.</p>
-	 * @param id Die ID des zu löschenden Objektes.
+	 * <p>Lï¿½schen aller Objekte mit einer bestimmten ID von der Zeichenflï¿½che.</p>
+	 * <p>Werden mehreren Objekten die gleiche ID zugewiesen, so ist es mï¿½glich diese Objekte als Gruppe auf einmal zu lï¿½schen.</p>
+	 * @param id Die ID des zu lï¿½schenden Objektes.
 	 */
 	public void loeschen(int id){
 		
@@ -551,7 +553,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		
 	// Attribute
 		
-		// Zeigt an, ob ein Rendering notwendig ist. Das ist z.B. der Fall, wenn neue Objekte zum Zeichnen zugeführt oder gelöscht
+		// Zeigt an, ob ein Rendering notwendig ist. Das ist z.B. der Fall, wenn neue Objekte zum Zeichnen zugefï¿½hrt oder gelï¿½scht
 		// wurden.
 		private boolean renderingNotwendig = true;
 		
@@ -571,7 +573,7 @@ public class ZeichenFlaeche14 extends JPanel{
 	// Methoden
 		public void run(){
 			
-			// Nur zeichnen, wenn zeichenFlaechenPanel existiert und eine Größe hat.
+			// Nur zeichnen, wenn zeichenFlaechenPanel existiert und eine Grï¿½ï¿½e hat.
 			if(zeichenFlaechenPanel != null && zeichenFlaechenPanel.getWidth() * zeichenFlaechenPanel.getHeight() != 0){
 
 				if(renderingNotwendig){
@@ -596,7 +598,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		private void render(){
 			
 			// Hier wird erst eine Kopie der Objektliste gemacht. Im Weiteren wird die Kopie zum Zeichnen verwendet
-			// und die setzexxxx() Methoden können mit der Originalliste gleichzeitig weiterarbeiten.
+			// und die setzexxxx() Methoden kï¿½nnen mit der Originalliste gleichzeitig weiterarbeiten.
 			ArrayList<ZuZeichnendesObjekt> tempZuZeichnendeObjekte = null;
 			synchronized (this) {
 				tempZuZeichnendeObjekte = (ArrayList<ZuZeichnendesObjekt>) zuZeichnendeObjekteListe.clone();
@@ -617,7 +619,7 @@ public class ZeichenFlaeche14 extends JPanel{
 				aktuellesObjekt.zeichne(neueGraphics);
 			}
 			
-			// Nach der Arbeit das alte Bild mit dem neuen Bild überschreiben.
+			// Nach der Arbeit das alte Bild mit dem neuen Bild ï¿½berschreiben.
 			synchronized (this){
 
 				bild = neuesBild;
@@ -640,7 +642,7 @@ public class ZeichenFlaeche14 extends JPanel{
 				
 				objektIndex = sucheErstenIndexInListe(id);
 				
-				// Wenn die suchen-Methode -1 zurückgegeben hat, gibt es die gewünschte id nicht in der Liste.
+				// Wenn die suchen-Methode -1 zurï¿½ckgegeben hat, gibt es die gewï¿½nschte id nicht in der Liste.
 				if(objektIndex == -1) return;
 
 				
@@ -648,10 +650,10 @@ public class ZeichenFlaeche14 extends JPanel{
 					objekt = zuZeichnendeObjekteListe.get(objektIndex);
 					objektId = objekt.getId();
 					
-					// Beim Löschen ist zu beachten:
-					// Wenn ein Objekt gelöscht wird, dann "rutschen" alle Objekte in der ArrayList einen Platz nach "oben".
+					// Beim Lï¿½schen ist zu beachten:
+					// Wenn ein Objekt gelï¿½scht wird, dann "rutschen" alle Objekte in der ArrayList einen Platz nach "oben".
 					// Daher muss objektIndex auf dem selben Wert BLEIBEN.
-					// Nur wenn KEIN Objekt gelöscht wird, dann muss objektIndex einen Schritt weiter gezählt werden.
+					// Nur wenn KEIN Objekt gelï¿½scht wird, dann muss objektIndex einen Schritt weiter gezï¿½hlt werden.
 					if(objektId == id){
 						zuZeichnendeObjekteListe.remove(objektIndex);
 					}else{
@@ -669,7 +671,7 @@ public class ZeichenFlaeche14 extends JPanel{
 
 				int objektIndex = sucheErstenIndexInListe(id);
 				
-				// Wenn die suchen-Methode -1 zurückgegeben hat, gibt es die gewünschte id nicht in der Liste.
+				// Wenn die suchen-Methode -1 zurï¿½ckgegeben hat, gibt es die gewï¿½nschte id nicht in der Liste.
 				if(objektIndex == -1) return;
 				
 				// Sonst verschieben.
@@ -680,7 +682,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		}
 
 
-		// Ein Objekt wird an der richtigen Stelle in die ArrayList eingefügt.
+		// Ein Objekt wird an der richtigen Stelle in die ArrayList eingefï¿½gt.
 		private synchronized void hinzufuegen(ZuZeichnendesObjekt zuZeichnendesObjekt){
 			
 			int objektID = zuZeichnendesObjekt.getId();
@@ -694,13 +696,13 @@ public class ZeichenFlaeche14 extends JPanel{
 
 			boolean hinzugefuegt = false;
 
-			// Falls Liste noch leer, dann einfach einfügen.
+			// Falls Liste noch leer, dann einfach einfï¿½gen.
 			if(obereGrenze < 0){
 				zuZeichnendeObjekteListe.add(zuZeichnendesObjekt);
 				hinzugefuegt = true;
 			}
 
-			// Falls nur ein Objekt in der Liste ist, dann einfaches vorher/nachher einfügen.
+			// Falls nur ein Objekt in der Liste ist, dann einfaches vorher/nachher einfï¿½gen.
 			if(!hinzugefuegt){
 				if(obereGrenze == 0){
 					if(objektID >= zuZeichnendeObjekteListe.get(0).getId()){
@@ -715,7 +717,7 @@ public class ZeichenFlaeche14 extends JPanel{
 				}
 			}
 
-			// Falls die Liste nicht leer ist, mit Teilmengenbildung (immer die Hälfte) einfügen.
+			// Falls die Liste nicht leer ist, mit Teilmengenbildung (immer die Hï¿½lfte) einfï¿½gen.
 			while(!hinzugefuegt && (untereGrenze < obereGrenze)){
 
 				tokenPosition = ((obereGrenze - untereGrenze) / 2) + untereGrenze;
@@ -741,7 +743,7 @@ public class ZeichenFlaeche14 extends JPanel{
 			}
 
 			// Wenn in der obigen Schleife nichts gefunden wurde, sind hier obere und untere Grenze gleich.
-			// Jetzt gibt es nur noch zwei Möglchkeiten, rechts oder links der Grenze.
+			// Jetzt gibt es nur noch zwei Mï¿½glchkeiten, rechts oder links der Grenze.
 			if(!hinzugefuegt){
 				if(objektID >= zuZeichnendeObjekteListe.get(obereGrenze).getId()){
 
@@ -754,12 +756,12 @@ public class ZeichenFlaeche14 extends JPanel{
 				}
 			}
 
-			// Rendern ist notwendig, wenn hinzugefügt wurde.
+			// Rendern ist notwendig, wenn hinzugefï¿½gt wurde.
 			renderingNotwendig = true;
 		}
 		
-		// Gibt die Position des ERSTEN Objekts mit der angegebenen id zurück.
-		// Gibt -1 zurück, wenn es kein Objekt mit der id in der Liste gibt.
+		// Gibt die Position des ERSTEN Objekts mit der angegebenen id zurï¿½ck.
+		// Gibt -1 zurï¿½ck, wenn es kein Objekt mit der id in der Liste gibt.
 		private int sucheErstenIndexInListe(int id){
 
 			int objektId = 0;
@@ -774,7 +776,7 @@ public class ZeichenFlaeche14 extends JPanel{
 					objektId = zuZeichnendeObjekteListe.get(objektIndex).getId();
 					
 					// Da die ArrayList sortiert ist, kann nach dem ersten Objekt mit einer 
-					// größeren objektID abgebrochen werden. Die id kann noch nicht in der Liste sein.
+					// grï¿½ï¿½eren objektID abgebrochen werden. Die id kann noch nicht in der Liste sein.
 					if(objektId > id){
 						return -1;
 					}
@@ -789,7 +791,7 @@ public class ZeichenFlaeche14 extends JPanel{
 				return -1;
 				
 			}
-			// Wenn die Liste länger ist, dann lieber mit dem Teilungsverfahren irgendeinen Eintrag finden
+			// Wenn die Liste lï¿½nger ist, dann lieber mit dem Teilungsverfahren irgendeinen Eintrag finden
 			// und danach von dort aus den linkesten Eintrag finden.
 			else {
 				
@@ -804,7 +806,7 @@ public class ZeichenFlaeche14 extends JPanel{
 				// Wenn wir ganz links angekommen sind, war unsere id der erste Eintrag.
 				while(objektIndex > 0){
 					
-					// Links von uns prüfen.
+					// Links von uns prï¿½fen.
 					objektId = zuZeichnendeObjekteListe.get(objektIndex - 1).getId();
 					
 					// Wenn links von uns nicht die gleiche id hat, dann sind wir der erste Eintrag
@@ -820,9 +822,9 @@ public class ZeichenFlaeche14 extends JPanel{
 			}
 		}
 		
-		// Sucht nach der angegebenen id in der Liste. Gibt die Position des ersten Objekts zurück, das
+		// Sucht nach der angegebenen id in der Liste. Gibt die Position des ersten Objekts zurï¿½ck, das
 		// gefunden wird. Die Position des Objekts in einer Gruppe von Objekten mit der gleichen id
-		// wird nicht beachtet. Irgendein (zufällig) gefundenes Objekt mit der gegebenen id wird genommen. 
+		// wird nicht beachtet. Irgendein (zufï¿½llig) gefundenes Objekt mit der gegebenen id wird genommen. 
 		private int sucheIrgendeinenIndexInListe(int id){
 			
 			int tokenPosition = 0;
@@ -836,7 +838,7 @@ public class ZeichenFlaeche14 extends JPanel{
 			if(obereGrenze < 0){
 				return -1;
 			}
-			// Falls in der Liste nur 1 Objekt ist, dann prüfen ob es die selbe id hat,
+			// Falls in der Liste nur 1 Objekt ist, dann prï¿½fen ob es die selbe id hat,
 			// wenn ja, fertig, wenn nein, dann gibt es die id nicht in der Liste.
 			if(obereGrenze == 0){
 				if(id == zuZeichnendeObjekteListe.get(0).getId()){
@@ -846,7 +848,7 @@ public class ZeichenFlaeche14 extends JPanel{
 				}
 			}
 			
-			// Falls die Liste nicht leer ist, mit Teilmengenbildung (immer die Hälfte) suchen.
+			// Falls die Liste nicht leer ist, mit Teilmengenbildung (immer die Hï¿½lfte) suchen.
 			while(untereGrenze != obereGrenze){
 
 				tokenPosition = ((obereGrenze - untereGrenze) / 2) + untereGrenze;
@@ -855,14 +857,14 @@ public class ZeichenFlaeche14 extends JPanel{
 				rechtesObjektID = zuZeichnendeObjekteListe.get(tokenPosition + 1).getId();
 
 
-				// Falls die id zur Linken oder zur Rechten stimmt, dann diese Position zurückgeben.
+				// Falls die id zur Linken oder zur Rechten stimmt, dann diese Position zurï¿½ckgeben.
 				if(id == linkesObjektID) return tokenPosition;
 				if(id == rechtesObjektID) return (tokenPosition + 1);
 				
 				if(linkesObjektID < id){
 					
 					// Falls die objektID zwischen der Linken und der Rechten ist, dann kann sie nicht in
-					// der Liste sein. Also -1 zurückgeben.
+					// der Liste sein. Also -1 zurï¿½ckgeben.
 					if(id < rechtesObjektID){
 
 						return -1;
@@ -897,7 +899,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		Color farbe = null;
 		
 		// Konstruktoren.
-		// Wenn die id -1 ist, dann ist das Objekt nicht löschbar.
+		// Wenn die id -1 ist, dann ist das Objekt nicht lï¿½schbar.
 		Punkt(int id, double x, double y, Color farbe){
 			this.id = id;
 			this.x = x;
@@ -914,7 +916,7 @@ public class ZeichenFlaeche14 extends JPanel{
 											 1);
 		}
 		
-		// Ändert seine Position.
+		// ï¿½ndert seine Position.
 		void verschieben(double deltaX, double deltaY){
 			
 			x = x + deltaX;
@@ -938,7 +940,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		Color farbe = null;
 		
 		// Konstruktoren.
-		// Wenn die id -1 ist, dann ist das Objekt nicht löschbar.
+		// Wenn die id -1 ist, dann ist das Objekt nicht lï¿½schbar.
 		Linie(int id, double x1, double y1, double x2, double y2, Color farbe){
 			this.id = id;
 			this.x1 = x1;
@@ -954,7 +956,7 @@ public class ZeichenFlaeche14 extends JPanel{
 			zeichenFlaechenGraphics.drawLine((int)x1, (int)y1, (int)x2, (int)y2);
 		}
 		
-		// Ändert seine Position.
+		// ï¿½ndert seine Position.
 		void verschieben(double deltaX, double deltaY){
 			
 			x1 = x1 + deltaX;
@@ -980,7 +982,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		Color farbe = null;
 		
 		// Konstruktoren.
-		// Wenn die id -1 ist, dann ist das Objekt nicht löschbar.
+		// Wenn die id -1 ist, dann ist das Objekt nicht lï¿½schbar.
 		Elipse(int id, double x, double y, double breite, double hoehe, Color farbe){
 			this.id = id;
 			this.x = x;
@@ -990,7 +992,7 @@ public class ZeichenFlaeche14 extends JPanel{
 			this.farbe = farbe;
 		}
 		
-		// Ändert seine Position.
+		// ï¿½ndert seine Position.
 		void verschieben(double deltaX, double deltaY){
 
 			x = x + deltaX;
@@ -1020,7 +1022,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		Color farbe = null;
 		
 		// Konstruktoren.
-		// Wenn die id -1 ist, dann ist das Objekt nicht löschbar.
+		// Wenn die id -1 ist, dann ist das Objekt nicht lï¿½schbar.
 		GefuellteElipse(int id, double x, double y, double breite, double hoehe, Color farbe){
 			this.id = id;
 			this.x = x;
@@ -1030,7 +1032,7 @@ public class ZeichenFlaeche14 extends JPanel{
 			this.farbe = farbe;
 		}
 		
-		// Ändert seine Position.
+		// ï¿½ndert seine Position.
 		void verschieben(double deltaX, double deltaY){
 			
 			x = x + deltaX;
@@ -1060,7 +1062,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		Color farbe = null;
 		
 		// Konstruktoren.
-		// Wenn die id -1 ist, dann ist das Objekt nicht löschbar.
+		// Wenn die id -1 ist, dann ist das Objekt nicht lï¿½schbar.
 		Rechteck(int id, double x, double y, double breite, double hoehe, Color farbe){
 			this.id = id;
 			this.x = x;
@@ -1070,7 +1072,7 @@ public class ZeichenFlaeche14 extends JPanel{
 			this.farbe = farbe;
 		}
 		
-		// Ändert seine Position.
+		// ï¿½ndert seine Position.
 		void verschieben(double deltaX, double deltaY){
 			
 			x = x + deltaX;
@@ -1100,7 +1102,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		Color farbe = null;
 		
 		// Konstruktoren.
-		// Wenn die id -1 ist, dann ist das Objekt nicht löschbar.
+		// Wenn die id -1 ist, dann ist das Objekt nicht lï¿½schbar.
 		GefuelltesRechteck(int id, double x, double y, double breite, double hoehe, Color farbe){
 			this.id = id;
 			this.x = x;
@@ -1110,7 +1112,7 @@ public class ZeichenFlaeche14 extends JPanel{
 			this.farbe = farbe;
 		}
 		
-		// Ändert seine Position.
+		// ï¿½ndert seine Position.
 		void verschieben(double deltaX, double deltaY){
 			
 			x = x + deltaX;
@@ -1141,7 +1143,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		Color farbe = null;
 		
 		// Konstruktoren.
-		// Wenn die id -1 ist, dann ist das Objekt nicht löschbar.
+		// Wenn die id -1 ist, dann ist das Objekt nicht lï¿½schbar.
 		Text(int id, String text, double x, double y, double groesse, Color farbe){
 			this.id = id;
 			this.text = text;
@@ -1151,7 +1153,7 @@ public class ZeichenFlaeche14 extends JPanel{
 			this.farbe = farbe;
 		}
 		
-		// Ändert seine Position.
+		// ï¿½ndert seine Position.
 		void verschieben(double deltaX, double deltaY){
 			
 			x = x + deltaX;
@@ -1187,7 +1189,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		double hoehe = 0;
 		
 		// Konstruktoren.
-		// Wenn die id -1 ist, dann ist das Objekt nicht löschbar.
+		// Wenn die id -1 ist, dann ist das Objekt nicht lï¿½schbar.
 		Bild(int id, Image bild, double x, double y, double breite, double hoehe){
 			this.id = id;
 			this.bild = bild;
@@ -1202,7 +1204,7 @@ public class ZeichenFlaeche14 extends JPanel{
 			zeichenFlaechenGraphics.drawImage(bild, (int)x, (int)y, (int)breite, (int)hoehe, null);
 		}
 		
-		// Ändert seine Position.
+		// ï¿½ndert seine Position.
 		void verschieben(double deltaX, double deltaY){
 			
 			x = x + deltaX;
@@ -1218,14 +1220,14 @@ public class ZeichenFlaeche14 extends JPanel{
 	
 	/**
 	 * <p>Einschalten des automatischen Zeichnens.</p>
-	 * <p>Mit dieser Methode wird ausserdem das Zeichenintervall geändert, falls das automatische Zeichnen bereits eingeschaltet war.</p>
+	 * <p>Mit dieser Methode wird ausserdem das Zeichenintervall geï¿½ndert, falls das automatische Zeichnen bereits eingeschaltet war.</p>
 	 * <p></p>
-	 * @param intervallInNanosekunden Zeit, nach der spätestens ein repaint() erfolgt in Nanosekunden. Hier kann man die minimale Frames pro Sekunde  einstellen.
+	 * @param intervallInNanosekunden Zeit, nach der spï¿½testens ein repaint() erfolgt in Nanosekunden. Hier kann man die minimale Frames pro Sekunde  einstellen.
 	 */
 
 	public void startAutomatischesZeichnen(int intervallInNanosekunden){
 		
-		// Die Timer-Funktion für das zeichnen (auch wenn es nicht so aussieht...).
+		// Die Timer-Funktion fï¿½r das zeichnen (auch wenn es nicht so aussieht...).
 		timer = new ScheduledThreadPoolExecutor(1);
 		timer.scheduleAtFixedRate(renderEngine, 0, 16, TimeUnit.MILLISECONDS);
 	}

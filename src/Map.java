@@ -1,3 +1,5 @@
+package src;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
@@ -13,14 +15,14 @@ public class Map {
 
     public Map() {
         try {
-            hauptraumImg = ImageIO.read(new File("img/maps/hauptraum.png"));
+            hauptraumImg = ImageIO.read(new File("src/img/maps/hauptraum.png"));
         } catch (IOException e) {
             System.err.println("Hauptraum konnte nicht geladen werden");
         }
         hauptraumStartX = 9;
         hauptraumStartY = 4;
         try {
-            druckplattenImg = ImageIO.read(new File("img/maps/druckplattenraum.png"));
+            druckplattenImg = ImageIO.read(new File("src/img/maps/druckplattenraum.png"));
         } catch (IOException e) {
             System.err.println("Druckplattenraum konnte nicht geladen werden");
         }

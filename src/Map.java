@@ -99,4 +99,20 @@ public class Map {
     public int getDruckplatteStartY() {
         return druckplatteStartY;
     }
+
+    public void setHauptraumStartX(int hauptraumStartX) {
+        this.hauptraumStartX = hauptraumStartX;
+    }
+
+    public void setHauptraumStartY(int hauptraumStartY) {
+        this.hauptraumStartY = hauptraumStartY;
+    }
+
+    public void setDruckplatteStartX(int druckplatteStartX) {
+        this.druckplatteStartX = druckplatteStartX;
+    }
+
+    public void setDruckplatteStartY(int druckplatteStartY) {
+        this.druckplatteStartY = druckplatteStartY;
+    }
 }

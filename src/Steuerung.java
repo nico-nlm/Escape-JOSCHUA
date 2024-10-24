@@ -53,6 +53,8 @@ public class Steuerung implements KeyListener {
                     spieler.setX(m.getHauptraumStartX());
                     spieler.setY(m.getHauptraumStartY());
                     naechstesLevel = 2;
+                    m.setDruckplatteStartX(9);
+                    m.setDruckplatteStartY(15);
                     break;
                 case 2:
                     aktuellesLevel = m.druckplatte;

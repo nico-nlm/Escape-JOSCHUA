@@ -93,6 +93,7 @@ public class Steuerung implements KeyListener {
                 spieler.zeichnen(zf);
                 break;
             case 6:
+                System.out.println("erkannt");
                 zf.loeschen(1);
                 zf.loeschen(spieler.getId());
                 m.setHauptraumStartX(9);
@@ -101,6 +102,7 @@ public class Steuerung implements KeyListener {
                 spieler.zeichnen(zf);
                 break;
             case 7:
+                System.out.println("erkannt");
                 zf.loeschen(1);
                 zf.loeschen(spieler.getId());
                 m.setHauptraumStartX(13);

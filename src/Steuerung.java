@@ -42,7 +42,7 @@ public class Steuerung implements KeyListener {
     }
 
     public void checkLevel() {
-        if (aktuellesLevel[spieler.getY()][spieler.getX()] == 4) {
+        /*if (aktuellesLevel[spieler.getY()][spieler.getX()] == 4) {
             zf.loeschen(1);
             zf.loeschen(spieler.getId());
             aktuellesLevelInt = naechstesLevel;
@@ -52,13 +52,14 @@ public class Steuerung implements KeyListener {
                     aktuellesLevelImg = m.getHauptraumImg();
                     spieler.setX(m.getHauptraumStartX());
                     spieler.setY(m.getHauptraumStartY());
-                    naechstesLevel = 2;
                     break;
                 case 2:
                     aktuellesLevel = m.druckplatte;
                     aktuellesLevelImg = m.getDruckplattenImg();
                     spieler.setX(m.getDruckplatteStartX());
                     spieler.setY(m.getDruckplatteStartY());
+                    m.setHauptraumStartX(2);
+                    m.setHauptraumStartY(11);
                     naechstesLevel = 1;
                     break;
                 default:
@@ -66,6 +67,48 @@ public class Steuerung implements KeyListener {
             }
             zeichneSpielflaeche();
             spieler.zeichnen(zf);
+        }*/
+
+        switch (aktuellesLevel[spieler.getY()][spieler.getX()]) {
+            case 4:
+                zf.loeschen(1);
+                zf.loeschen(spieler.getId());
+                aktuellesLevel = m.hauptraum;
+                aktuellesLevelImg = m.getHauptraumImg();
+                spieler.setX(m.getHauptraumStartX());
+                spieler.setY(m.getHauptraumStartY());
+                zeichneSpielflaeche();
+                spieler.zeichnen(zf);
+                break;
+            case 5:
+                zf.loeschen(1);
+                zf.loeschen(spieler.getId());
+                aktuellesLevel = m.druckplatte;
+                aktuellesLevelImg = m.getDruckplattenImg();
+                spieler.setX(m.getDruckplatteStartX());
+                spieler.setY(m.getDruckplatteStartY());
+                m.setHauptraumStartX(2);
+                m.setHauptraumStartY(11);
+                zeichneSpielflaeche();
+                spieler.zeichnen(zf);
+                break;
+            case 6:
+                zf.loeschen(1);
+                zf.loeschen(spieler.getId());
+                m.setHauptraumStartX(9);
+                m.setHauptraumStartY(18);
+                zeichneSpielflaeche();
+                spieler.zeichnen(zf);
+                break;
+            case 7:
+                zf.loeschen(1);
+                zf.loeschen(spieler.getId());
+                m.setHauptraumStartX(13);
+                m.setHauptraumStartY(11);
+                zeichneSpielflaeche();
+                spieler.zeichnen(zf);
+                break;
+            default:
         }
     }
 

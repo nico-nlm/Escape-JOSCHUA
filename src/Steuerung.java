@@ -93,6 +93,8 @@ public class Steuerung implements KeyListener {
                 spieler.zeichnen(zf);
                 break;
             case 6:
+                //Dass der Spieler sich auf dem Feld zum nächsten Raum befindet wird erkannt und der Code wird auch umgehend umgesetzt,
+                //jedoch funktionieren die "Lösch-Methoden der ZF nicht
                 System.out.println("erkannt");
                 zf.loeschen(1);
                 zf.loeschen(spieler.getId());

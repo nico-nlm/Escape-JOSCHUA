@@ -42,33 +42,6 @@ public class Steuerung implements KeyListener {
     }
 
     public void checkLevel() {
-        /*if (aktuellesLevel[spieler.getY()][spieler.getX()] == 4) {
-            zf.loeschen(1);
-            zf.loeschen(spieler.getId());
-            aktuellesLevelInt = naechstesLevel;
-            switch (aktuellesLevelInt) {
-                case 1:
-                    aktuellesLevel = m.hauptraum;
-                    aktuellesLevelImg = m.getHauptraumImg();
-                    spieler.setX(m.getHauptraumStartX());
-                    spieler.setY(m.getHauptraumStartY());
-                    break;
-                case 2:
-                    aktuellesLevel = m.druckplatte;
-                    aktuellesLevelImg = m.getDruckplattenImg();
-                    spieler.setX(m.getDruckplatteStartX());
-                    spieler.setY(m.getDruckplatteStartY());
-                    m.setHauptraumStartX(2);
-                    m.setHauptraumStartY(11);
-                    naechstesLevel = 1;
-                    break;
-                default:
-                    break;
-            }
-            zeichneSpielflaeche();
-            spieler.zeichnen(zf);
-        }*/
-
         switch (aktuellesLevel[spieler.getY()][spieler.getX()]) {
             case 4:
                 zf.loeschen(1);
@@ -93,20 +66,22 @@ public class Steuerung implements KeyListener {
                 spieler.zeichnen(zf);
                 break;
             case 6:
-                //Dass der Spieler sich auf dem Feld zum nächsten Raum befindet wird erkannt und der Code wird auch umgehend umgesetzt,
-                //jedoch funktionieren die "Lösch-Methoden der ZF nicht
-                System.out.println("erkannt");
                 zf.loeschen(1);
                 zf.loeschen(spieler.getId());
+                aktuellesLevelImg = m.getTestImg();
+                spieler.setX(m.getTestStartX());
+                spieler.setY(m.getTestStartY());
                 m.setHauptraumStartX(9);
                 m.setHauptraumStartY(18);
                 zeichneSpielflaeche();
                 spieler.zeichnen(zf);
                 break;
             case 7:
-                System.out.println("erkannt");
                 zf.loeschen(1);
                 zf.loeschen(spieler.getId());
+                aktuellesLevelImg = m.getTestImg();
+                spieler.setX(m.getTestStartX());
+                spieler.setY(m.getTestStartY());
                 m.setHauptraumStartX(13);
                 m.setHauptraumStartY(11);
                 zeichneSpielflaeche();

@@ -12,6 +12,9 @@ public class Map {
     private Image druckplattenImg;
     private int druckplatteStartX;
     private int druckplatteStartY = 14;
+    private Image testImg;
+    private int testStartX;
+    private int testStartY;
 
     public Map() {
         try {
@@ -28,6 +31,13 @@ public class Map {
         }
         druckplatteStartX = 9;
         druckplatteStartY = 15;
+        try {
+            testImg = ImageIO.read(new File("src/img/maps/test.png"));
+        } catch (IOException e) {
+            System.err.println("Testbild konnte nicht geladen werden");
+        }
+        testStartX = 8;
+        testStartY = 11;
     }
 
     int[][] hauptraum = {
@@ -108,11 +118,15 @@ public class Map {
         this.hauptraumStartY = hauptraumStartY;
     }
 
-    public void setDruckplatteStartX(int druckplatteStartX) {
-        this.druckplatteStartX = druckplatteStartX;
+    public Image getTestImg() {
+        return testImg;
     }
 
-    public void setDruckplatteStartY(int druckplatteStartY) {
-        this.druckplatteStartY = druckplatteStartY;
+    public int getTestStartX() {
+        return testStartX;
+    }
+
+    public int getTestStartY() {
+        return testStartY;
     }
 }

@@ -30,9 +30,9 @@ public class Krug {
         zf.setzeBild(id, krug, x, y, breite, hoehe);
     }
 
-    public void collect(ZeichenFlaeche14 zf, Spielfigur spieler) {
-        zf.loeschen(id);
-        zf.loeschen(spieler.getId());
-        zf.setzeBild(spieler.getId(), spieler.getFigurKrug(), spieler.getX(), spieler.getY(), spieler.getBreite(), spieler.getHoehe());
+    public int getId() {
+        return id;
     }
+
+
 }

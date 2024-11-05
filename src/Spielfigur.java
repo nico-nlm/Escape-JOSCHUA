@@ -14,6 +14,7 @@ public class Spielfigur {
     private int hoehe;
     private int id;
     private Image figur;
+    private Image figurKrug;
 
     public Spielfigur(int x, int y, int breite, int hoehe, int id) {
         this.x = x;
@@ -26,6 +27,12 @@ public class Spielfigur {
 
         } catch (IOException e) {
             System.err.println("Bild konnte nicht geladen werden");
+        }
+        try {
+            figurKrug = ImageIO.read(new File("src/img/figuren/spielerKrug.png"));
+
+        } catch (IOException e) {
+            System.err.println("Spieler mit Krug konnte nicht geladen werden");
         }
     }
 
@@ -55,8 +62,20 @@ public class Spielfigur {
         return neachsteY;
     }
 
+    public int getBreite() {
+        return breite;
+    }
+
+    public int getHoehe() {
+        return hoehe;
+    }
+
     public int getId() {
         return id;
+    }
+
+    public Image getFigurKrug() {
+        return figurKrug;
     }
 
     public void setX(int x) {

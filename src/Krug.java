@@ -26,8 +26,8 @@ public class Krug {
         }
     }
 
-    public void zeichneKrug(ZeichenFlaeche14 zf) {
-        zf.setzeBild(id, krug, x, y, breite, hoehe);
+    public void zeichnen(ZeichenFlaeche14 zf) {
+        zf.setzeBild(id, krug, x*breite, y*hoehe, breite, hoehe);
     }
 
     public int getId() {

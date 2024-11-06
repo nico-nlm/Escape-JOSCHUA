@@ -19,7 +19,8 @@ public class Steuerung implements KeyListener {
     private int groesse = 700;
     private int[][] aktuellesLevel;
     private Image aktuellesLevelImg;
-    private boolean eingesammelt;
+    private int eingesammelterKrug;
+
 
     public Steuerung() {
         zf = new ZeichenFlaeche14();
@@ -32,7 +33,7 @@ public class Steuerung implements KeyListener {
         krug4 = new Krug(13, 4, 35, 35, 7);
         aktuellesLevel = m.hauptraum;
         aktuellesLevelImg = m.getHauptraumImg();
-        eingesammelt = false;
+        eingesammelterKrug = 0;
     }
 
     public void starten() {
@@ -48,7 +49,7 @@ public class Steuerung implements KeyListener {
     }
 
     public void checkKrug() {
-        if (!eingesammelt) {
+        if (eingesammelterKrug == 0) {
             switch (aktuellesLevel[spieler.getY()][spieler.getX()]) {
                 case 6, 7, 8, 9:
                     zf.setzeText(8, "Drücke 'E' um den Krug aufzuheben", 210, 250, 18, Color.BLACK);
@@ -56,14 +57,11 @@ public class Steuerung implements KeyListener {
                 default:
                     zf.loeschen(8);
             }
-        } else zf.loeschen(8);
-        switch (aktuellesLevel[spieler.getY()][spieler.getX()]) {
-            case 6, 7, 8, 9:
-                zf.setzeText(8, "Drücke 'E' um den Krug aufzuheben", 210, 250, 18, Color.BLACK);
-                break;
-            default:
-                zf.loeschen(8);
+        } else {
+            zf.loeschen(8);
+            zf.setzeText(8, "Drücke 'E' um den Krug abzulegen", 210, 250, 18, Color.BLACK);
         }
+
     }
 
     public void checkLevel() {
@@ -144,31 +142,72 @@ public class Steuerung implements KeyListener {
         }
 
         if (e.getKeyCode() == KeyEvent.VK_E) {
-            if (!eingesammelt) {
+            if (eingesammelterKrug == 0) {
                 if (aktuellesLevel[spieler.getY()][spieler.getX()] == 6) {
                     //zf.loeschen(spieler.getId());
                     zf.loeschen(krug1.getId());
                     spieler.setFigur(spieler.getFigurKrug());
-                    eingesammelt = true;
+                    m.druckplatte[spieler.getY()][spieler.getX()] = 0;
+                    eingesammelterKrug = 1;
+                    zf.loeschen(8);
                 }
                 if (aktuellesLevel[spieler.getY()][spieler.getX()] == 7) {
                     //zf.loeschen(spieler.getId());
                     zf.loeschen(krug2.getId());
                     spieler.setFigur(spieler.getFigurKrug());
-                    eingesammelt = true;
+                    m.druckplatte[spieler.getY()][spieler.getX()] = 0;
+                    eingesammelterKrug = 2;
+                    zf.loeschen(8);
                 }
                 if (aktuellesLevel[spieler.getY()][spieler.getX()] == 8) {
                     //zf.loeschen(spieler.getId());
                     zf.loeschen(krug3.getId());
                     spieler.setFigur(spieler.getFigurKrug());
-                    eingesammelt = true;
+                    m.druckplatte[spieler.getY()][spieler.getX()] = 0;
+                    eingesammelterKrug = 3;
+                    zf.loeschen(8);
                 }
                 if (aktuellesLevel[spieler.getY()][spieler.getX()] == 9) {
                     //zf.loeschen(spieler.getId());
                     zf.loeschen(krug4.getId());
                     spieler.setFigur(spieler.getFigurKrug());
-                    eingesammelt = true;
+                    m.druckplatte[spieler.getY()][spieler.getX()] = 0;
+                    eingesammelterKrug = 4;
+                    zf.loeschen(8);
                 }
+            } else {
+                switch (eingesammelterKrug) {
+                    case 1:
+                        krug1.setX(spieler.getX());
+                        krug1.setY(spieler.getY());
+                        krug1.zeichnen(zf);
+                        m.druckplatte[spieler.getY()][spieler.getX()] = 6;
+                        zf.loeschen(8);
+                        break;
+                    case 2:
+                        krug2.setX(spieler.getX());
+                        krug2.setY(spieler.getY());
+                        krug2.zeichnen(zf);
+                        m.druckplatte[spieler.getY()][spieler.getX()] = 7;
+                        zf.loeschen(8);
+                        break;
+                    case 3:
+                        krug3.setX(spieler.getX());
+                        krug3.setY(spieler.getY());
+                        krug3.zeichnen(zf);
+                        m.druckplatte[spieler.getY()][spieler.getX()] = 8;
+                        zf.loeschen(8);
+                        break;
+                    case 4:
+                        krug4.setX(spieler.getX());
+                        krug4.setY(spieler.getY());
+                        krug4.zeichnen(zf);
+                        m.druckplatte[spieler.getY()][spieler.getX()] = 9;
+                        zf.loeschen(8);
+                        break;
+                    default:
+                }
+                eingesammelterKrug = 0;
             }
         }
         checkLevel();

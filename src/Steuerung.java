@@ -19,6 +19,7 @@ public class Steuerung implements KeyListener {
     private int groesse = 700;
     private int[][] aktuellesLevel;
     private Image aktuellesLevelImg;
+    private boolean eingesammelt;
 
     public Steuerung() {
         zf = new ZeichenFlaeche14();
@@ -31,6 +32,7 @@ public class Steuerung implements KeyListener {
         krug4 = new Krug(13, 4, 35, 35, 7);
         aktuellesLevel = m.hauptraum;
         aktuellesLevelImg = m.getHauptraumImg();
+        eingesammelt = false;
     }
 
     public void starten() {
@@ -46,6 +48,15 @@ public class Steuerung implements KeyListener {
     }
 
     public void checkKrug() {
+        if (!eingesammelt) {
+            switch (aktuellesLevel[spieler.getY()][spieler.getX()]) {
+                case 6, 7, 8, 9:
+                    zf.setzeText(8, "Drücke 'E' um den Krug aufzuheben", 210, 250, 18, Color.BLACK);
+                    break;
+                default:
+                    zf.loeschen(8);
+            }
+        } else zf.loeschen(8);
         switch (aktuellesLevel[spieler.getY()][spieler.getX()]) {
             case 6, 7, 8, 9:
                 zf.setzeText(8, "Drücke 'E' um den Krug aufzuheben", 210, 250, 18, Color.BLACK);
@@ -133,25 +144,31 @@ public class Steuerung implements KeyListener {
         }
 
         if (e.getKeyCode() == KeyEvent.VK_E) {
-            if (aktuellesLevel[spieler.getY()][spieler.getX()] == 6) {
-                //zf.loeschen(spieler.getId());
-                zf.loeschen(krug1.getId());
-                spieler.setFigur(spieler.getFigurKrug());
-            }
-            if (aktuellesLevel[spieler.getY()][spieler.getX()] == 7) {
-                //zf.loeschen(spieler.getId());
-                zf.loeschen(krug2.getId());
-                spieler.setFigur(spieler.getFigurKrug());
-            }
-            if (aktuellesLevel[spieler.getY()][spieler.getX()] == 8) {
-                //zf.loeschen(spieler.getId());
-                zf.loeschen(krug3.getId());
-                spieler.setFigur(spieler.getFigurKrug());
-            }
-            if (aktuellesLevel[spieler.getY()][spieler.getX()] == 9) {
-                //zf.loeschen(spieler.getId());
-                zf.loeschen(krug4.getId());
-                spieler.setFigur(spieler.getFigurKrug());
+            if (!eingesammelt) {
+                if (aktuellesLevel[spieler.getY()][spieler.getX()] == 6) {
+                    //zf.loeschen(spieler.getId());
+                    zf.loeschen(krug1.getId());
+                    spieler.setFigur(spieler.getFigurKrug());
+                    eingesammelt = true;
+                }
+                if (aktuellesLevel[spieler.getY()][spieler.getX()] == 7) {
+                    //zf.loeschen(spieler.getId());
+                    zf.loeschen(krug2.getId());
+                    spieler.setFigur(spieler.getFigurKrug());
+                    eingesammelt = true;
+                }
+                if (aktuellesLevel[spieler.getY()][spieler.getX()] == 8) {
+                    //zf.loeschen(spieler.getId());
+                    zf.loeschen(krug3.getId());
+                    spieler.setFigur(spieler.getFigurKrug());
+                    eingesammelt = true;
+                }
+                if (aktuellesLevel[spieler.getY()][spieler.getX()] == 9) {
+                    //zf.loeschen(spieler.getId());
+                    zf.loeschen(krug4.getId());
+                    spieler.setFigur(spieler.getFigurKrug());
+                    eingesammelt = true;
+                }
             }
         }
         checkLevel();

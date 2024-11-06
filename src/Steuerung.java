@@ -69,6 +69,11 @@ public class Steuerung implements KeyListener {
             case 2:
                 zf.loeschen(1);
                 zf.loeschen(spieler.getId());
+                zf.loeschen(4);
+                zf.loeschen(5);
+                zf.loeschen(6);
+                zf.loeschen(7);
+                eingesammelterKrug = 0;
                 aktuellesLevel = m.hauptraum;
                 aktuellesLevelImg = m.getHauptraumImg();
                 spieler.setX(m.getHauptraumStartX());
@@ -83,7 +88,7 @@ public class Steuerung implements KeyListener {
                 aktuellesLevelImg = m.getDruckplattenImg();
                 spieler.setX(m.getDruckplatteStartX());
                 spieler.setY(m.getDruckplatteStartY());
-                m.setHauptraumStartX(2);
+                m.setHauptraumStartX(13);
                 m.setHauptraumStartY(11);
                 zeichneSpielflaeche();
                 krug1.zeichnen(zf);

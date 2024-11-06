@@ -86,6 +86,10 @@ public class Spielfigur {
         this.y = y;
     }
 
+    public void setFigur(Image figur) {
+        this.figur = figur;
+    }
+
     public void setNeachsteX(int neachsteX) {
         this.neachsteX = neachsteX;
     }

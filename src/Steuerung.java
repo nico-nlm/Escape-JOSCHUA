@@ -136,18 +136,22 @@ public class Steuerung implements KeyListener {
             if (aktuellesLevel[spieler.getY()][spieler.getX()] == 6) {
                 //zf.loeschen(spieler.getId());
                 zf.loeschen(krug1.getId());
+                spieler.setFigur(spieler.getFigurKrug());
             }
             if (aktuellesLevel[spieler.getY()][spieler.getX()] == 7) {
                 //zf.loeschen(spieler.getId());
                 zf.loeschen(krug2.getId());
+                spieler.setFigur(spieler.getFigurKrug());
             }
             if (aktuellesLevel[spieler.getY()][spieler.getX()] == 8) {
                 //zf.loeschen(spieler.getId());
                 zf.loeschen(krug3.getId());
+                spieler.setFigur(spieler.getFigurKrug());
             }
             if (aktuellesLevel[spieler.getY()][spieler.getX()] == 9) {
                 //zf.loeschen(spieler.getId());
                 zf.loeschen(krug4.getId());
+                spieler.setFigur(spieler.getFigurKrug());
             }
         }
         checkLevel();

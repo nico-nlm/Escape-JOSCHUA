@@ -38,6 +38,14 @@ public class Krug {
         this.y = y;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     public int getId() {
         return id;
     }

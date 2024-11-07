@@ -61,7 +61,6 @@ public class Steuerung implements KeyListener {
             zf.loeschen(8);
             zf.setzeText(8, "Drücke 'E' um den Krug abzulegen", 210, 250, 18, Color.BLACK);
         } else zf.loeschen(8);
-
     }
 
     public void checkLevel() {

@@ -13,6 +13,7 @@ public class Spielfigur {
     private int breite;
     private int hoehe;
     private int id;
+    private Image aktuelleFigur;
     private Image figur;
     private Image figurKrug;
 
@@ -34,6 +35,7 @@ public class Spielfigur {
         } catch (IOException e) {
             System.err.println("Spieler mit Krug konnte nicht geladen werden");
         }
+        aktuelleFigur = figur;
     }
 
     public void zeichnen(ZeichenFlaeche14 zf) {
@@ -74,6 +76,10 @@ public class Spielfigur {
         return id;
     }
 
+    public Image getFigur() {
+        return figur;
+    }
+
     public Image getFigurKrug() {
         return figurKrug;
     }
@@ -86,8 +92,8 @@ public class Spielfigur {
         this.y = y;
     }
 
-    public void setFigur(Image figur) {
-        this.figur = figur;
+    public void setAktuelleFigur(Image aktuelleFigur) {
+        this.aktuelleFigur = aktuelleFigur;
     }
 
     public void setNeachsteX(int neachsteX) {

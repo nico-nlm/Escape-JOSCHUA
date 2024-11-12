@@ -36,7 +36,7 @@ public class Map {
         druckplatteStartX = 9;
         druckplatteStartY = 15;
         druckPlatteX1 = 4;
-        druckplatteY1 = 14;
+        druckplatteY1 = 15;
         druckPlatteX2 = 15;
         druckplatteY2 = 13;
 

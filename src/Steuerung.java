@@ -20,6 +20,8 @@ public class Steuerung implements KeyListener {
     private int[][] aktuellesLevel;
     private Image aktuellesLevelImg;
     private int eingesammelterKrug;
+    private boolean druckplatte1;
+    private boolean druckplatte2;
 
 
     public Steuerung() {
@@ -34,6 +36,9 @@ public class Steuerung implements KeyListener {
         aktuellesLevel = m.hauptraum;
         aktuellesLevelImg = m.getHauptraumImg();
         eingesammelterKrug = 0;
+        druckplatte1 = false;
+        druckplatte2 = false;
+
     }
 
     public void starten() {
@@ -61,17 +66,6 @@ public class Steuerung implements KeyListener {
             zf.loeschen(8);
             zf.setzeText(8, "Drücke 'E' um den Krug abzulegen", 210, 250, 18, Color.BLACK);
         } else zf.loeschen(8);
-
-        if (m.druckplatte[m.getDruckplatteY1()][m.getDruckPlatteX1()] == 6 ||
-        m.druckplatte[m.getDruckplatteY1()][m.getDruckPlatteX1()] == 7 ||
-        m.druckplatte[m.getDruckplatteY1()][m.getDruckPlatteX1()] == 8 ||
-        m.druckplatte[m.getDruckplatteY1()][m.getDruckPlatteX1()] == 9 &&
-        m.druckplatte[m.getDruckplatteY2()][m.getDruckPlatteX2()] == 6 ||
-        m.druckplatte[m.getDruckplatteY2()][m.getDruckPlatteX2()] == 7 ||
-        m.druckplatte[m.getDruckplatteY2()][m.getDruckPlatteX2()] == 8 ||
-        m.druckplatte[m.getDruckplatteY2()][m.getDruckPlatteX2()] == 9) {
-            System.out.println("Etwas ist im Hauptraum passiert!");
-        }
     }
 
     public void checkLevel() {
@@ -227,6 +221,11 @@ public class Steuerung implements KeyListener {
                 }
                 eingesammelterKrug = 0;
                 spieler.setAktuelleFigur(spieler.getFigur());
+                if (spieler.getX() == m.getDruckPlatteX1() && spieler.getY() == m.getDruckplatteY1()) druckplatte1 = true;
+                if (spieler.getX() == m.getDruckPlatteX2() && spieler.getY() == m.getDruckplatteY2()) druckplatte2 = true;
+                if (druckplatte1 && druckplatte2) {
+                    System.out.println("Im Hauptraum ist etwas passiert!");
+                }
             }
         }
         checkLevel();

@@ -187,6 +187,8 @@ public class Steuerung implements KeyListener {
                     eingesammelterKrug = 4;
                     zf.loeschen(8);
                 }
+                if (spieler.getX() == m.getDruckPlatteX1() && spieler.getY() == m.getDruckplatteY1()) druckplatte1 = false;
+                if (spieler.getX() == m.getDruckPlatteX2() && spieler.getY() == m.getDruckplatteY2()) druckplatte2 = false;
             } else if (eingesammelterKrug !=0 && aktuellesLevel[spieler.getY()][spieler.getX()] == 0){
                 switch (eingesammelterKrug) {
                     case 1:

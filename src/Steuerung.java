@@ -61,6 +61,17 @@ public class Steuerung implements KeyListener {
             zf.loeschen(8);
             zf.setzeText(8, "Drücke 'E' um den Krug abzulegen", 210, 250, 18, Color.BLACK);
         } else zf.loeschen(8);
+
+        if (m.druckplatte[m.getDruckplatteY1()][m.getDruckPlatteX1()] == 6 ||
+        m.druckplatte[m.getDruckplatteY1()][m.getDruckPlatteX1()] == 7 ||
+        m.druckplatte[m.getDruckplatteY1()][m.getDruckPlatteX1()] == 8 ||
+        m.druckplatte[m.getDruckplatteY1()][m.getDruckPlatteX1()] == 9 &&
+        m.druckplatte[m.getDruckplatteY2()][m.getDruckPlatteX2()] == 6 ||
+        m.druckplatte[m.getDruckplatteY2()][m.getDruckPlatteX2()] == 7 ||
+        m.druckplatte[m.getDruckplatteY2()][m.getDruckPlatteX2()] == 8 ||
+        m.druckplatte[m.getDruckplatteY2()][m.getDruckPlatteX2()] == 9) {
+            System.out.println("Etwas ist im Hauptraum passiert!");
+        }
     }
 
     public void checkLevel() {
@@ -182,7 +193,7 @@ public class Steuerung implements KeyListener {
                     eingesammelterKrug = 4;
                     zf.loeschen(8);
                 }
-            } else if (eingesammelterKrug !=0 && aktuellesLevel[spieler.getY()][spieler.getX()] == 0 || aktuellesLevel[spieler.getY()][spieler.getX()] == 10){
+            } else if (eingesammelterKrug !=0 && aktuellesLevel[spieler.getY()][spieler.getX()] == 0){
                 switch (eingesammelterKrug) {
                     case 1:
                         krug1.setX(spieler.getX());

@@ -12,6 +12,10 @@ public class Map {
     private Image druckplattenImg;
     private int druckplatteStartX;
     private int druckplatteStartY = 14;
+    private int druckPlatteX1;
+    private int druckplatteY1;
+    private int druckPlatteX2;
+    private int druckplatteY2;
     private Image testImg;
     private int testStartX;
     private int testStartY;
@@ -31,6 +35,11 @@ public class Map {
         }
         druckplatteStartX = 9;
         druckplatteStartY = 15;
+        druckPlatteX1 = 4;
+        druckplatteY1 = 14;
+        druckPlatteX2 = 15;
+        druckplatteY2 = 13;
+
         try {
             testImg = ImageIO.read(new File("src/img/maps/test.png"));
         } catch (IOException e) {
@@ -77,8 +86,8 @@ public class Map {
             {0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
             {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
             {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 1, 0, 0, 0},
-            {0, 0, 0, 1, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -108,6 +117,22 @@ public class Map {
 
     public int getDruckplatteStartY() {
         return druckplatteStartY;
+    }
+
+    public int getDruckPlatteX1() {
+        return druckPlatteX1;
+    }
+
+    public int getDruckplatteY1() {
+        return druckplatteY1;
+    }
+
+    public int getDruckPlatteX2() {
+        return druckPlatteX2;
+    }
+
+    public int getDruckplatteY2() {
+        return druckplatteY2;
     }
 
     public void setHauptraumStartX(int hauptraumStartX) {

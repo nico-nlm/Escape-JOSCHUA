@@ -226,7 +226,8 @@ public class Steuerung implements KeyListener {
                 if (spieler.getX() == m.getDruckPlatteX1() && spieler.getY() == m.getDruckplatteY1()) druckplatte1 = true;
                 if (spieler.getX() == m.getDruckPlatteX2() && spieler.getY() == m.getDruckplatteY2()) druckplatte2 = true;
                 if (druckplatte1 && druckplatte2) {
-                    System.out.println("Im Hauptraum ist etwas passiert!");
+                    zf.loeschen(8);
+                    zf.setzeText(8, "Im Hauptraum ist etwas passiert", 210, 250, 18, Color.BLACK);
                 }
             }
         }

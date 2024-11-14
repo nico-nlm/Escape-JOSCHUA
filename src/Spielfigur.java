@@ -30,7 +30,7 @@ public class Spielfigur {
             System.err.println("Bild konnte nicht geladen werden");
         }
         try {
-            figurKrug = ImageIO.read(new File("src/img/figuren/spielerKrug.png"));
+            figurKrug = ImageIO.read(new File("src/img/figuren/spieler-krug.png"));
 
         } catch (IOException e) {
             System.err.println("Spieler mit Krug konnte nicht geladen werden");
@@ -39,7 +39,7 @@ public class Spielfigur {
     }
 
     public void zeichnen(ZeichenFlaeche14 zf) {
-        zf.setzeBild(id, figur, x*breite, y*hoehe, breite, hoehe);
+        zf.setzeBild(id, aktuelleFigur, x*breite, y*hoehe, breite, hoehe);
     }
 
     public void bewegen(int deltaX, int deltaY, ZeichenFlaeche14 zf) {
@@ -90,6 +90,14 @@ public class Spielfigur {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public void setHoehe(int hoehe) {
+        this.hoehe = hoehe;
+    }
+
+    public void setBreite(int breite) {
+        this.breite = breite;
     }
 
     public void setAktuelleFigur(Image aktuelleFigur) {

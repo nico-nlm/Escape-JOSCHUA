@@ -80,6 +80,7 @@ public class Steuerung implements KeyListener {
                     zf.loeschen(5);
                     zf.loeschen(6);
                     zf.loeschen(7);
+                    zf.loeschen(8);
                     eingesammelterKrug = 0;
                     aktuellesLevel = m.hauptraum;
                     aktuellesLevelImg = m.getHauptraumImg();
@@ -159,36 +160,44 @@ public class Steuerung implements KeyListener {
             if (!druckplatte1 || !druckplatte2) {
                 if (eingesammelterKrug == 0) {
                     if (aktuellesLevel[spieler.getY()][spieler.getX()] == 6) {
-                        //zf.loeschen(spieler.getId());
                         zf.loeschen(krug1.getId());
                         spieler.setAktuelleFigur(spieler.getFigurKrug());
                         m.druckplatte[spieler.getY()][spieler.getX()] = 0;
                         eingesammelterKrug = 1;
                         zf.loeschen(8);
+                        zf.loeschen(spieler.getId());
+                        spieler.setAktuelleFigur(spieler.getFigurKrug());
+                        spieler.zeichnen(zf);
                     }
                     if (aktuellesLevel[spieler.getY()][spieler.getX()] == 7) {
-                        //zf.loeschen(spieler.getId());
                         zf.loeschen(krug2.getId());
                         spieler.setAktuelleFigur(spieler.getFigurKrug());
                         m.druckplatte[spieler.getY()][spieler.getX()] = 0;
                         eingesammelterKrug = 2;
                         zf.loeschen(8);
+                        zf.loeschen(spieler.getId());
+                        spieler.setAktuelleFigur(spieler.getFigurKrug());
+                        spieler.zeichnen(zf);
                     }
                     if (aktuellesLevel[spieler.getY()][spieler.getX()] == 8) {
-                        //zf.loeschen(spieler.getId());
                         zf.loeschen(krug3.getId());
                         spieler.setAktuelleFigur(spieler.getFigurKrug());
                         m.druckplatte[spieler.getY()][spieler.getX()] = 0;
                         eingesammelterKrug = 3;
                         zf.loeschen(8);
+                        zf.loeschen(spieler.getId());
+                        spieler.setAktuelleFigur(spieler.getFigurKrug());
+                        spieler.zeichnen(zf);
                     }
                     if (aktuellesLevel[spieler.getY()][spieler.getX()] == 9) {
-                        //zf.loeschen(spieler.getId());
                         zf.loeschen(krug4.getId());
                         spieler.setAktuelleFigur(spieler.getFigurKrug());
                         m.druckplatte[spieler.getY()][spieler.getX()] = 0;
                         eingesammelterKrug = 4;
                         zf.loeschen(8);
+                        zf.loeschen(spieler.getId());
+                        spieler.setAktuelleFigur(spieler.getFigurKrug());
+                        spieler.zeichnen(zf);
                     }
                     if (spieler.getX() == m.getDruckPlatteX1() && spieler.getY() == m.getDruckplatteY1()) druckplatte1 = false;
                     if (spieler.getX() == m.getDruckPlatteX2() && spieler.getY() == m.getDruckplatteY2()) druckplatte2 = false;
@@ -225,12 +234,20 @@ public class Steuerung implements KeyListener {
                         default:
                     }
                     eingesammelterKrug = 0;
+                    zf.loeschen(spieler.getId());
                     spieler.setAktuelleFigur(spieler.getFigur());
+                    spieler.zeichnen(zf);
                     if (spieler.getX() == m.getDruckPlatteX1() && spieler.getY() == m.getDruckplatteY1()) druckplatte1 = true;
                     if (spieler.getX() == m.getDruckPlatteX2() && spieler.getY() == m.getDruckplatteY2()) druckplatte2 = true;
                     if (druckplatte1 && druckplatte2) {
                         zf.loeschen(8);
-                        zf.setzeText(8, "Im Hauptraum ist etwas passiert", 210, 250, 18, Color.BLACK);
+                        zf.setzeText(8, "Im Hauptraum ist etwas passiert", 220, 250, 18, Color.BLACK);
+                        //m.getHauptraumImg() = Hauptraum mit einer Lampe an
+                        for (int i = 0; i < m.hauptraum.length; i++) {
+                            for (int j = 0; j < m.hauptraum[i].length; j++) {
+                                if (m.hauptraum[i][j] == 3) m.hauptraum[i][j] = 0;
+                            }
+                        }
                     }
                 }
             }

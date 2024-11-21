@@ -57,7 +57,7 @@ public class Npc {
                 break;
             case 3:
                 if (map[y][x+1] == 0) {
-                    zf.verschieben(id, 0, breite);
+                    zf.verschieben(id, breite, 0);
                     x++;
                 }
                 break;

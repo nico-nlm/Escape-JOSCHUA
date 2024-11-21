@@ -28,7 +28,7 @@ public class Steuerung implements KeyListener {
         zf = new ZeichenFlaeche14();
         m = new Map();
         spieler = new Spielfigur(8, 11, 35, 35, 2);
-        npc = new Npc(200, 200, 70, 70, 3);
+        npc = new Npc(6, 6, 35, 35, 3);
         krug1 = new Krug(6, 4, 35, 35, 4);
         krug2 = new Krug(7, 4, 35, 35, 5);
         krug3 = new Krug(12, 4, 35, 35, 6);
@@ -104,6 +104,7 @@ public class Steuerung implements KeyListener {
                     krug2.zeichnen(zf);
                     krug3.zeichnen(zf);
                     krug4.zeichnen(zf);
+                    npc.zeichnen(zf);
                     spieler.zeichnen(zf);
                     break;
                 case 4:
@@ -253,7 +254,11 @@ public class Steuerung implements KeyListener {
             }
         }
         checkLevel();
-        checkKrug();
+        if (aktuellesLevel == m.druckplatte) {
+            checkKrug();
+            npc.bewegen(aktuellesLevel, zf);
+        }
+
     }
 
     @Override

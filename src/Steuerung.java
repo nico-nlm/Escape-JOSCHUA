@@ -139,21 +139,33 @@ public class Steuerung implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_W) {
             if (aktuellesLevel[spieler.getY()-1][spieler.getX()] != 1) {
                 spieler.bewegen(0, -1, zf);
+                if (aktuellesLevel == m.druckplatte) {
+                    npc.bewegen(aktuellesLevel, zf);
+                }
             }
         }
         if (e.getKeyCode() == KeyEvent.VK_S) {
             if (aktuellesLevel[spieler.getY()+1][spieler.getX()] != 1) {
                 spieler.bewegen(0, 1, zf);
+                if (aktuellesLevel == m.druckplatte) {
+                    npc.bewegen(aktuellesLevel, zf);
+                }
             }
         }
         if (e.getKeyCode() == KeyEvent.VK_A) {
             if (aktuellesLevel[spieler.getY()][spieler.getX()-1] != 1) {
                 spieler.bewegen(-1, 0, zf);
+                if (aktuellesLevel == m.druckplatte) {
+                    npc.bewegen(aktuellesLevel, zf);
+                }
             }
         }
         if (e.getKeyCode() == KeyEvent.VK_D) {
             if (aktuellesLevel[spieler.getY()][spieler.getX()+1] != 1) {
                 spieler.bewegen(1, 0, zf);
+                if (aktuellesLevel == m.druckplatte) {
+                    npc.bewegen(aktuellesLevel, zf);
+                }
             }
         }
 
@@ -256,7 +268,6 @@ public class Steuerung implements KeyListener {
         checkLevel();
         if (aktuellesLevel == m.druckplatte) {
             checkKrug();
-            npc.bewegen(aktuellesLevel, zf);
         }
 
     }

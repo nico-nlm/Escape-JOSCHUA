@@ -70,6 +70,14 @@ public class Steuerung implements KeyListener {
         }
     }
 
+    public void checkNpc() {
+        if (spieler.getY() == npc.getX() && spieler.getY() == npc.getY()) {
+            zf.loeschen(spieler.getId());
+            zf.loeschen(npc.getId());
+            //spieler und npc neu setzen
+        }
+    }
+
     public void checkLevel() {
         if (eingesammelterKrug == 0) {
             switch (aktuellesLevel[spieler.getY()][spieler.getX()]) {

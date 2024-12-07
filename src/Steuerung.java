@@ -71,10 +71,12 @@ public class Steuerung implements KeyListener {
     }
 
     public void checkNpc() {
-        if (spieler.getY() == npc.getX() && spieler.getY() == npc.getY()) {
+        if (spieler.getX() == npc.getX() && spieler.getY() == npc.getY()) {
             zf.loeschen(spieler.getId());
-            zf.loeschen(npc.getId());
-            //spieler und npc neu setzen
+            spieler.setX(m.getDruckplatteStartX());
+            spieler.setY(m.getDruckplatteStartY());
+            spieler.zeichnen(zf);
+            System.out.println("erkannt");
         }
     }
 
@@ -84,6 +86,7 @@ public class Steuerung implements KeyListener {
                 case 2:
                     zf.loeschen(1);
                     zf.loeschen(spieler.getId());
+                    zf.loeschen(npc.getId());
                     zf.loeschen(4);
                     zf.loeschen(5);
                     zf.loeschen(6);
@@ -147,7 +150,7 @@ public class Steuerung implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_W) {
             if (aktuellesLevel[spieler.getY()-1][spieler.getX()] != 1) {
                 spieler.bewegen(0, -1, zf);
-                if (aktuellesLevel == m.druckplatte) {
+                if (aktuellesLevel == m.druckplatte && !druckplatte1 || !druckplatte2) {
                     npc.bewegen(aktuellesLevel, zf);
                 }
             }
@@ -155,7 +158,7 @@ public class Steuerung implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_S) {
             if (aktuellesLevel[spieler.getY()+1][spieler.getX()] != 1) {
                 spieler.bewegen(0, 1, zf);
-                if (aktuellesLevel == m.druckplatte) {
+                if (aktuellesLevel == m.druckplatte && !druckplatte1 || !druckplatte2) {
                     npc.bewegen(aktuellesLevel, zf);
                 }
             }
@@ -163,7 +166,7 @@ public class Steuerung implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_A) {
             if (aktuellesLevel[spieler.getY()][spieler.getX()-1] != 1) {
                 spieler.bewegen(-1, 0, zf);
-                if (aktuellesLevel == m.druckplatte) {
+                if (aktuellesLevel == m.druckplatte && !druckplatte1 || !druckplatte2) {
                     npc.bewegen(aktuellesLevel, zf);
                 }
             }
@@ -171,7 +174,7 @@ public class Steuerung implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_D) {
             if (aktuellesLevel[spieler.getY()][spieler.getX()+1] != 1) {
                 spieler.bewegen(1, 0, zf);
-                if (aktuellesLevel == m.druckplatte) {
+                if (aktuellesLevel == m.druckplatte && !druckplatte1 || !druckplatte2) {
                     npc.bewegen(aktuellesLevel, zf);
                 }
             }
@@ -276,6 +279,7 @@ public class Steuerung implements KeyListener {
         checkLevel();
         if (aktuellesLevel == m.druckplatte) {
             checkKrug();
+            checkNpc();
         }
 
     }

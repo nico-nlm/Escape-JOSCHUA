@@ -108,8 +108,8 @@ public class Steuerung implements KeyListener {
                     aktuellesLevelImg = m.getDruckplattenImg();
                     spieler.setX(m.getDruckplatteStartX());
                     spieler.setY(m.getDruckplatteStartY());
-                    m.setHauptraumStartX(13);
-                    m.setHauptraumStartY(11);
+                    m.setHauptraumStartX(9);
+                    m.setHauptraumStartY(4);
                     zeichneSpielflaeche();
                     krug1.zeichnen(zf);
                     krug2.zeichnen(zf);

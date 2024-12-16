@@ -16,6 +16,9 @@ public class Steuerung implements KeyListener {
     private Krug krug3;
     private Krug krug4;
     private Map m;
+    private Signal signalDruckplatte;
+    private Signal signalDarkroom;
+    private Signal signalJoschua;
     private int groesse = 700;
     private int[][] aktuellesLevel;
     private Image aktuellesLevelImg;
@@ -27,6 +30,9 @@ public class Steuerung implements KeyListener {
     public Steuerung() {
         zf = new ZeichenFlaeche14();
         m = new Map();
+        signalDruckplatte = new Signal(7, 7, 35, 70, 9);
+        signalDarkroom = new Signal(13, 7, 35, 70, 9);
+        signalJoschua = new Signal(7, 7, 35, 70, 9);
         spieler = new Spielfigur(8, 11, 35, 35, 2);
         npc = new Npc(6, 6, 35, 35, 3);
         krug1 = new Krug(6, 4, 35, 35, 4);
@@ -99,6 +105,7 @@ public class Steuerung implements KeyListener {
                     spieler.setX(m.getHauptraumStartX());
                     spieler.setY(m.getHauptraumStartY());
                     zeichneSpielflaeche();
+                    if (druckplatte1 && druckplatte2)
                     spieler.zeichnen(zf);
                     break;
                 case 3:
@@ -266,7 +273,6 @@ public class Steuerung implements KeyListener {
                     if (druckplatte1 && druckplatte2) {
                         zf.loeschen(8);
                         zf.setzeText(8, "Im Hauptraum ist etwas passiert", 220, 250, 18, Color.BLACK);
-                        //m.getHauptraumImg() = Hauptraum mit einer Lampe an
                         for (int i = 0; i < m.hauptraum.length; i++) {
                             for (int j = 0; j < m.hauptraum[i].length; j++) {
                                 if (m.hauptraum[i][j] == 3) m.hauptraum[i][j] = 0;

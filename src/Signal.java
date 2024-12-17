@@ -16,8 +16,8 @@ public class Signal {
     public Signal(int x, int y, int breite, int hoehe, int id) {
         this.x = x;
         this.y = y;
-        this.breite = hoehe;
-        this.hoehe = breite;
+        this.breite = breite;
+        this.hoehe = hoehe;
         this.id = id;
         try {
             signalImg = ImageIO.read(new File("src/img/maps/signal.png"));
@@ -28,6 +28,6 @@ public class Signal {
     }
 
     public void zeichnen(ZeichenFlaeche14 zf) {
-        zf.setzeBild(9, signalImg, x*breite, y*hoehe, breite, hoehe);
+        zf.setzeBild(9, signalImg, x*breite, y*breite, breite, hoehe);
     }
 }

@@ -30,9 +30,6 @@ public class Steuerung implements KeyListener {
     public Steuerung() {
         zf = new ZeichenFlaeche14();
         m = new Map();
-        signalDruckplatte = new Signal(7, 7, 35, 70, 9);
-        signalDarkroom = new Signal(13, 7, 35, 70, 9);
-        signalJoschua = new Signal(7, 7, 35, 70, 9);
         spieler = new Spielfigur(8, 11, 35, 35, 2);
         npc = new Npc(6, 6, 35, 35, 3);
         krug1 = new Krug(6, 4, 35, 35, 4);
@@ -105,7 +102,12 @@ public class Steuerung implements KeyListener {
                     spieler.setX(m.getHauptraumStartX());
                     spieler.setY(m.getHauptraumStartY());
                     zeichneSpielflaeche();
-                    if (druckplatte1 && druckplatte2)
+                    if (druckplatte1 && druckplatte2) signalDruckplatte = new Signal(7, 8, 35, 70, 9);
+                    try {
+                        signalDruckplatte.zeichnen(zf);
+                    } catch (Exception e) {
+                        System.err.println("Druckplattenraum noch nicht gelöst");
+                    }
                     spieler.zeichnen(zf);
                     break;
                 case 3:

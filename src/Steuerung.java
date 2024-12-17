@@ -275,11 +275,6 @@ public class Steuerung implements KeyListener {
                     if (druckplatte1 && druckplatte2) {
                         zf.loeschen(8);
                         zf.setzeText(8, "Im Hauptraum ist etwas passiert", 220, 250, 18, Color.BLACK);
-                        for (int i = 0; i < m.hauptraum.length; i++) {
-                            for (int j = 0; j < m.hauptraum[i].length; j++) {
-                                if (m.hauptraum[i][j] == 3) m.hauptraum[i][j] = 0;
-                            }
-                        }
                     }
                 }
             }

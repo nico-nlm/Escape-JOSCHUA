@@ -102,7 +102,7 @@ public class Steuerung implements KeyListener {
                     spieler.setX(m.getHauptraumStartX());
                     spieler.setY(m.getHauptraumStartY());
                     zeichneSpielflaeche();
-                    if (druckplatte1 && druckplatte2) signalDruckplatte = new Signal(7, 8, 35, 70, 9);
+                    if (druckplatte1 && druckplatte2) signalDruckplatte = new Signal(7, 8, 35, 35, 9);
                     try {
                         signalDruckplatte.zeichnen(zf);
                     } catch (Exception e) {

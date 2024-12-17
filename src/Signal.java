@@ -28,6 +28,6 @@ public class Signal {
     }
 
     public void zeichnen(ZeichenFlaeche14 zf) {
-        zf.setzeBild(9, signalImg, x*breite, y*breite, breite, hoehe);
+        zf.setzeBild(9, signalImg, x*breite, y*hoehe, breite, hoehe);
     }
 }

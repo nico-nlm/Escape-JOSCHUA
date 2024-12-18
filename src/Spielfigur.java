@@ -8,8 +8,6 @@ import java.io.IOException;
 public class Spielfigur {
     private int x;
     private int y;
-    private int neachsteX;
-    private int neachsteY;
     private int breite;
     private int hoehe;
     private int id;
@@ -56,14 +54,6 @@ public class Spielfigur {
         return y;
     }
 
-    public int getNeachsteX() {
-        return neachsteX;
-    }
-
-    public int getNeachsteY() {
-        return neachsteY;
-    }
-
     public int getBreite() {
         return breite;
     }
@@ -102,13 +92,5 @@ public class Spielfigur {
 
     public void setAktuelleFigur(Image aktuelleFigur) {
         this.aktuelleFigur = aktuelleFigur;
-    }
-
-    public void setNeachsteX(int neachsteX) {
-        this.neachsteX = neachsteX;
-    }
-
-    public void setNeachsteY(int neachsteY) {
-        this.neachsteY = neachsteY;
     }
 }

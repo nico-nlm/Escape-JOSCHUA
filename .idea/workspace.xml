@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae77acc8-c77e-45bf-b6ce-a128d6a734c7" name="Changes" comment="Vererbung in der Klasse Spielfigur umgesetzt :Construction:" />
+    <list default="true" id="ae77acc8-c77e-45bf-b6ce-a128d6a734c7" name="Changes" comment="Vererbung in der Klasse Spielfigur umgesetzt :Construction:">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Krug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Krug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Npc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Npc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Signal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Signal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Spielfigur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spielfigur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Steuerung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steuerung.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,6 +158,7 @@
       <workItem from="1734515877650" duration="235000" />
       <workItem from="1734516691268" duration="753000" />
       <workItem from="1734862597821" duration="3615000" />
+      <workItem from="1734871228262" duration="1504000" />
     </task>
     <task id="LOCAL-00001" summary="Erstellung der Oberklasse begonnen :hammer:">
       <option name="closed" value="true" />

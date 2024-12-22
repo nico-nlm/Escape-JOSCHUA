@@ -5,7 +5,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-public class Spielfigur extends Identitaet{
+public class Spielfigur extends Identitaet {
     private Image figur;
     private Image figurKrug;
     private Image aktuelleFigur;

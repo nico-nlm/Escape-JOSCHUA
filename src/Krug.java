@@ -5,49 +5,20 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-public class Krug {
-    private int x;
-    private int y;
-    private int breite;
-    private int hoehe;
-    private int id;
-    private Image krug;
+public class Krug extends Identitaet {
+    private Image img;
 
     public Krug(int x, int y, int breite, int hoehe, int id) {
-        this.x = x;
-        this.y = y;
-        this.breite = breite;
-        this.hoehe = hoehe;
-        this.id = id;
+        super(x, y, breite, hoehe, id);
         try {
-            krug = ImageIO.read(new File("src/img/items/krug.png"));
+            img = ImageIO.read(new File("src/img/items/krug.png"));
         } catch (IOException e) {
             System.err.println("Krug konnte nicht geladen werden");
         }
     }
 
-    public void zeichnen(ZeichenFlaeche14 zf) {
-        zf.setzeBild(id, krug, x*breite, y*hoehe, breite, hoehe);
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public int getId() {
-        return id;
+    public Image getImg() {
+        return img;
     }
 
 

@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae77acc8-c77e-45bf-b6ce-a128d6a734c7" name="Changes" comment="Vererbung in der Klasse Spielfigur umgesetzt :Construction:">
-      <change beforePath="$PROJECT_DIR$/dokumente/Dokumentation.docx" beforeDir="false" afterPath="$PROJECT_DIR$/dokumente/Dokumentation.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dokumente/Protokoll.docx" beforeDir="false" afterPath="$PROJECT_DIR$/dokumente/Protokoll.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Npc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Npc.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +157,7 @@
       <workItem from="1734871228262" duration="1504000" />
       <workItem from="1734873170180" duration="250000" />
       <workItem from="1734978011715" duration="196000" />
-      <workItem from="1735392804606" duration="674000" />
+      <workItem from="1735392804606" duration="1645000" />
     </task>
     <task id="LOCAL-00001" summary="Erstellung der Oberklasse begonnen :hammer:">
       <option name="closed" value="true" />

@@ -9,6 +9,7 @@ import java.io.IOException;
 
 public class Steuerung implements KeyListener {
     private ZeichenFlaeche14 zf;
+    private Grafiken g;
     private Spielfigur spieler;
     private Npc npc;
     private Krug krug1;
@@ -29,13 +30,14 @@ public class Steuerung implements KeyListener {
 
     public Steuerung() {
         zf = new ZeichenFlaeche14();
+        g = new Grafiken();
         m = new Map();
-        spieler = new Spielfigur(8, 11, 35, 35, 2);
-        npc = new Npc(6, 6, 35, 35, 3);
-        krug1 = new Krug(6, 4, 35, 35, 4);
-        krug2 = new Krug(7, 4, 35, 35, 5);
-        krug3 = new Krug(12, 4, 35, 35, 6);
-        krug4 = new Krug(13, 4, 35, 35, 7);
+        spieler = new Spielfigur(8, 11, 35, 35, g.getSpielerImg(), 2);
+        npc = new Npc(6, 6, 35, 35, g.getJoschuaImg(), 3);
+        krug1 = new Krug(6, 4, 35, 35, g.getKrugImg(), 4);
+        krug2 = new Krug(7, 4, 35, 35, g.getKrugImg(), 5);
+        krug3 = new Krug(12, 4, 35, 35, g.getKrugImg(), 6);
+        krug4 = new Krug(13, 4, 35, 35, g.getKrugImg(), 7);
         aktuellesLevel = m.hauptraum;
         aktuellesLevelImg = m.getHauptraumImg();
         eingesammelterKrug = 0;
@@ -49,7 +51,7 @@ public class Steuerung implements KeyListener {
         zf.addKeyListener(this);
         zf.requestFocus();
         zeichneSpielflaeche();
-        spieler.zeichnen(zf, spieler.getAktuelleFigur());
+        spieler.zeichnen(zf);
     }
 
     public void zeichneSpielflaeche() {
@@ -78,7 +80,7 @@ public class Steuerung implements KeyListener {
             zf.loeschen(spieler.getId());
             spieler.setX(m.getDruckplatteStartX());
             spieler.setY(m.getDruckplatteStartY());
-            spieler.zeichnen(zf, spieler.getAktuelleFigur());
+            spieler.zeichnen(zf);
             System.out.println("erkannt");
         }
     }
@@ -98,34 +100,35 @@ public class Steuerung implements KeyListener {
                     eingesammelterKrug = 0;
                     aktuellesLevel = m.hauptraum;
                     aktuellesLevelImg = m.getHauptraumImg();
-                    spieler.setAktuelleFigur(spieler.getFigur());
+                    spieler.setGrafik(g.getSpielerImg());
                     spieler.setX(m.getHauptraumStartX());
                     spieler.setY(m.getHauptraumStartY());
                     zeichneSpielflaeche();
-                    if (druckplatte1 && druckplatte2) signalDruckplatte = new Signal(7, 8, 35, 35, 9);
+                    if (druckplatte1 && druckplatte2) signalDruckplatte = new Signal(7, 8, 35, 35, g.getSignalImg(), 9);
                     try {
-                        signalDruckplatte.zeichnen(zf,signalDruckplatte.getImg());
+                        signalDruckplatte.zeichnen(zf);
                     } catch (Exception e) {
                         System.err.println("Druckplattenraum noch nicht gelöst");
                     }
-                    spieler.zeichnen(zf, spieler.getAktuelleFigur());
+                    spieler.zeichnen(zf);
                     break;
                 case 3:
                     zf.loeschen(1);
                     zf.loeschen(spieler.getId());
                     aktuellesLevel = m.druckplatte;
                     aktuellesLevelImg = m.getDruckplattenImg();
+                    spieler.setGrafik(g.getSpielerImg());
                     spieler.setX(m.getDruckplatteStartX());
                     spieler.setY(m.getDruckplatteStartY());
                     m.setHauptraumStartX(9);
                     m.setHauptraumStartY(4);
                     zeichneSpielflaeche();
-                    krug1.zeichnen(zf, krug1.getImg());
-                    krug2.zeichnen(zf, krug2.getImg());
-                    krug3.zeichnen(zf, krug3.getImg());
-                    krug4.zeichnen(zf, krug4.getImg());
-                    npc.zeichnen(zf, npc.getFigur());
-                    spieler.zeichnen(zf, spieler.getAktuelleFigur());
+                    krug1.zeichnen(zf);
+                    krug2.zeichnen(zf);
+                    krug3.zeichnen(zf);
+                    krug4.zeichnen(zf);
+                    npc.zeichnen(zf);
+                    spieler.zeichnen(zf);
                     break;
                 case 4:
                     zf.loeschen(1);
@@ -136,7 +139,7 @@ public class Steuerung implements KeyListener {
                     m.setHauptraumStartX(9);
                     m.setHauptraumStartY(18);
                     zeichneSpielflaeche();
-                    spieler.zeichnen(zf, spieler.getAktuelleFigur());
+                    spieler.zeichnen(zf);
                     break;
                 case 5:
                     zf.loeschen(1);
@@ -147,7 +150,7 @@ public class Steuerung implements KeyListener {
                     m.setHauptraumStartX(13);
                     m.setHauptraumStartY(11);
                     zeichneSpielflaeche();
-                    spieler.zeichnen(zf, spieler.getAktuelleFigur());
+                    spieler.zeichnen(zf);
                     break;
                 default:
             }
@@ -194,43 +197,39 @@ public class Steuerung implements KeyListener {
                 if (eingesammelterKrug == 0) {
                     if (aktuellesLevel[spieler.getY()][spieler.getX()] == 6) {
                         zf.loeschen(krug1.getId());
-                        spieler.setAktuelleFigur(spieler.getFigurKrug());
                         m.druckplatte[spieler.getY()][spieler.getX()] = 0;
                         eingesammelterKrug = 1;
                         zf.loeschen(8);
                         zf.loeschen(spieler.getId());
-                        spieler.setAktuelleFigur(spieler.getFigurKrug());
-                        spieler.zeichnen(zf, spieler.getAktuelleFigur());
+                        spieler.setGrafik(g.getSpielerKrugImg());
+                        spieler.zeichnen(zf);
                     }
                     if (aktuellesLevel[spieler.getY()][spieler.getX()] == 7) {
                         zf.loeschen(krug2.getId());
-                        spieler.setAktuelleFigur(spieler.getFigurKrug());
                         m.druckplatte[spieler.getY()][spieler.getX()] = 0;
                         eingesammelterKrug = 2;
                         zf.loeschen(8);
                         zf.loeschen(spieler.getId());
-                        spieler.setAktuelleFigur(spieler.getFigurKrug());
-                        spieler.zeichnen(zf, spieler.getAktuelleFigur());
+                        spieler.setGrafik(g.getSpielerKrugImg());
+                        spieler.zeichnen(zf);
                     }
                     if (aktuellesLevel[spieler.getY()][spieler.getX()] == 8) {
                         zf.loeschen(krug3.getId());
-                        spieler.setAktuelleFigur(spieler.getFigurKrug());
                         m.druckplatte[spieler.getY()][spieler.getX()] = 0;
                         eingesammelterKrug = 3;
                         zf.loeschen(8);
                         zf.loeschen(spieler.getId());
-                        spieler.setAktuelleFigur(spieler.getFigurKrug());
-                        spieler.zeichnen(zf, spieler.getAktuelleFigur());
+                        spieler.setGrafik(g.getSpielerKrugImg());
+                        spieler.zeichnen(zf);
                     }
                     if (aktuellesLevel[spieler.getY()][spieler.getX()] == 9) {
                         zf.loeschen(krug4.getId());
-                        spieler.setAktuelleFigur(spieler.getFigurKrug());
                         m.druckplatte[spieler.getY()][spieler.getX()] = 0;
                         eingesammelterKrug = 4;
                         zf.loeschen(8);
                         zf.loeschen(spieler.getId());
-                        spieler.setAktuelleFigur(spieler.getFigurKrug());
-                        spieler.zeichnen(zf, spieler.getAktuelleFigur());
+                        spieler.setGrafik(g.getSpielerKrugImg());
+                        spieler.zeichnen(zf);
                     }
                     if (spieler.getX() == m.getDruckPlatteX1() && spieler.getY() == m.getDruckplatteY1()) druckplatte1 = false;
                     if (spieler.getX() == m.getDruckPlatteX2() && spieler.getY() == m.getDruckplatteY2()) druckplatte2 = false;
@@ -239,28 +238,28 @@ public class Steuerung implements KeyListener {
                         case 1:
                             krug1.setX(spieler.getX());
                             krug1.setY(spieler.getY());
-                            krug1.zeichnen(zf, krug1.getImg());
+                            krug1.zeichnen(zf);
                             m.druckplatte[spieler.getY()][spieler.getX()] = 6;
                             zf.loeschen(8);
                             break;
                         case 2:
                             krug2.setX(spieler.getX());
                             krug2.setY(spieler.getY());
-                            krug2.zeichnen(zf, krug2.getImg());
+                            krug2.zeichnen(zf);
                             m.druckplatte[spieler.getY()][spieler.getX()] = 7;
                             zf.loeschen(8);
                             break;
                         case 3:
                             krug3.setX(spieler.getX());
                             krug3.setY(spieler.getY());
-                            krug3.zeichnen(zf, krug3.getImg());
+                            krug3.zeichnen(zf);
                             m.druckplatte[spieler.getY()][spieler.getX()] = 8;
                             zf.loeschen(8);
                             break;
                         case 4:
                             krug4.setX(spieler.getX());
                             krug4.setY(spieler.getY());
-                            krug4.zeichnen(zf, krug4.getImg());
+                            krug4.zeichnen(zf);
                             m.druckplatte[spieler.getY()][spieler.getX()] = 9;
                             zf.loeschen(8);
                             break;
@@ -268,8 +267,8 @@ public class Steuerung implements KeyListener {
                     }
                     eingesammelterKrug = 0;
                     zf.loeschen(spieler.getId());
-                    spieler.setAktuelleFigur(spieler.getFigur());
-                    spieler.zeichnen(zf, spieler.getAktuelleFigur());
+                    spieler.setGrafik(g.getSpielerImg());
+                    spieler.zeichnen(zf);
                     if (spieler.getX() == m.getDruckPlatteX1() && spieler.getY() == m.getDruckplatteY1()) druckplatte1 = true;
                     if (spieler.getX() == m.getDruckPlatteX2() && spieler.getY() == m.getDruckplatteY2()) druckplatte2 = true;
                     if (druckplatte1 && druckplatte2) {

@@ -7,18 +7,20 @@ public class Identitaet {
     protected int y;
     protected int breite;
     protected int hoehe;
+    protected Image grafik;
     protected int id;
 
-    Identitaet(int x, int y, int breite, int hoehe, int id) {
+    Identitaet(int x, int y, int breite, int hoehe, Image grafik, int id) {
         this.x = x;
         this.y = y;
         this.breite = breite;
         this.hoehe = hoehe;
+        this.grafik = grafik;
         this.id = id;
     }
 
-    protected void zeichnen(ZeichenFlaeche14 zf, Image img) {
-        zf.setzeBild(id, img, x*breite, y*hoehe, breite, hoehe);
+    protected void zeichnen(ZeichenFlaeche14 zf) {
+        zf.setzeBild(id, grafik, x*breite, y*hoehe, breite, hoehe);
     }
 
     protected int getX() {
@@ -44,6 +46,9 @@ public class Identitaet {
     }
     protected void setHoehe(int hoehe) {
         this.hoehe = hoehe;
+    }
+    protected void setGrafik(Image grafik) {
+        this.grafik = grafik;
     }
     protected int getId() {
         return id;

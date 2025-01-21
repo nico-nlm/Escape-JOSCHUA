@@ -7,19 +7,12 @@ import java.io.IOException;
 import java.util.Random;
 
 public class Npc extends Identitaet {
-    private Image figur;
     private Random rnd;
     private int richtung;
     private boolean richtungGefunden;
 
-    public Npc(int x, int y, int breite, int hoehe, int id) {
-        super(x, y, breite, hoehe, id);
-        try {
-            figur = ImageIO.read(new File("src/img/figuren/joschua.jpg"));
-
-        } catch (IOException e) {
-            System.err.println("Bild konnte nicht geladen werden");
-        }
+    public Npc(int x, int y, int breite, int hoehe, Image grafik, int id) {
+        super(x, y, breite, hoehe, grafik, id);
         rnd = new Random();
     }
 
@@ -59,9 +52,5 @@ public class Npc extends Identitaet {
                 default:
             }
         }
-    }
-
-    public Image getFigur() {
-        return figur;
     }
 }

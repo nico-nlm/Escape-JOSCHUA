@@ -195,7 +195,7 @@ public class ZeichenFlaeche14 extends JPanel{
 	 * Bildschirm sichtbar zu machen. Nach dem Aufruf dieser Methode ist
 	 * die Zeichenfl�che leer.</p>
 	 */
-	public void macheZeichenFlaecheSichtbar(int breite, int hoehe){
+	public void macheZeichenFlaecheSichtbar(int breite, int hoehe, Grafiken g){
 		
 		initializeColors();				       		// Call own method to create an array of possible colors.
 		
@@ -203,6 +203,7 @@ public class ZeichenFlaeche14 extends JPanel{
 		fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fenster.setTitle("Escape-JOSCHUA");
 		fenster.setBackground(aktuelleHintergrundfarbe);
+		fenster.setIconImage(g.getSpielerImg());
 
 		this.setPreferredSize(new Dimension(breite, hoehe));
 		fenster.setSize(breite, hoehe);

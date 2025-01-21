@@ -47,7 +47,7 @@ public class Steuerung implements KeyListener {
     }
 
     public void starten() {
-        zf.macheZeichenFlaecheSichtbar(groesse, groesse);
+        zf.macheZeichenFlaecheSichtbar(groesse, groesse, g);
         zf.addKeyListener(this);
         zf.requestFocus();
         zeichneSpielflaeche();

@@ -164,13 +164,14 @@ public class ZeichenFlaeche14 extends JPanel{
 		
 		fenster = new JFrame();
 		fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		fenster.setTitle("Zeichenfl�che");
+		fenster.setTitle("Escape-JOSCHUA");
 		fenster.setBackground(aktuelleHintergrundfarbe);
 		
 		this.setPreferredSize(new Dimension(800,600));
 		this.setBackground(aktuelleHintergrundfarbe);
 		this.setOpaque(true);
 		fenster.setContentPane(this);
+		fenster.setResizable(false);
 		
 		fenster.pack();
 		fenster.setVisible(true);
@@ -200,13 +201,14 @@ public class ZeichenFlaeche14 extends JPanel{
 		
 		fenster = new JFrame();
 		fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		fenster.setTitle("Zeichenfl�che");
+		fenster.setTitle("Escape-JOSCHUA");
 		fenster.setBackground(aktuelleHintergrundfarbe);
 		
 		this.setPreferredSize(new Dimension(breite,hoehe));
 		this.setBackground(aktuelleHintergrundfarbe);
 		this.setOpaque(true);
 		fenster.setContentPane(this);
+		fenster.setResizable(false);
 		
 		fenster.pack();
 		fenster.setVisible(true);

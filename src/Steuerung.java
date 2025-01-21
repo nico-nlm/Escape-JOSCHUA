@@ -39,7 +39,7 @@ public class Steuerung implements KeyListener {
         krug3 = new Krug(12, 4, 35, 35, g.getKrugImg(), 6);
         krug4 = new Krug(13, 4, 35, 35, g.getKrugImg(), 7);
         aktuellesLevel = m.hauptraum;
-        aktuellesLevelImg = m.getHauptraumImg();
+        aktuellesLevelImg = g.getHauptraumImg();
         eingesammelterKrug = 0;
         druckplatte1 = false;
         druckplatte2 = false;
@@ -99,7 +99,7 @@ public class Steuerung implements KeyListener {
                     zf.loeschen(8);
                     eingesammelterKrug = 0;
                     aktuellesLevel = m.hauptraum;
-                    aktuellesLevelImg = m.getHauptraumImg();
+                    aktuellesLevelImg = g.getHauptraumImg();
                     spieler.setGrafik(g.getSpielerImg());
                     spieler.setX(m.getHauptraumStartX());
                     spieler.setY(m.getHauptraumStartY());
@@ -116,7 +116,7 @@ public class Steuerung implements KeyListener {
                     zf.loeschen(1);
                     zf.loeschen(spieler.getId());
                     aktuellesLevel = m.druckplatte;
-                    aktuellesLevelImg = m.getDruckplattenImg();
+                    aktuellesLevelImg = g.getDruckplattenraumImg();
                     spieler.setGrafik(g.getSpielerImg());
                     spieler.setX(m.getDruckplatteStartX());
                     spieler.setY(m.getDruckplatteStartY());
@@ -133,7 +133,7 @@ public class Steuerung implements KeyListener {
                 case 4:
                     zf.loeschen(1);
                     zf.loeschen(spieler.getId());
-                    aktuellesLevelImg = m.getTestImg();
+                    aktuellesLevelImg = g.getTestImg();
                     spieler.setX(m.getTestStartX());
                     spieler.setY(m.getTestStartY());
                     m.setHauptraumStartX(9);
@@ -144,7 +144,7 @@ public class Steuerung implements KeyListener {
                 case 5:
                     zf.loeschen(1);
                     zf.loeschen(spieler.getId());
-                    aktuellesLevelImg = m.getTestImg();
+                    aktuellesLevelImg = g.getTestImg();
                     spieler.setX(m.getTestStartX());
                     spieler.setY(m.getTestStartY());
                     m.setHauptraumStartX(13);

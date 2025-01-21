@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ae77acc8-c77e-45bf-b6ce-a128d6a734c7" name="Changes" comment="Vererbung in der Klasse Spielfigur umgesetzt :Construction:">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Identitaet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Identitaet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Krug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Krug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Npc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Npc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Signal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Signal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Spielfigur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spielfigur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grafiken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grafiken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Steuerung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steuerung.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +162,7 @@
       <workItem from="1735392804606" duration="1645000" />
       <workItem from="1737442830132" duration="787000" />
       <workItem from="1737447006752" duration="369000" />
-      <workItem from="1737491058918" duration="3538000" />
+      <workItem from="1737491058918" duration="4167000" />
     </task>
     <task id="LOCAL-00001" summary="Erstellung der Oberklasse begonnen :hammer:">
       <option name="closed" value="true" />

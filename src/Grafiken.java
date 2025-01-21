@@ -24,10 +24,12 @@ public class Grafiken {
     private String druckplattenraum;
     private String schablone;
     private String signal;
+    private String test;
     private Image hauptraumImg;
     private Image druckplattenraumImg;
     private Image schabloneImg;
     private Image signalImg;
+    private Image testImg;
 
     Grafiken() {
         //Figuren
@@ -43,6 +45,7 @@ public class Grafiken {
         druckplattenraum = "src/img/maps/druckplattenraum.png";
         schablone = "src/img/maps/schablone.png";
         signal = "src/img/maps/signal.PNG";
+        test = "src/img/maps/test.png";
 
         try {
             //Figuren
@@ -58,6 +61,7 @@ public class Grafiken {
             druckplattenraumImg = ImageIO.read(new File(druckplattenraum));
             schabloneImg = ImageIO.read(new File(schablone));
             signalImg = ImageIO.read(new File(signal));
+            testImg = ImageIO.read(new File(test));
         } catch (IOException e) {
             System.err.println("Eine Figur konnte nicht geladen werden");
         }
@@ -99,6 +103,10 @@ public class Grafiken {
 
     public Image getSignalImg() {
         return signalImg;
+    }
+
+    public Image getTestImg() {
+        return testImg;
     }
 
 

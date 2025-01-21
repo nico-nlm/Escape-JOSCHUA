@@ -203,12 +203,14 @@ public class ZeichenFlaeche14 extends JPanel{
 		fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fenster.setTitle("Escape-JOSCHUA");
 		fenster.setBackground(aktuelleHintergrundfarbe);
-		
-		this.setPreferredSize(new Dimension(breite,hoehe));
+
+		this.setPreferredSize(new Dimension(breite, hoehe));
+		fenster.setSize(breite, hoehe);
 		this.setBackground(aktuelleHintergrundfarbe);
 		this.setOpaque(true);
 		fenster.setContentPane(this);
 		fenster.setResizable(false);
+		fenster.setLocationRelativeTo(null);
 		
 		fenster.pack();
 		fenster.setVisible(true);

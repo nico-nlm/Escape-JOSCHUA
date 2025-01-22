@@ -16,6 +16,7 @@ public class Steuerung implements KeyListener {
     private Krug krug2;
     private Krug krug3;
     private Krug krug4;
+    private Schablone schablone;
     private Map m;
     private Signal signalDruckplatte;
     private Signal signalDarkroom;
@@ -38,6 +39,7 @@ public class Steuerung implements KeyListener {
         krug2 = new Krug(7, 4, 35, 35, g.getKrugImg(), 5);
         krug3 = new Krug(12, 4, 35, 35, g.getKrugImg(), 6);
         krug4 = new Krug(13, 4, 35, 35, g.getKrugImg(), 7);
+        schablone = new Schablone(-193, -298, groesse*2, groesse*2, g.getSchabloneImg(), 10);
         aktuellesLevel = m.hauptraum;
         aktuellesLevelImg = g.getHauptraumImg();
         eingesammelterKrug = 0;
@@ -97,6 +99,7 @@ public class Steuerung implements KeyListener {
                     zf.loeschen(6);
                     zf.loeschen(7);
                     zf.loeschen(8);
+                    zf.loeschen(10);
                     eingesammelterKrug = 0;
                     aktuellesLevel = m.hauptraum;
                     aktuellesLevelImg = g.getHauptraumImg();
@@ -144,13 +147,14 @@ public class Steuerung implements KeyListener {
                 case 5:
                     zf.loeschen(1);
                     zf.loeschen(spieler.getId());
-                    aktuellesLevelImg = g.getTestImg();
+                    aktuellesLevel = m.darkroom;
                     spieler.setX(m.getDarkroomStartX());
                     spieler.setY(m.getDarkroomStartY());
                     m.setHauptraumStartX(14);
                     m.setHauptraumStartY(11);
                     zeichneSpielflaeche();
                     spieler.zeichnen(zf);
+                    schablone.zeichneSchablone(zf);
                     break;
                 default:
             }
@@ -162,33 +166,29 @@ public class Steuerung implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_W) {
             if (aktuellesLevel[spieler.getY()-1][spieler.getX()] != 1) {
                 spieler.bewegen(0, -1, zf);
-                if (aktuellesLevel == m.druckplatte && !druckplatte1 || !druckplatte2) {
-                    npc.bewegen(aktuellesLevel, zf);
-                }
+                if (aktuellesLevel == m.druckplatte && !druckplatte1 || !druckplatte2) npc.bewegen(aktuellesLevel, zf);
+                if (aktuellesLevel == m.darkroom) schablone.bewegen(0, -spieler.getHoehe(), zf);
             }
         }
         if (e.getKeyCode() == KeyEvent.VK_S) {
             if (aktuellesLevel[spieler.getY()+1][spieler.getX()] != 1) {
                 spieler.bewegen(0, 1, zf);
-                if (aktuellesLevel == m.druckplatte && !druckplatte1 || !druckplatte2) {
-                    npc.bewegen(aktuellesLevel, zf);
-                }
+                if (aktuellesLevel == m.druckplatte && !druckplatte1 || !druckplatte2) npc.bewegen(aktuellesLevel, zf);
+                if (aktuellesLevel == m.darkroom) schablone.bewegen(0, spieler.getBreite(), zf);
             }
         }
         if (e.getKeyCode() == KeyEvent.VK_A) {
             if (aktuellesLevel[spieler.getY()][spieler.getX()-1] != 1) {
                 spieler.bewegen(-1, 0, zf);
-                if (aktuellesLevel == m.druckplatte && !druckplatte1 || !druckplatte2) {
-                    npc.bewegen(aktuellesLevel, zf);
-                }
+                if (aktuellesLevel == m.druckplatte && !druckplatte1 || !druckplatte2) npc.bewegen(aktuellesLevel, zf);
+                if (aktuellesLevel == m.darkroom) schablone.bewegen(-spieler.getBreite(), 0, zf);
             }
         }
         if (e.getKeyCode() == KeyEvent.VK_D) {
             if (aktuellesLevel[spieler.getY()][spieler.getX()+1] != 1) {
                 spieler.bewegen(1, 0, zf);
-                if (aktuellesLevel == m.druckplatte && !druckplatte1 || !druckplatte2) {
-                    npc.bewegen(aktuellesLevel, zf);
-                }
+                if (aktuellesLevel == m.druckplatte && !druckplatte1 || !druckplatte2) npc.bewegen(aktuellesLevel, zf);
+                if (aktuellesLevel == m.darkroom) schablone.bewegen(spieler.getBreite(), 0, zf);
             }
         }
 

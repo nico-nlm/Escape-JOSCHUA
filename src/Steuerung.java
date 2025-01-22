@@ -145,9 +145,9 @@ public class Steuerung implements KeyListener {
                     zf.loeschen(1);
                     zf.loeschen(spieler.getId());
                     aktuellesLevelImg = g.getTestImg();
-                    spieler.setX(m.getTestStartX());
-                    spieler.setY(m.getTestStartY());
-                    m.setHauptraumStartX(13);
+                    spieler.setX(m.getDarkroomStartX());
+                    spieler.setY(m.getDarkroomStartY());
+                    m.setHauptraumStartX(14);
                     m.setHauptraumStartY(11);
                     zeichneSpielflaeche();
                     spieler.zeichnen(zf);

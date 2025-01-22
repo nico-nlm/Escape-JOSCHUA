@@ -14,6 +14,8 @@ public class Map {
     private int druckplatteY1;
     private int druckPlatteX2;
     private int druckplatteY2;
+    private int darkroomStartX;
+    private int darkroomStartY;
     private int testStartX;
     private int testStartY;
 
@@ -27,6 +29,9 @@ public class Map {
         druckplatteY1 = 15;
         druckPlatteX2 = 15;
         druckplatteY2 = 13;
+
+        darkroomStartX = 14;
+        darkroomStartY = 11;
 
         testStartX = 8;
         testStartY = 11;
@@ -82,8 +87,16 @@ public class Map {
         return hauptraumStartX;
     }
 
+    public void setHauptraumStartX(int hauptraumStartX) {
+        this.hauptraumStartX = hauptraumStartX;
+    }
+
     public int getHauptraumStartY() {
         return hauptraumStartY;
+    }
+
+    public void setHauptraumStartY(int hauptraumStartY) {
+        this.hauptraumStartY = hauptraumStartY;
     }
 
     public int getDruckplatteStartX() {
@@ -110,12 +123,12 @@ public class Map {
         return druckplatteY2;
     }
 
-    public void setHauptraumStartX(int hauptraumStartX) {
-        this.hauptraumStartX = hauptraumStartX;
+    public int getDarkroomStartX() {
+        return darkroomStartX;
     }
 
-    public void setHauptraumStartY(int hauptraumStartY) {
-        this.hauptraumStartY = hauptraumStartY;
+    public int getDarkroomStartY() {
+        return darkroomStartY;
     }
 
     public int getTestStartX() {

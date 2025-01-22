@@ -103,6 +103,8 @@ public class Steuerung implements KeyListener {
                     eingesammelterKrug = 0;
                     aktuellesLevel = m.hauptraum;
                     aktuellesLevelImg = g.getHauptraumImg();
+                    schablone.setX(-193);
+                    schablone.setY(-298);
                     spieler.setGrafik(g.getSpielerImg());
                     spieler.setX(m.getHauptraumStartX());
                     spieler.setY(m.getHauptraumStartY());

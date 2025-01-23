@@ -167,8 +167,11 @@
       <workItem from="1737560408322" duration="2785000" />
       <workItem from="1737567850718" duration="379000" />
       <workItem from="1737576436931" duration="1516000" />
+<<<<<<< HEAD
       <workItem from="1737615361275" duration="4074000" />
       <workItem from="1737620166321" duration="102000" />
+=======
+>>>>>>> parent of 87bacec (Hebel 🚧)
     </task>
     <task id="LOCAL-00001" summary="Erstellung der Oberklasse begonnen :hammer:">
       <option name="closed" value="true" />

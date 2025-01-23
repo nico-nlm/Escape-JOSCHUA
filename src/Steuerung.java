@@ -38,6 +38,8 @@ public class Steuerung implements KeyListener {
         krug3 = new Krug(12, 4, 35, 35, g.getKrugImg(), 6);
         krug4 = new Krug(13, 4, 35, 35, g.getKrugImg(), 7);
         schablone = new Schablone(-193, -298, groesse*2, groesse*2, g.getSchabloneImg(), 10);
+        signalDruckplatte = new Signal(7, 8, 35, 35, g.getSignalImg(), 9);
+        signalDarkroom = new Signal(11, 8, 35, 35, g.getSignalImg(), 9);
         aktuellesLevel = m.hauptraum;
         aktuellesLevelImg = g.getHauptraumImg();
         eingesammelterKrug = 0;
@@ -114,16 +116,13 @@ public class Steuerung implements KeyListener {
                     spieler.setX(m.getHauptraumStartX());
                     spieler.setY(m.getHauptraumStartY());
                     zeichneSpielflaeche();
-                    if (druckplatte1 && druckplatte2) signalDruckplatte = new Signal(7, 8, 35, 35, g.getSignalImg(), 9);
-                    try {
-                        signalDruckplatte.zeichnen(zf);
-                    } catch (Exception e) {
-                        System.err.println("Druckplattenraum noch nicht gelöst");
-                    }
+                    if (druckplatte1 && druckplatte2) signalDruckplatte.zeichnen(zf);
+                    if (darkroomSchalter) signalDarkroom.zeichnen(zf);
                     spieler.zeichnen(zf);
                     break;
                 case 3:
                     zf.loeschen(1);
+                    zf.loeschen(9);
                     zf.loeschen(spieler.getId());
                     aktuellesLevel = m.druckplatte;
                     aktuellesLevelImg = g.getDruckplattenraumImg();
@@ -142,6 +141,7 @@ public class Steuerung implements KeyListener {
                     break;
                 case 4:
                     zf.loeschen(1);
+                    zf.loeschen(9);
                     zf.loeschen(spieler.getId());
                     aktuellesLevel = m.darkroom;
                     if (!darkroomSchalter) aktuellesLevelImg = g.getDarkroomImg();

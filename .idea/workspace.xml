@@ -4,62 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae77acc8-c77e-45bf-b6ce-a128d6a734c7" name="Changes" comment="Vererbung in der Klasse Spielfigur umgesetzt :Construction:">
+    <list default="true" id="490296ba-a332-4765-90d0-80b1c80369c9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace (Kopie von Nico Brauer mit Konflikt 2024-10-18) (2).xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/.idea/workspace (Kopie von Nico Brauer mit Konflikt 2024-10-18) (2).xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/~$tenbank.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/src/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Escape JOSCHUA/src/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/src/Steuerung.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Escape JOSCHUA/src/Steuerung.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Steuerung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steuerung.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
-}</component>
-  <component name="ProjectId" id="2nZfAddjtULkgKos4pl5WphU21F" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicob/Filr/Meine Dateien/2BKI2/Projektarbeit/Escape JOSCHUA&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.src.Main">
+}]]></component>
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Escape JOSCHUA" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="src.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main" />
       <module name="Escape JOSCHUA" />
       <extension name="coverage">
@@ -74,7 +52,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.src.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -90,125 +67,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ae77acc8-c77e-45bf-b6ce-a128d6a734c7" name="Changes" comment="" />
-      <created>1729185376788</created>
+      <changelist id="490296ba-a332-4765-90d0-80b1c80369c9" name="Changes" comment="" />
+      <created>1737622300656</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1729185376788</updated>
-      <workItem from="1729185377828" duration="78000" />
-      <workItem from="1729185462677" duration="56000" />
-      <workItem from="1729185526004" duration="22000" />
-      <workItem from="1729185554940" duration="288000" />
-      <workItem from="1729185853869" duration="616000" />
-      <workItem from="1729186483525" duration="1031000" />
-      <workItem from="1729187533404" duration="1414000" />
-      <workItem from="1729256303425" duration="2571000" />
-      <workItem from="1729502326820" duration="624000" />
-      <workItem from="1729578901870" duration="2380000" />
-      <workItem from="1729596158919" duration="106000" />
-      <workItem from="1729598757926" duration="1229000" />
-      <workItem from="1729603790285" duration="2342000" />
-      <workItem from="1729613868960" duration="1854000" />
-      <workItem from="1729748534710" duration="530000" />
-      <workItem from="1729752610589" duration="1015000" />
-      <workItem from="1729756967850" duration="2990000" />
-      <workItem from="1729761035600" duration="251000" />
-      <workItem from="1729767783719" duration="2231000" />
-      <workItem from="1729783376023" duration="3038000" />
-      <workItem from="1730379268569" duration="3493000" />
-      <workItem from="1730703178388" duration="491000" />
-      <workItem from="1730735830015" duration="2293000" />
-      <workItem from="1730788611929" duration="425000" />
-      <workItem from="1730817790740" duration="1757000" />
-      <workItem from="1730823855419" duration="4806000" />
-      <workItem from="1730877967621" duration="1680000" />
-      <workItem from="1730907823142" duration="2724000" />
-      <workItem from="1730923932156" duration="572000" />
-      <workItem from="1730968261193" duration="3000" />
-      <workItem from="1730985232508" duration="2706000" />
-      <workItem from="1731063878006" duration="86000" />
-      <workItem from="1731064526665" duration="871000" />
-      <workItem from="1731065541703" duration="9000" />
-      <workItem from="1731394522248" duration="4918000" />
-      <workItem from="1731417379072" duration="3995000" />
-      <workItem from="1731571004704" duration="409000" />
-      <workItem from="1731586473115" duration="4647000" />
-      <workItem from="1731662122222" duration="96000" />
-      <workItem from="1731663516102" duration="174000" />
-      <workItem from="1731663781868" duration="1212000" />
-      <workItem from="1731678916596" duration="20000" />
-      <workItem from="1732214603067" duration="5412000" />
-      <workItem from="1732776070172" duration="1794000" />
-      <workItem from="1732805850006" duration="2326000" />
-      <workItem from="1733586933267" duration="66000" />
-      <workItem from="1733593210632" duration="33000" />
-      <workItem from="1733734156978" duration="377000" />
-      <workItem from="1733844363573" duration="311000" />
-      <workItem from="1734352732704" duration="17000" />
-      <workItem from="1734365277844" duration="2874000" />
-      <workItem from="1734417702094" duration="2132000" />
-      <workItem from="1734422359747" duration="85000" />
-      <workItem from="1734443348128" duration="1035000" />
-      <workItem from="1734444451987" duration="397000" />
-      <workItem from="1734515877650" duration="235000" />
-      <workItem from="1734516691268" duration="753000" />
-      <workItem from="1734862597821" duration="3615000" />
-      <workItem from="1734871228262" duration="1504000" />
-      <workItem from="1734873170180" duration="250000" />
-      <workItem from="1734978011715" duration="196000" />
-      <workItem from="1735392804606" duration="1645000" />
-      <workItem from="1737442830132" duration="787000" />
-      <workItem from="1737447006752" duration="369000" />
-      <workItem from="1737491058918" duration="4167000" />
-      <workItem from="1737495445597" duration="98000" />
-      <workItem from="1737534579433" duration="90000" />
-      <workItem from="1737536067782" duration="214000" />
-      <workItem from="1737538322785" duration="1389000" />
-      <workItem from="1737560408322" duration="2785000" />
-      <workItem from="1737567850718" duration="379000" />
-      <workItem from="1737576436931" duration="1516000" />
-<<<<<<< HEAD
-      <workItem from="1737615361275" duration="4074000" />
-      <workItem from="1737620166321" duration="102000" />
-=======
->>>>>>> parent of 87bacec (Hebel 🚧)
+      <updated>1737622300656</updated>
+      <workItem from="1737622305672" duration="550000" />
     </task>
-    <task id="LOCAL-00001" summary="Erstellung der Oberklasse begonnen :hammer:">
-      <option name="closed" value="true" />
-      <created>1734517412061</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1734517412061</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Vererbung in der Klasse Spielfigur umgesetzt :Construction:">
-      <option name="closed" value="true" />
-      <created>1734866147457</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1734866147459</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Erstellung der Oberklasse begonnen :hammer:" />
-    <MESSAGE value="Vererbung in der Klasse Spielfigur umgesetzt :Construction:" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vererbung in der Klasse Spielfigur umgesetzt :Construction:" />
   </component>
 </project>

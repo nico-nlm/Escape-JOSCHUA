@@ -14,6 +14,8 @@ public class Map {
     private int druckplatteY1;
     private int druckPlatteX2;
     private int druckplatteY2;
+    private int npcStartX;
+    private int npcStartY;
     private int darkroomStartX;
     private int darkroomStartY;
     private int testStartX;
@@ -29,6 +31,8 @@ public class Map {
         druckplatteY1 = 15;
         druckPlatteX2 = 15;
         druckplatteY2 = 13;
+        npcStartX = 9;
+        npcStartY = 8;
 
         darkroomStartX = 14;
         darkroomStartY = 11;
@@ -48,8 +52,8 @@ public class Map {
             {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 1, 0, 0, 0},
+            {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+            {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 1, 0, 0, 0},
             {0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
@@ -144,6 +148,14 @@ public class Map {
 
     public int getDruckplatteY2() {
         return druckplatteY2;
+    }
+
+    public int getNpcStartX() {
+        return npcStartX;
+    }
+
+    public int getNpcStartY() {
+        return npcStartY;
     }
 
     public int getDarkroomStartX() {

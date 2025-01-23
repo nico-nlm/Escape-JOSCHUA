@@ -33,8 +33,8 @@ public class Steuerung implements KeyListener {
         zf = new ZeichenFlaeche14();
         g = new Grafiken();
         m = new Map();
-        spieler = new Spielfigur(8, 11, 35, 35, g.getSpielerImg(), 2);
-        npc = new Npc(6, 6, 35, 35, g.getJoschuaImg(), 3);
+        spieler = new Spielfigur(m.getHauptraumStartX(), m.getHauptraumStartY(), 35, 35, g.getSpielerImg(), 2);
+        npc = new Npc(m.getNpcStartX(), m.getNpcStartY(), 35, 35, g.getJoschuaImg(), 3);
         krug1 = new Krug(6, 4, 35, 35, g.getKrugImg(), 4);
         krug2 = new Krug(7, 4, 35, 35, g.getKrugImg(), 5);
         krug3 = new Krug(12, 4, 35, 35, g.getKrugImg(), 6);
@@ -136,17 +136,6 @@ public class Steuerung implements KeyListener {
                     spieler.zeichnen(zf);
                     break;
                 case 4:
-                    zf.loeschen(1);
-                    zf.loeschen(spieler.getId());
-                    aktuellesLevelImg = g.getTestImg();
-                    spieler.setX(m.getTestStartX());
-                    spieler.setY(m.getTestStartY());
-                    m.setHauptraumStartX(9);
-                    m.setHauptraumStartY(18);
-                    zeichneSpielflaeche();
-                    spieler.zeichnen(zf);
-                    break;
-                case 5:
                     zf.loeschen(1);
                     zf.loeschen(spieler.getId());
                     aktuellesLevel = m.darkroom;

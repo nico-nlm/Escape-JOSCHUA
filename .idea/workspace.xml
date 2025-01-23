@@ -5,37 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="490296ba-a332-4765-90d0-80b1c80369c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace (Kopie von Nico Brauer mit Konflikt 2024-10-18) (2).xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/.idea/workspace (Kopie von Nico Brauer mit Konflikt 2024-10-18) (2).xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/~$tenbank.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/src/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Escape JOSCHUA/src/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/src/Steuerung.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Escape JOSCHUA/src/Steuerung.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Steuerung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steuerung.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2s1WbWXs3FzwXypQSpBXGTyViGy" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main" />
@@ -73,6 +74,8 @@
       <option name="presentableId" value="Default" />
       <updated>1737622300656</updated>
       <workItem from="1737622305672" duration="550000" />
+      <workItem from="1737623647263" duration="151000" />
+      <workItem from="1737623844164" duration="7000" />
     </task>
     <servers />
   </component>

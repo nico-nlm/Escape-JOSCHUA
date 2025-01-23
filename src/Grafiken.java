@@ -17,7 +17,11 @@ public class Grafiken {
 
     //Items
     private String krug;
+    private String hebel;
+    private String hebelUmgelegt;
     private Image krugImg;
+    private Image hebelImg;
+    private Image hebelUmgelegtImg;
 
     //Maps
     private String hauptraum;
@@ -39,6 +43,8 @@ public class Grafiken {
 
         //Items
         krug = "src/img/items/krug.PNG";
+        hebel = "src/img/items/hebel.png";
+        hebelUmgelegt = "src/img/items/hebel-umgelegt.png";
 
         //Maps
         hauptraum = "src/img/maps/hauptraum.png";
@@ -55,6 +61,8 @@ public class Grafiken {
 
             //Items
             krugImg = ImageIO.read(new File(krug));
+            hebelImg = ImageIO.read(new File(hebel));
+            hebelUmgelegtImg = ImageIO.read(new File(hebelUmgelegt));
 
             //Maps
             hauptraumImg = ImageIO.read(new File(hauptraum));
@@ -103,6 +111,14 @@ public class Grafiken {
 
     public Image getSignalImg() {
         return signalImg;
+    }
+
+    public Image getHebelImg() {
+        return hebelImg;
+    }
+
+    public Image getHebelUmgelegtImg() {
+        return hebelUmgelegtImg;
     }
 
     public Image getTestImg() {

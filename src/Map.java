@@ -14,8 +14,12 @@ public class Map {
     private int druckplatteY1;
     private int druckPlatteX2;
     private int druckplatteY2;
+    private int npcStartX;
+    private int npcStartY;
     private int darkroomStartX;
     private int darkroomStartY;
+    private int darkroomHebelX;
+    private int darkroomHebelY;
     private int testStartX;
     private int testStartY;
 
@@ -29,9 +33,13 @@ public class Map {
         druckplatteY1 = 15;
         druckPlatteX2 = 15;
         druckplatteY2 = 13;
+        npcStartX = 10;
+        npcStartY = 8;
 
         darkroomStartX = 14;
         darkroomStartY = 11;
+        darkroomHebelX = 10;
+        darkroomHebelY = 11;
 
         testStartX = 8;
         testStartY = 11;
@@ -48,8 +56,8 @@ public class Map {
             {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 1, 0, 0, 0},
+            {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+            {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 1, 0, 0, 0},
             {0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
@@ -146,12 +154,28 @@ public class Map {
         return druckplatteY2;
     }
 
+    public int getNpcStartX() {
+        return npcStartX;
+    }
+
+    public int getNpcStartY() {
+        return npcStartY;
+    }
+
     public int getDarkroomStartX() {
         return darkroomStartX;
     }
 
     public int getDarkroomStartY() {
         return darkroomStartY;
+    }
+
+    public int getDarkroomHebelX() {
+        return darkroomHebelX;
+    }
+
+    public int getDarkroomHebelY() {
+        return darkroomHebelY;
     }
 
     public int getTestStartX() {

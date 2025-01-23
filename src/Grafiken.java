@@ -24,12 +24,14 @@ public class Grafiken {
     private String druckplattenraum;
     private String schablone;
     private String signal;
-    private String test;
+    private String darkroom;
+    private String darkroomSchalter;
     private Image hauptraumImg;
     private Image druckplattenraumImg;
     private Image schabloneImg;
     private Image signalImg;
-    private Image testImg;
+    private Image darkroomImg;
+    private Image darkroomSchalterImg;
 
     Grafiken() {
         //Figuren
@@ -45,7 +47,8 @@ public class Grafiken {
         druckplattenraum = "src/img/maps/druckplattenraum.png";
         schablone = "src/img/maps/schablone.png";
         signal = "src/img/maps/signal.PNG";
-        test = "src/img/maps/test.png";
+        darkroom = "src/img/maps/darkroom.png";
+        darkroomSchalter = "src/img/maps/darkroom-schalter.png";
 
         try {
             //Figuren
@@ -61,7 +64,8 @@ public class Grafiken {
             druckplattenraumImg = ImageIO.read(new File(druckplattenraum));
             schabloneImg = ImageIO.read(new File(schablone));
             signalImg = ImageIO.read(new File(signal));
-            testImg = ImageIO.read(new File(test));
+            darkroomImg = ImageIO.read(new File(darkroom));
+            darkroomSchalterImg = ImageIO.read(new File(darkroomSchalter));
         } catch (IOException e) {
             System.err.println("Eine Figur konnte nicht geladen werden");
         }
@@ -105,10 +109,11 @@ public class Grafiken {
         return signalImg;
     }
 
-    public Image getTestImg() {
-        return testImg;
+    public Image getDarkroomImg() {
+        return darkroomImg;
     }
 
-
-
+    public Image getDarkroomSchalterImg() {
+        return darkroomSchalterImg;
+    }
 }

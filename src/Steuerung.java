@@ -76,10 +76,9 @@ public class Steuerung implements KeyListener {
         }
         if (aktuellesLevel == m.darkroom) {
             if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY() && !darkroomSchalter) {
-                zf.setzeText(8, "Du hast einen Schalter gefunden!", 220, 250, 18, Color.WHITE);
-                zf.setzeText(8, "Drücke 'E' um ihn zu betätigen", 220, 280, 18, Color.WHITE);
-
-            }
+                zf.setzeText(11, "Du hast einen Schalter gefunden!", 220, 250, 18, Color.WHITE);
+                zf.setzeText(11, "Drücke 'E' um ihn zu betätigen", 220, 280, 18, Color.WHITE);
+            } else zf.loeschen(11);
         }
     }
 

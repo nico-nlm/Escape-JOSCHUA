@@ -78,8 +78,8 @@ public class Steuerung implements KeyListener {
                 zf.setzeText(11, "Drücke 'E' um den Krug abzulegen", 210, 250, 18, Color.BLACK);
             } else zf.loeschen(11);
         }
-        if (aktuellesLevel == m.darkroom) {
-            if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY() && !darkroomSchalter) {
+        if (aktuellesLevel == m.darkroom && !darkroomSchalter) {
+            if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
                 zf.setzeText(11, "Du hast einen Schalter gefunden!", 220, 250, 18, Color.WHITE);
                 zf.setzeText(11, "Drücke 'E' um ihn zu betätigen", 220, 280, 18, Color.WHITE);
             } else zf.loeschen(11);
@@ -284,6 +284,7 @@ public class Steuerung implements KeyListener {
                 if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
                     zf.loeschen(8);
                     zf.loeschen(10);
+                    zf.loeschen(11);
                     darkroomHebel.setGrafik(g.getDarkroomSchalterUmgelegtImg());
                     zeichneSpielflaeche();
                     darkroomHebel.zeichnen(zf);

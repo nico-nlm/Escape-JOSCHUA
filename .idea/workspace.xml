@@ -6,16 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="490296ba-a332-4765-90d0-80b1c80369c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dokumente/Datenbank.docx" beforeDir="false" afterPath="$PROJECT_DIR$/dokumente/Datenbank.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/Datenbank.docx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/Datenbank.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/Protokoll.docx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/Protokoll.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/~$kumentation.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/~WRL0358.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grafiken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grafiken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Steuerung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steuerung.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/maps/darkroom-schalter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/maps/darkroom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/maps/darkroom.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,7 +90,7 @@
       <workItem from="1737623844164" duration="7000" />
       <workItem from="1737641248136" duration="3691000" />
       <workItem from="1737645491064" duration="2239000" />
-      <workItem from="1737701479051" duration="3603000" />
+      <workItem from="1737701479051" duration="5468000" />
     </task>
     <servers />
   </component>

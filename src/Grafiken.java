@@ -16,22 +16,26 @@ public class Grafiken {
     private Image joschuaImg;
 
     //Items
+
     private String krug;
+    private String darkroomSchalter;
+    private String darkroomSchalterUmgelegt;
     private Image krugImg;
+    private Image darkroomSchalterImg;
+    private Image darkroomSchalterUmgelegtImg;
 
     //Maps
     private String hauptraum;
     private String druckplattenraum;
+    private String darkroom;
     private String schablone;
     private String signal;
-    private String darkroom;
-    private String darkroomSchalter;
     private Image hauptraumImg;
     private Image druckplattenraumImg;
+    private Image darkroomImg;
     private Image schabloneImg;
     private Image signalImg;
-    private Image darkroomImg;
-    private Image darkroomSchalterImg;
+
 
     Grafiken() {
         //Figuren
@@ -41,14 +45,15 @@ public class Grafiken {
 
         //Items
         krug = "src/img/items/krug.PNG";
+        darkroomSchalter = "src/img/items/hebel.png";
+        darkroomSchalterUmgelegt = "src/img/items/hebel-umgelegt.png";
 
         //Maps
         hauptraum = "src/img/maps/hauptraum.png";
         druckplattenraum = "src/img/maps/druckplattenraum.png";
+        darkroom = "src/img/maps/darkroom.png";
         schablone = "src/img/maps/schablone.png";
         signal = "src/img/maps/signal.PNG";
-        darkroom = "src/img/maps/darkroom.png";
-        darkroomSchalter = "src/img/maps/darkroom-schalter.png";
 
         try {
             //Figuren
@@ -58,14 +63,16 @@ public class Grafiken {
 
             //Items
             krugImg = ImageIO.read(new File(krug));
+            darkroomSchalterImg = ImageIO.read(new File(darkroomSchalter));
+            darkroomSchalterUmgelegtImg = ImageIO.read(new File(darkroomSchalterUmgelegt));
 
             //Maps
             hauptraumImg = ImageIO.read(new File(hauptraum));
             druckplattenraumImg = ImageIO.read(new File(druckplattenraum));
+            darkroomImg = ImageIO.read(new File(darkroom));
             schabloneImg = ImageIO.read(new File(schablone));
             signalImg = ImageIO.read(new File(signal));
-            darkroomImg = ImageIO.read(new File(darkroom));
-            darkroomSchalterImg = ImageIO.read(new File(darkroomSchalter));
+
         } catch (IOException e) {
             System.err.println("Eine Figur konnte nicht geladen werden");
         }
@@ -115,5 +122,9 @@ public class Grafiken {
 
     public Image getDarkroomSchalterImg() {
         return darkroomSchalterImg;
+    }
+
+    public Image getDarkroomSchalterUmgelegtImg() {
+        return darkroomSchalterUmgelegtImg;
     }
 }

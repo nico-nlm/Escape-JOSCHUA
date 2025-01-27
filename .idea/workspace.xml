@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="490296ba-a332-4765-90d0-80b1c80369c9" name="Changes" comment="" />
+    <list default="true" id="490296ba-a332-4765-90d0-80b1c80369c9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Steuerung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steuerung.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +34,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "Darkroom-Hebel-v2",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -66,8 +69,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.153" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.153" />
       </set>
     </attachedChunks>
   </component>
@@ -87,6 +90,7 @@
       <workItem from="1737701479051" duration="5468000" />
       <workItem from="1737722511665" duration="913000" />
       <workItem from="1737963429302" duration="103000" />
+      <workItem from="1737994005833" duration="160000" />
     </task>
     <servers />
   </component>

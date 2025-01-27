@@ -18,7 +18,6 @@ public class Steuerung implements KeyListener {
     private Map m;
     private Signal signalDruckplatte;
     private Signal signalDarkroom;
-    private Signal signalJoschua;
     private int groesse = 700;
     private int[][] aktuellesLevel;
     private Image aktuellesLevelImg;
@@ -103,12 +102,12 @@ public class Steuerung implements KeyListener {
                     zf.loeschen(1);
                     zf.loeschen(spieler.getId());
                     zf.loeschen(npc.getId());
-                    zf.loeschen(4);
-                    zf.loeschen(5);
-                    zf.loeschen(6);
-                    zf.loeschen(7);
-                    zf.loeschen(8);
-                    zf.loeschen(10);
+                    zf.loeschen(krug1.getId());
+                    zf.loeschen(krug2.getId());
+                    zf.loeschen(krug3.getId());
+                    zf.loeschen(krug4.getId());
+                    zf.loeschen(darkroomHebel.getId());
+                    zf.loeschen(schablone.getId());
                     zf.loeschen(11);
                     eingesammelterKrug = 0;
                     aktuellesLevel = m.hauptraum;
@@ -125,8 +124,8 @@ public class Steuerung implements KeyListener {
                     break;
                 case 3:
                     zf.loeschen(1);
-                    zf.loeschen(9);
                     zf.loeschen(spieler.getId());
+                    zf.loeschen(signalDruckplatte.getId());
                     aktuellesLevel = m.druckplatte;
                     aktuellesLevelImg = g.getDruckplattenraumImg();
                     spieler.setGrafik(g.getSpielerImg());
@@ -144,7 +143,7 @@ public class Steuerung implements KeyListener {
                     break;
                 case 4:
                     zf.loeschen(1);
-                    zf.loeschen(9);
+                    zf.loeschen(signalDruckplatte.getId());
                     zf.loeschen(spieler.getId());
                     aktuellesLevel = m.darkroom;
                     aktuellesLevelImg = g.getDarkroomImg();
@@ -282,8 +281,8 @@ public class Steuerung implements KeyListener {
             }
             if (aktuellesLevel == m.darkroom && !darkroomSchalter) {
                 if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
-                    zf.loeschen(8);
-                    zf.loeschen(10);
+                    zf.loeschen(darkroomHebel.getId());
+                    zf.loeschen(schablone.getId());
                     zf.loeschen(11);
                     darkroomHebel.setGrafik(g.getDarkroomSchalterUmgelegtImg());
                     zeichneSpielflaeche();

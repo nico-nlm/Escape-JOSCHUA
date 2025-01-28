@@ -13,11 +13,11 @@ public class Steuerung implements KeyListener {
     private Krug krug2;
     private Krug krug3;
     private Krug krug4;
+    private Hebel darkroomHebel;
     private Schablone schablone;
     private Map m;
     private Signal signalDruckplatte;
     private Signal signalDarkroom;
-    private Signal signalJoschua;
     private int groesse = 700;
     private int[][] aktuellesLevel;
     private Image aktuellesLevelImg;
@@ -31,15 +31,16 @@ public class Steuerung implements KeyListener {
         zf = new ZeichenFlaeche14();
         g = new Grafiken();
         m = new Map();
-        spieler = new Spielfigur(m.getHauptraumStartX(), m.getHauptraumStartY(), 35, 35, g.getSpielerImg(), 2);
-        npc = new Npc(m.getNpcStartX(), m.getNpcStartY(), 35, 35, g.getJoschuaImg(), 3);
-        krug1 = new Krug(6, 4, 35, 35, g.getKrugImg(), 4);
-        krug2 = new Krug(7, 4, 35, 35, g.getKrugImg(), 5);
-        krug3 = new Krug(12, 4, 35, 35, g.getKrugImg(), 6);
-        krug4 = new Krug(13, 4, 35, 35, g.getKrugImg(), 7);
+        spieler = new Spielfigur(m.getHauptraumStartX(), m.getHauptraumStartY(), 35, 35, g.getSpielerImg(), 8);
+        npc = new Npc(m.getNpcStartX(), m.getNpcStartY(), 35, 35, g.getJoschuaImg(), 9);
+        krug1 = new Krug(6, 4, 35, 35, g.getKrugImg(), 2);
+        krug2 = new Krug(7, 4, 35, 35, g.getKrugImg(), 3);
+        krug3 = new Krug(12, 4, 35, 35, g.getKrugImg(), 4);
+        krug4 = new Krug(13, 4, 35, 35, g.getKrugImg(), 5);
+        darkroomHebel = new Hebel(m.getDarkroomSchalterX(), m.getDarkroomSchalterY(), 35, 35, g.getDarkroomSchalterImg(), 6);
+        signalDruckplatte = new Signal(7, 8, 35, 35, g.getSignalImg(), 7);
+        signalDarkroom = new Signal(11, 8, 35, 35, g.getSignalImg(), 7);
         schablone = new Schablone(-193, -298, groesse*2, groesse*2, g.getSchabloneImg(), 10);
-        signalDruckplatte = new Signal(7, 8, 35, 35, g.getSignalImg(), 9);
-        signalDarkroom = new Signal(11, 8, 35, 35, g.getSignalImg(), 9);
         aktuellesLevel = m.hauptraum;
         aktuellesLevelImg = g.getHauptraumImg();
         eingesammelterKrug = 0;
@@ -66,18 +67,18 @@ public class Steuerung implements KeyListener {
             if (eingesammelterKrug == 0) {
                 switch (aktuellesLevel[spieler.getY()][spieler.getX()]) {
                     case 6, 7, 8, 9:
-                        zf.setzeText(8, "Drücke 'E' um den Krug aufzuheben", 210, 250, 18, Color.BLACK);
+                        zf.setzeText(11, "Drücke 'E' um den Krug aufzuheben", 210, 250, 18, Color.BLACK);
                         break;
                     default:
-                        zf.loeschen(8);
+                        zf.loeschen(11);
                 }
             } else if (aktuellesLevel[spieler.getY()][spieler.getX()] == 0) {
-                zf.loeschen(8);
-                zf.setzeText(8, "Drücke 'E' um den Krug abzulegen", 210, 250, 18, Color.BLACK);
-            } else zf.loeschen(8);
+                zf.loeschen(11);
+                zf.setzeText(11, "Drücke 'E' um den Krug abzulegen", 210, 250, 18, Color.BLACK);
+            } else zf.loeschen(11);
         }
-        if (aktuellesLevel == m.darkroom) {
-            if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY() && !darkroomSchalter) {
+        if (aktuellesLevel == m.darkroom && !darkroomSchalter) {
+            if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
                 zf.setzeText(11, "Du hast einen Schalter gefunden!", 220, 250, 18, Color.WHITE);
                 zf.setzeText(11, "Drücke 'E' um ihn zu betätigen", 220, 280, 18, Color.WHITE);
             } else zf.loeschen(11);
@@ -101,12 +102,13 @@ public class Steuerung implements KeyListener {
                     zf.loeschen(1);
                     zf.loeschen(spieler.getId());
                     zf.loeschen(npc.getId());
-                    zf.loeschen(4);
-                    zf.loeschen(5);
-                    zf.loeschen(6);
-                    zf.loeschen(7);
-                    zf.loeschen(8);
-                    zf.loeschen(10);
+                    zf.loeschen(krug1.getId());
+                    zf.loeschen(krug2.getId());
+                    zf.loeschen(krug3.getId());
+                    zf.loeschen(krug4.getId());
+                    zf.loeschen(darkroomHebel.getId());
+                    zf.loeschen(schablone.getId());
+                    zf.loeschen(11);
                     eingesammelterKrug = 0;
                     aktuellesLevel = m.hauptraum;
                     aktuellesLevelImg = g.getHauptraumImg();
@@ -122,8 +124,8 @@ public class Steuerung implements KeyListener {
                     break;
                 case 3:
                     zf.loeschen(1);
-                    zf.loeschen(9);
                     zf.loeschen(spieler.getId());
+                    zf.loeschen(signalDruckplatte.getId());
                     aktuellesLevel = m.druckplatte;
                     aktuellesLevelImg = g.getDruckplattenraumImg();
                     spieler.setGrafik(g.getSpielerImg());
@@ -141,16 +143,16 @@ public class Steuerung implements KeyListener {
                     break;
                 case 4:
                     zf.loeschen(1);
-                    zf.loeschen(9);
+                    zf.loeschen(signalDruckplatte.getId());
                     zf.loeschen(spieler.getId());
                     aktuellesLevel = m.darkroom;
-                    if (!darkroomSchalter) aktuellesLevelImg = g.getDarkroomImg();
-                    else aktuellesLevelImg = g.getDarkroomSchalterImg();
+                    aktuellesLevelImg = g.getDarkroomImg();
                     spieler.setX(m.getDarkroomStartX());
                     spieler.setY(m.getDarkroomStartY());
                     m.setHauptraumStartX(14);
                     m.setHauptraumStartY(11);
                     zeichneSpielflaeche();
+                    darkroomHebel.zeichnen(zf);
                     spieler.zeichnen(zf);
                     if (!darkroomSchalter) schablone.zeichneSchablone(zf);
                     break;
@@ -198,7 +200,7 @@ public class Steuerung implements KeyListener {
                             zf.loeschen(krug1.getId());
                             m.druckplatte[spieler.getY()][spieler.getX()] = 0;
                             eingesammelterKrug = 1;
-                            zf.loeschen(8);
+                            zf.loeschen(11);
                             zf.loeschen(spieler.getId());
                             spieler.setGrafik(g.getSpielerKrugImg());
                             spieler.zeichnen(zf);
@@ -207,7 +209,7 @@ public class Steuerung implements KeyListener {
                             zf.loeschen(krug2.getId());
                             m.druckplatte[spieler.getY()][spieler.getX()] = 0;
                             eingesammelterKrug = 2;
-                            zf.loeschen(8);
+                            zf.loeschen(11);
                             zf.loeschen(spieler.getId());
                             spieler.setGrafik(g.getSpielerKrugImg());
                             spieler.zeichnen(zf);
@@ -216,7 +218,7 @@ public class Steuerung implements KeyListener {
                             zf.loeschen(krug3.getId());
                             m.druckplatte[spieler.getY()][spieler.getX()] = 0;
                             eingesammelterKrug = 3;
-                            zf.loeschen(8);
+                            zf.loeschen(11);
                             zf.loeschen(spieler.getId());
                             spieler.setGrafik(g.getSpielerKrugImg());
                             spieler.zeichnen(zf);
@@ -225,7 +227,7 @@ public class Steuerung implements KeyListener {
                             zf.loeschen(krug4.getId());
                             m.druckplatte[spieler.getY()][spieler.getX()] = 0;
                             eingesammelterKrug = 4;
-                            zf.loeschen(8);
+                            zf.loeschen(11);
                             zf.loeschen(spieler.getId());
                             spieler.setGrafik(g.getSpielerKrugImg());
                             spieler.zeichnen(zf);
@@ -239,28 +241,28 @@ public class Steuerung implements KeyListener {
                                 krug1.setY(spieler.getY());
                                 krug1.zeichnen(zf);
                                 m.druckplatte[spieler.getY()][spieler.getX()] = 6;
-                                zf.loeschen(8);
+                                zf.loeschen(11);
                                 break;
                             case 2:
                                 krug2.setX(spieler.getX());
                                 krug2.setY(spieler.getY());
                                 krug2.zeichnen(zf);
                                 m.druckplatte[spieler.getY()][spieler.getX()] = 7;
-                                zf.loeschen(8);
+                                zf.loeschen(11);
                                 break;
                             case 3:
                                 krug3.setX(spieler.getX());
                                 krug3.setY(spieler.getY());
                                 krug3.zeichnen(zf);
                                 m.druckplatte[spieler.getY()][spieler.getX()] = 8;
-                                zf.loeschen(8);
+                                zf.loeschen(11);
                                 break;
                             case 4:
                                 krug4.setX(spieler.getX());
                                 krug4.setY(spieler.getY());
                                 krug4.zeichnen(zf);
                                 m.druckplatte[spieler.getY()][spieler.getX()] = 9;
-                                zf.loeschen(8);
+                                zf.loeschen(11);
                                 break;
                             default:
                         }
@@ -271,20 +273,22 @@ public class Steuerung implements KeyListener {
                         if (spieler.getX() == m.getDruckPlatteX1() && spieler.getY() == m.getDruckplatteY1()) druckplatte1 = true;
                         if (spieler.getX() == m.getDruckPlatteX2() && spieler.getY() == m.getDruckplatteY2()) druckplatte2 = true;
                         if (druckplatte1 && druckplatte2) {
-                            zf.loeschen(8);
-                            zf.setzeText(8, "Im Hauptraum ist etwas passiert", 220, 250, 18, Color.BLACK);
+                            zf.loeschen(11);
+                            zf.setzeText(11, "Im Hauptraum ist etwas passiert", 220, 250, 18, Color.BLACK);
                         }
                     }
                 }
             }
             if (aktuellesLevel == m.darkroom && !darkroomSchalter) {
                 if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
-                    zf.loeschen(1);
-                    zf.loeschen(10);
-                    aktuellesLevelImg = g.getDarkroomSchalterImg();
+                    zf.loeschen(darkroomHebel.getId());
+                    zf.loeschen(schablone.getId());
+                    zf.loeschen(11);
+                    darkroomHebel.setGrafik(g.getDarkroomSchalterUmgelegtImg());
                     zeichneSpielflaeche();
+                    darkroomHebel.zeichnen(zf);
                     darkroomSchalter = true;
-                    zf.setzeText(8, "Im Hauptraum ist etwas passiert", 220, 250, 18, Color.BLACK);
+                    zf.setzeText(11, "Im Hauptraum ist etwas passiert", 220, 250, 18, Color.BLACK);
                 }
             }
         }

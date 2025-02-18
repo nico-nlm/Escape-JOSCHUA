@@ -38,8 +38,8 @@ public class Steuerung implements KeyListener {
         krug3 = new Krug(12, 4, 35, 35, g.getKrugImg(), 4);
         krug4 = new Krug(13, 4, 35, 35, g.getKrugImg(), 5);
         darkroomHebel = new Hebel(m.getDarkroomSchalterX(), m.getDarkroomSchalterY(), 35, 35, g.getDarkroomSchalterImg(), 6);
-        signalDruckplatte = new Signal(7, 8, 35, 35, g.getSignalImg(), 7);
-        signalDarkroom = new Signal(11, 8, 35, 35, g.getSignalImg(), 7);
+        signalDarkroom = new Signal(11, 13, 35, 35, g.getSignalImg(), 7);
+        signalDruckplatte = new Signal(11, 9, 35, 35, g.getSignalImg(), 7);
         schablone = new Schablone(-193, -298, groesse*2, groesse*2, g.getSchabloneImg(), 10);
         aktuellesLevel = m.hauptraum;
         aktuellesLevelImg = g.getHauptraumImg();

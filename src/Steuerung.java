@@ -24,7 +24,7 @@ public class Steuerung implements KeyListener {
     private int eingesammelterKrug;
     private boolean druckplatte1;
     private boolean druckplatte2;
-    private boolean darkroomSchalter;
+    private boolean darkroomHebelUmgelegt;
 
 
     public Steuerung() {
@@ -46,7 +46,7 @@ public class Steuerung implements KeyListener {
         eingesammelterKrug = 0;
         druckplatte1 = false;
         druckplatte2 = false;
-        darkroomSchalter = false;
+        darkroomHebelUmgelegt = false;
 
     }
 
@@ -63,6 +63,11 @@ public class Steuerung implements KeyListener {
     }
 
     public void checkPosition() {
+        if (aktuellesLevel == m.hauptraum && druckplatte1 && druckplatte2 && darkroomHebelUmgelegt) {
+            m.hauptraum[19][9] = 5;
+            zf.setzeText(11, "Du kannst den Dungeon nun", 210, 390, 18, Color.BLACK);
+            zf.setzeText(11, "durch die untere Tür verlassen", 210, 420, 18, Color.BLACK);
+        } else zf.loeschen(11);
         if ((!druckplatte1 || !druckplatte2) && aktuellesLevel == m.druckplatte) {
             if (eingesammelterKrug == 0) {
                 switch (aktuellesLevel[spieler.getY()][spieler.getX()]) {
@@ -77,7 +82,7 @@ public class Steuerung implements KeyListener {
                 zf.setzeText(11, "Drücke 'E' um den Krug abzulegen", 210, 250, 18, Color.BLACK);
             } else zf.loeschen(11);
         }
-        if (aktuellesLevel == m.darkroom && !darkroomSchalter) {
+        if (aktuellesLevel == m.darkroom && !darkroomHebelUmgelegt) {
             if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
                 zf.setzeText(11, "Du hast einen Schalter gefunden!", 220, 250, 18, Color.WHITE);
                 zf.setzeText(11, "Drücke 'E' um ihn zu betätigen", 220, 280, 18, Color.WHITE);
@@ -108,7 +113,6 @@ public class Steuerung implements KeyListener {
                     zf.loeschen(krug4.getId());
                     zf.loeschen(darkroomHebel.getId());
                     zf.loeschen(schablone.getId());
-                    zf.loeschen(11);
                     eingesammelterKrug = 0;
                     aktuellesLevel = m.hauptraum;
                     aktuellesLevelImg = g.getHauptraumImg();
@@ -119,7 +123,7 @@ public class Steuerung implements KeyListener {
                     spieler.setY(m.getHauptraumStartY());
                     zeichneSpielflaeche();
                     if (druckplatte1 && druckplatte2) signalDruckplatte.zeichnen(zf);
-                    if (darkroomSchalter) signalDarkroom.zeichnen(zf);
+                    if (darkroomHebelUmgelegt) signalDarkroom.zeichnen(zf);
                     spieler.zeichnen(zf);
                     break;
                 case 3:
@@ -154,8 +158,14 @@ public class Steuerung implements KeyListener {
                     zeichneSpielflaeche();
                     darkroomHebel.zeichnen(zf);
                     spieler.zeichnen(zf);
-                    if (!darkroomSchalter) schablone.zeichneSchablone(zf);
+                    if (!darkroomHebelUmgelegt) schablone.zeichneSchablone(zf);
                     break;
+                case 5:
+                    zf.loeschen(1);
+                    zf.loeschen(signalDruckplatte.getId());
+                    zf.loeschen(spieler.getId());
+                    aktuellesLevelImg = g.getOutsideImg();
+                    zeichneSpielflaeche();
                 default:
             }
         }
@@ -163,141 +173,142 @@ public class Steuerung implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_W) {
-            if (aktuellesLevel[spieler.getY()-1][spieler.getX()] != 1) {
-                spieler.bewegen(0, -1, zf);
-                if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(aktuellesLevel, zf);
-                if (aktuellesLevel == m.darkroom) schablone.bewegen(0, -spieler.getHoehe(), zf);
+        if (aktuellesLevelImg != g.getOutsideImg()) {
+            if (e.getKeyCode() == KeyEvent.VK_W) {
+                if (aktuellesLevel[spieler.getY()-1][spieler.getX()] != 1) {
+                    spieler.bewegen(0, -1, zf);
+                    if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(aktuellesLevel, zf);
+                    if (aktuellesLevel == m.darkroom) schablone.bewegen(0, -spieler.getHoehe(), zf);
+                }
             }
-        }
-        if (e.getKeyCode() == KeyEvent.VK_S) {
-            if (aktuellesLevel[spieler.getY()+1][spieler.getX()] != 1) {
-                spieler.bewegen(0, 1, zf);
-                if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(aktuellesLevel, zf);
-                if (aktuellesLevel == m.darkroom) schablone.bewegen(0, spieler.getHoehe(), zf);
+            if (e.getKeyCode() == KeyEvent.VK_S) {
+                if (aktuellesLevel[spieler.getY()+1][spieler.getX()] != 1) {
+                    spieler.bewegen(0, 1, zf);
+                    if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(aktuellesLevel, zf);
+                    if (aktuellesLevel == m.darkroom) schablone.bewegen(0, spieler.getHoehe(), zf);
+                }
             }
-        }
-        if (e.getKeyCode() == KeyEvent.VK_A) {
-            if (aktuellesLevel[spieler.getY()][spieler.getX()-1] != 1) {
-                spieler.bewegen(-1, 0, zf);
-                if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(aktuellesLevel, zf);
-                if (aktuellesLevel == m.darkroom) schablone.bewegen(-spieler.getBreite(), 0, zf);
+            if (e.getKeyCode() == KeyEvent.VK_A) {
+                if (aktuellesLevel[spieler.getY()][spieler.getX()-1] != 1) {
+                    spieler.bewegen(-1, 0, zf);
+                    if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(aktuellesLevel, zf);
+                    if (aktuellesLevel == m.darkroom) schablone.bewegen(-spieler.getBreite(), 0, zf);
+                }
             }
-        }
-        if (e.getKeyCode() == KeyEvent.VK_D) {
-            if (aktuellesLevel[spieler.getY()][spieler.getX()+1] != 1) {
-                spieler.bewegen(1, 0, zf);
-                if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(aktuellesLevel, zf);
-                if (aktuellesLevel == m.darkroom) schablone.bewegen(spieler.getBreite(), 0, zf);
+            if (e.getKeyCode() == KeyEvent.VK_D) {
+                if (aktuellesLevel[spieler.getY()][spieler.getX()+1] != 1) {
+                    spieler.bewegen(1, 0, zf);
+                    if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(aktuellesLevel, zf);
+                    if (aktuellesLevel == m.darkroom) schablone.bewegen(spieler.getBreite(), 0, zf);
+                }
             }
-        }
 
-        if (e.getKeyCode() == KeyEvent.VK_E) {
-            if (aktuellesLevel == m.druckplatte) {
-                if (!druckplatte1 || !druckplatte2) {
-                    if (eingesammelterKrug == 0) {
-                        if (aktuellesLevel[spieler.getY()][spieler.getX()] == 6) {
-                            zf.loeschen(krug1.getId());
-                            m.druckplatte[spieler.getY()][spieler.getX()] = 0;
-                            eingesammelterKrug = 1;
-                            zf.loeschen(11);
-                            zf.loeschen(spieler.getId());
-                            spieler.setGrafik(g.getSpielerKrugImg());
-                            spieler.zeichnen(zf);
-                        }
-                        if (aktuellesLevel[spieler.getY()][spieler.getX()] == 7) {
-                            zf.loeschen(krug2.getId());
-                            m.druckplatte[spieler.getY()][spieler.getX()] = 0;
-                            eingesammelterKrug = 2;
-                            zf.loeschen(11);
-                            zf.loeschen(spieler.getId());
-                            spieler.setGrafik(g.getSpielerKrugImg());
-                            spieler.zeichnen(zf);
-                        }
-                        if (aktuellesLevel[spieler.getY()][spieler.getX()] == 8) {
-                            zf.loeschen(krug3.getId());
-                            m.druckplatte[spieler.getY()][spieler.getX()] = 0;
-                            eingesammelterKrug = 3;
-                            zf.loeschen(11);
-                            zf.loeschen(spieler.getId());
-                            spieler.setGrafik(g.getSpielerKrugImg());
-                            spieler.zeichnen(zf);
-                        }
-                        if (aktuellesLevel[spieler.getY()][spieler.getX()] == 9) {
-                            zf.loeschen(krug4.getId());
-                            m.druckplatte[spieler.getY()][spieler.getX()] = 0;
-                            eingesammelterKrug = 4;
-                            zf.loeschen(11);
-                            zf.loeschen(spieler.getId());
-                            spieler.setGrafik(g.getSpielerKrugImg());
-                            spieler.zeichnen(zf);
-                        }
-                        if (spieler.getX() == m.getDruckPlatteX1() && spieler.getY() == m.getDruckplatteY1()) druckplatte1 = false;
-                        if (spieler.getX() == m.getDruckPlatteX2() && spieler.getY() == m.getDruckplatteY2()) druckplatte2 = false;
-                    } else if (aktuellesLevel[spieler.getY()][spieler.getX()] == 0){
-                        switch (eingesammelterKrug) {
-                            case 1:
-                                krug1.setX(spieler.getX());
-                                krug1.setY(spieler.getY());
-                                krug1.zeichnen(zf);
-                                m.druckplatte[spieler.getY()][spieler.getX()] = 6;
+            if (e.getKeyCode() == KeyEvent.VK_E) {
+                if (aktuellesLevel == m.druckplatte) {
+                    if (!druckplatte1 || !druckplatte2) {
+                        if (eingesammelterKrug == 0) {
+                            if (aktuellesLevel[spieler.getY()][spieler.getX()] == 6) {
+                                zf.loeschen(krug1.getId());
+                                m.druckplatte[spieler.getY()][spieler.getX()] = 0;
+                                eingesammelterKrug = 1;
                                 zf.loeschen(11);
-                                break;
-                            case 2:
-                                krug2.setX(spieler.getX());
-                                krug2.setY(spieler.getY());
-                                krug2.zeichnen(zf);
-                                m.druckplatte[spieler.getY()][spieler.getX()] = 7;
+                                zf.loeschen(spieler.getId());
+                                spieler.setGrafik(g.getSpielerKrugImg());
+                                spieler.zeichnen(zf);
+                            }
+                            if (aktuellesLevel[spieler.getY()][spieler.getX()] == 7) {
+                                zf.loeschen(krug2.getId());
+                                m.druckplatte[spieler.getY()][spieler.getX()] = 0;
+                                eingesammelterKrug = 2;
                                 zf.loeschen(11);
-                                break;
-                            case 3:
-                                krug3.setX(spieler.getX());
-                                krug3.setY(spieler.getY());
-                                krug3.zeichnen(zf);
-                                m.druckplatte[spieler.getY()][spieler.getX()] = 8;
+                                zf.loeschen(spieler.getId());
+                                spieler.setGrafik(g.getSpielerKrugImg());
+                                spieler.zeichnen(zf);
+                            }
+                            if (aktuellesLevel[spieler.getY()][spieler.getX()] == 8) {
+                                zf.loeschen(krug3.getId());
+                                m.druckplatte[spieler.getY()][spieler.getX()] = 0;
+                                eingesammelterKrug = 3;
                                 zf.loeschen(11);
-                                break;
-                            case 4:
-                                krug4.setX(spieler.getX());
-                                krug4.setY(spieler.getY());
-                                krug4.zeichnen(zf);
-                                m.druckplatte[spieler.getY()][spieler.getX()] = 9;
+                                zf.loeschen(spieler.getId());
+                                spieler.setGrafik(g.getSpielerKrugImg());
+                                spieler.zeichnen(zf);
+                            }
+                            if (aktuellesLevel[spieler.getY()][spieler.getX()] == 9) {
+                                zf.loeschen(krug4.getId());
+                                m.druckplatte[spieler.getY()][spieler.getX()] = 0;
+                                eingesammelterKrug = 4;
                                 zf.loeschen(11);
-                                break;
-                            default:
-                        }
-                        eingesammelterKrug = 0;
-                        zf.loeschen(spieler.getId());
-                        spieler.setGrafik(g.getSpielerImg());
-                        spieler.zeichnen(zf);
-                        if (spieler.getX() == m.getDruckPlatteX1() && spieler.getY() == m.getDruckplatteY1()) druckplatte1 = true;
-                        if (spieler.getX() == m.getDruckPlatteX2() && spieler.getY() == m.getDruckplatteY2()) druckplatte2 = true;
-                        if (druckplatte1 && druckplatte2) {
-                            zf.loeschen(11);
-                            zf.setzeText(11, "Im Hauptraum ist etwas passiert", 220, 250, 18, Color.BLACK);
+                                zf.loeschen(spieler.getId());
+                                spieler.setGrafik(g.getSpielerKrugImg());
+                                spieler.zeichnen(zf);
+                            }
+                            if (spieler.getX() == m.getDruckPlatteX1() && spieler.getY() == m.getDruckplatteY1()) druckplatte1 = false;
+                            if (spieler.getX() == m.getDruckPlatteX2() && spieler.getY() == m.getDruckplatteY2()) druckplatte2 = false;
+                        } else if (aktuellesLevel[spieler.getY()][spieler.getX()] == 0){
+                            switch (eingesammelterKrug) {
+                                case 1:
+                                    krug1.setX(spieler.getX());
+                                    krug1.setY(spieler.getY());
+                                    krug1.zeichnen(zf);
+                                    m.druckplatte[spieler.getY()][spieler.getX()] = 6;
+                                    zf.loeschen(11);
+                                    break;
+                                case 2:
+                                    krug2.setX(spieler.getX());
+                                    krug2.setY(spieler.getY());
+                                    krug2.zeichnen(zf);
+                                    m.druckplatte[spieler.getY()][spieler.getX()] = 7;
+                                    zf.loeschen(11);
+                                    break;
+                                case 3:
+                                    krug3.setX(spieler.getX());
+                                    krug3.setY(spieler.getY());
+                                    krug3.zeichnen(zf);
+                                    m.druckplatte[spieler.getY()][spieler.getX()] = 8;
+                                    zf.loeschen(11);
+                                    break;
+                                case 4:
+                                    krug4.setX(spieler.getX());
+                                    krug4.setY(spieler.getY());
+                                    krug4.zeichnen(zf);
+                                    m.druckplatte[spieler.getY()][spieler.getX()] = 9;
+                                    zf.loeschen(11);
+                                    break;
+                                default:
+                            }
+                            eingesammelterKrug = 0;
+                            zf.loeschen(spieler.getId());
+                            spieler.setGrafik(g.getSpielerImg());
+                            spieler.zeichnen(zf);
+                            if (spieler.getX() == m.getDruckPlatteX1() && spieler.getY() == m.getDruckplatteY1()) druckplatte1 = true;
+                            if (spieler.getX() == m.getDruckPlatteX2() && spieler.getY() == m.getDruckplatteY2()) druckplatte2 = true;
+                            if (druckplatte1 && druckplatte2) {
+                                zf.loeschen(11);
+                                zf.setzeText(11, "Im Hauptraum ist etwas passiert", 220, 250, 18, Color.BLACK);
+                            }
                         }
                     }
                 }
-            }
-            if (aktuellesLevel == m.darkroom && !darkroomSchalter) {
-                if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
-                    zf.loeschen(darkroomHebel.getId());
-                    zf.loeschen(schablone.getId());
-                    zf.loeschen(11);
-                    darkroomHebel.setGrafik(g.getDarkroomSchalterUmgelegtImg());
-                    zeichneSpielflaeche();
-                    darkroomHebel.zeichnen(zf);
-                    darkroomSchalter = true;
-                    zf.setzeText(11, "Im Hauptraum ist etwas passiert", 220, 250, 18, Color.BLACK);
+                if (aktuellesLevel == m.darkroom && !darkroomHebelUmgelegt) {
+                    if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
+                        zf.loeschen(darkroomHebel.getId());
+                        zf.loeschen(schablone.getId());
+                        zf.loeschen(11);
+                        darkroomHebel.setGrafik(g.getDarkroomSchalterUmgelegtImg());
+                        zeichneSpielflaeche();
+                        darkroomHebel.zeichnen(zf);
+                        darkroomHebelUmgelegt = true;
+                        zf.setzeText(11, "Im Hauptraum ist etwas passiert", 220, 250, 18, Color.BLACK);
+                    }
                 }
             }
+            checkLevel();
+            checkPosition();
+            if (aktuellesLevel == m.druckplatte) {
+                checkNpc();
+            }
         }
-        checkLevel();
-        checkPosition();
-        if (aktuellesLevel == m.druckplatte) {
-            checkNpc();
-        }
-
     }
 
     @Override

@@ -23,6 +23,12 @@ public class Identitaet {
         zf.setzeBild(id, grafik, x*breite, y*hoehe, breite, hoehe);
     }
 
+    public void bewegen(int deltaX, int deltaY, ZeichenFlaeche14 zf) {
+        zf.verschieben(id, deltaX*breite, deltaY*hoehe);
+        x += deltaX;
+        y += deltaY;
+    }
+
     protected int getX() {
         return x;
     }

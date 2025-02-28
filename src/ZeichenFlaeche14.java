@@ -40,7 +40,7 @@ import javax.swing.JPanel;
  * <p>1. Das automatische Zeichnen. In diesem Modus zeichnet die Zeichenfl�che automatisch und der Benutzer</p>
  * <p>   muss sich nicht darum k�mmern.</p>
  * <p>   Anf�nger k�nnen diesen Modus benutzen, es ist der Standardmodus.</p>
- * <p>   Dieser Modus hat aber einen Nachteil. Wenn der Benutze ein Objekt auf der Zeichenfl�che bewegen m�chte,</p>
+ * <p>   Dieser Modus hat aber einen Nachteil. Wenn der Benutze ein Objekt auf der Zeichenfl�che bewegenSchablone m�chte,</p>
  * <p>   so muss er es erst vom alten Ort l�schen und es dann am neuen Ort zeichnen. Wenn das automatische Zeichnen</p>
  * <p>   genau in dem Moment zeichnet, wenn das Objekt gel�scht ist, aber noch nicht neu gezeichnet wurde, so</p>
  * <p>   bleibt das Objekt bis zum n�chsten Zeichnen unsichtbar. Der Zeitpunkt des n�chsten Zeichnens ist in diesem</p>
@@ -520,7 +520,7 @@ public class ZeichenFlaeche14 extends JPanel{
 
 	/**
 	 * <p>�ndert die Position aller Objekte mit einer bestimmten ID auf der Zeichenfl�che.</p>
-	 * <p>Werden mehreren Objekten die gleiche ID zugewiesen, so ist es m�glich diese Objekte als Gruppe auf einmal zu bewegen.</p>
+	 * <p>Werden mehreren Objekten die gleiche ID zugewiesen, so ist es m�glich diese Objekte als Gruppe auf einmal zu bewegenSchablone.</p>
 	 * @param id Die ID des zu l�schenden Objektes.
 	 * @param deltaX Anzahl Pixel um die das Objekt verschoben wird.
 	 * @param deltaY Anzahl Pixel um die das Objekt verschoben wird.

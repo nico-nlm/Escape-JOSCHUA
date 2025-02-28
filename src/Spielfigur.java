@@ -11,9 +11,5 @@ public class Spielfigur extends Identitaet {
         super(x, y, breite, hoehe, grafik, id);
     }
 
-    public void bewegen(int deltaX, int deltaY, ZeichenFlaeche14 zf) {
-        zf.verschieben(id, deltaX*breite, deltaY*hoehe);
-        x += deltaX;
-        y += deltaY;
-    }
+
 }

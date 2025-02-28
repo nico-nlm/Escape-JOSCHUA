@@ -320,4 +320,24 @@ public class Steuerung implements KeyListener {
     public void keyTyped(KeyEvent e) {
 
     }
+
+    class NpcTimer implements Runnable {
+        private ZeichenFlaeche14 zf;
+
+        NpcTimer(ZeichenFlaeche14 zf) {
+            this.zf = zf;
+        }
+
+        @Override
+        public void run() {
+            try {
+                while (aktuellesLevel == m.druckplatte) {
+                    //bewegen zeugs
+                    Thread.sleep(500);
+                }
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
 }

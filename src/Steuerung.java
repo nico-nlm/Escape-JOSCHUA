@@ -182,24 +182,28 @@ public class Steuerung implements KeyListener {
                     spieler.bewegen(0, -1, zf);
                     if (aktuellesLevel == m.darkroom) schablone.bewegen(0, -spieler.getHoehe(), zf);
                 }
+                checkLevel();
             }
             if (e.getKeyCode() == KeyEvent.VK_S) {
                 if (aktuellesLevel[spieler.getY()+1][spieler.getX()] != 1) {
                     spieler.bewegen(0, 1, zf);
                     if (aktuellesLevel == m.darkroom) schablone.bewegen(0, spieler.getHoehe(), zf);
                 }
+                checkLevel();
             }
             if (e.getKeyCode() == KeyEvent.VK_A) {
                 if (aktuellesLevel[spieler.getY()][spieler.getX()-1] != 1) {
                     spieler.bewegen(-1, 0, zf);
                     if (aktuellesLevel == m.darkroom) schablone.bewegen(-spieler.getBreite(), 0, zf);
                 }
+                checkLevel();
             }
             if (e.getKeyCode() == KeyEvent.VK_D) {
                 if (aktuellesLevel[spieler.getY()][spieler.getX()+1] != 1) {
                     spieler.bewegen(1, 0, zf);
                     if (aktuellesLevel == m.darkroom) schablone.bewegen(spieler.getBreite(), 0, zf);
                 }
+                checkLevel();
             }
 
             if (e.getKeyCode() == KeyEvent.VK_E) {
@@ -302,7 +306,6 @@ public class Steuerung implements KeyListener {
                     }
                 }
             }
-            checkLevel();
             checkPosition();
             if (aktuellesLevel == m.druckplatte) {
                 checkNpc();
@@ -332,7 +335,7 @@ public class Steuerung implements KeyListener {
             try {
                 while (1==1) {
                     if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(m.druckplatte, zf);
-                    Thread.sleep(500);
+                    Thread.sleep(200);
                 }
             } catch (InterruptedException ex) {
                 ex.printStackTrace();

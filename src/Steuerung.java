@@ -9,6 +9,7 @@ public class Steuerung implements KeyListener {
     private Grafiken g;
     private Spielfigur spieler;
     private Npc npc;
+    private NpcTimer npcTimer;
     private Krug krug1;
     private Krug krug2;
     private Krug krug3;
@@ -33,6 +34,7 @@ public class Steuerung implements KeyListener {
         m = new Map();
         spieler = new Spielfigur(m.getHauptraumStartX(), m.getHauptraumStartY(), 35, 35, g.getSpielerImg(), 8);
         npc = new Npc(m.getNpcStartX(), m.getNpcStartY(), 35, 35, g.getJoschuaImg(), 9);
+        npcTimer = new NpcTimer(zf);
         krug1 = new Krug(6, 4, 35, 35, g.getKrugImg(), 2);
         krug2 = new Krug(7, 4, 35, 35, g.getKrugImg(), 3);
         krug3 = new Krug(12, 4, 35, 35, g.getKrugImg(), 4);
@@ -48,6 +50,7 @@ public class Steuerung implements KeyListener {
         druckplatte2 = false;
         darkroomHebelUmgelegt = false;
 
+
     }
 
     public void starten() {
@@ -56,6 +59,7 @@ public class Steuerung implements KeyListener {
         zf.requestFocus();
         zeichneSpielflaeche();
         spieler.zeichnen(zf);
+        npcTimer.run();
     }
 
     public void zeichneSpielflaeche() {
@@ -96,7 +100,6 @@ public class Steuerung implements KeyListener {
             spieler.setX(m.getDruckplatteStartX());
             spieler.setY(m.getDruckplatteStartY());
             spieler.zeichnen(zf);
-            System.out.println("erkannt");
         }
     }
 
@@ -177,28 +180,24 @@ public class Steuerung implements KeyListener {
             if (e.getKeyCode() == KeyEvent.VK_W) {
                 if (aktuellesLevel[spieler.getY()-1][spieler.getX()] != 1) {
                     spieler.bewegen(0, -1, zf);
-                    if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(aktuellesLevel, zf);
                     if (aktuellesLevel == m.darkroom) schablone.bewegen(0, -spieler.getHoehe(), zf);
                 }
             }
             if (e.getKeyCode() == KeyEvent.VK_S) {
                 if (aktuellesLevel[spieler.getY()+1][spieler.getX()] != 1) {
                     spieler.bewegen(0, 1, zf);
-                    if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(aktuellesLevel, zf);
                     if (aktuellesLevel == m.darkroom) schablone.bewegen(0, spieler.getHoehe(), zf);
                 }
             }
             if (e.getKeyCode() == KeyEvent.VK_A) {
                 if (aktuellesLevel[spieler.getY()][spieler.getX()-1] != 1) {
                     spieler.bewegen(-1, 0, zf);
-                    if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(aktuellesLevel, zf);
                     if (aktuellesLevel == m.darkroom) schablone.bewegen(-spieler.getBreite(), 0, zf);
                 }
             }
             if (e.getKeyCode() == KeyEvent.VK_D) {
                 if (aktuellesLevel[spieler.getY()][spieler.getX()+1] != 1) {
                     spieler.bewegen(1, 0, zf);
-                    if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(aktuellesLevel, zf);
                     if (aktuellesLevel == m.darkroom) schablone.bewegen(spieler.getBreite(), 0, zf);
                 }
             }
@@ -319,5 +318,25 @@ public class Steuerung implements KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
 
+    }
+
+    class NpcTimer implements Runnable {
+        private ZeichenFlaeche14 zf;
+
+        NpcTimer(ZeichenFlaeche14 zf) {
+            this.zf = zf;
+        }
+
+        @Override
+        public void run() {
+            try {
+                while (1==1) {
+                    if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(m.druckplatte, zf);
+                    Thread.sleep(500);
+                }
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 }

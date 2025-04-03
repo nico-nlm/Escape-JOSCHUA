@@ -53,7 +53,7 @@ public class Grafiken {
         //Maps
         hauptraum = "src/img/maps/hauptraum.png";
         druckplattenraum = "src/img/maps/druckplattenraum.png";
-        darkroom = "src/img/maps/darkroom.png";
+        darkroom = "src/img/maps/darkroomRaster.jpg";
         schablone = "src/img/maps/schablone.png";
         signal = "src/img/maps/signal.PNG";
         outside = "src/img/maps/outside.png";

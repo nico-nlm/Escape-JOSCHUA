@@ -22,6 +22,7 @@ public class Map {
     private int darkroomSchalterY;
     private int darkroomStachelSchalterX;
     private int darkroomStachelSchalterY;
+    private int darkroomStachelSchalterY2;
 
     public Map() {
         hauptraumStartX = 8;
@@ -38,10 +39,11 @@ public class Map {
 
         darkroomStartX = 16;
         darkroomStartY = 9;
-        darkroomSchalterX = 4;
-        darkroomSchalterY = 4;
-        darkroomStachelSchalterX = 10;
-        darkroomStachelSchalterY = 10;
+        darkroomSchalterX = 10;
+        darkroomSchalterY = 17;
+        darkroomStachelSchalterX = 3;
+        darkroomStachelSchalterY = 9;
+        darkroomStachelSchalterY2 = 10;
     }
 
     int[][] hauptraum = {
@@ -93,13 +95,13 @@ public class Map {
     int[][] darkroom = {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-            {0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-            {1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0},
-            {1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-            {1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+            {0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0},
             {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0},
             {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0},
             {1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0},
@@ -175,5 +177,17 @@ public class Map {
 
     public int getDarkroomSchalterY() {
         return darkroomSchalterY;
+    }
+
+    public int getDarkroomStachelSchalterX() {
+        return darkroomStachelSchalterX;
+    }
+
+    public int getDarkroomStachelSchalterY() {
+        return darkroomStachelSchalterY;
+    }
+
+    public int getDarkroomStachelSchalterY2() {
+        return darkroomStachelSchalterY2;
     }
 }

@@ -42,8 +42,8 @@ public class Map {
         darkroomSchalterX = 10;
         darkroomSchalterY = 17;
         darkroomStachelSchalterX = 3;
-        darkroomStachelSchalterY = 9;
-        darkroomStachelSchalterY2 = 10;
+        darkroomStachelSchalterY = 8;
+        darkroomStachelSchalterY2 = 11;
     }
 
     int[][] hauptraum = {

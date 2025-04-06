@@ -87,8 +87,13 @@ public class Steuerung implements KeyListener {
             } else zf.loeschen(11);
         }
         if (aktuellesLevel == m.darkroom && !darkroomHebelUmgelegt) {
-            if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
-                zf.setzeText(11, "Du hast einen Schalter gefunden!", 220, 250, 18, Color.WHITE);
+            if (spieler.getX() == m.getDarkroomStachelSchalterX() && spieler.getY() == m.getDarkroomStachelSchalterY()) {
+                zf.setzeText(11, "Dieser Schalter scheint defekt zu sein.", 220, 250, 18, Color.WHITE);
+                zf.setzeText(11, "Versuche es mit dem anderen!", 220, 280, 18, Color.WHITE);
+            } else if (spieler.getX() == m.getDarkroomStachelSchalterX() && spieler.getY() == m.getDarkroomStachelSchalterY2()) {
+                zf.setzeText(11, "Drücke 'E' um die Stacheln zu deaktivieren!", 220, 250, 18, Color.WHITE);
+            } else if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
+                zf.setzeText(11, "Du hast noch einen Schalter gefunden!", 220, 250, 18, Color.WHITE);
                 zf.setzeText(11, "Drücke 'E' um ihn zu betätigen", 220, 280, 18, Color.WHITE);
             } else zf.loeschen(11);
         }

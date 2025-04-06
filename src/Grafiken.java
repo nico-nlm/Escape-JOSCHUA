@@ -128,6 +128,10 @@ public class Grafiken {
         return darkroomImg;
     }
 
+    public Image getDarkroomFreiImg() {
+        return darkroomFreiImg;
+    }
+
     public Image getDarkroomSchalterImg() {
         return darkroomSchalterImg;
     }

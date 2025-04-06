@@ -88,13 +88,17 @@ public class Steuerung implements KeyListener {
         }
         if (aktuellesLevel == m.darkroom && !darkroomHebelUmgelegt) {
             if (spieler.getX() == m.getDarkroomStachelSchalterX() && spieler.getY() == m.getDarkroomStachelSchalterY()) {
-                zf.setzeText(11, "Dieser Schalter scheint defekt zu sein.", 220, 250, 18, Color.WHITE);
-                zf.setzeText(11, "Versuche es mit dem anderen!", 220, 280, 18, Color.WHITE);
+                zf.setzeText(11, "Dieser Schalter scheint defekt zu sein.", 210, 250, 18, Color.WHITE);
+                zf.setzeText(11, "Versuche es mit dem anderen!", 210, 280, 18, Color.WHITE);
             } else if (spieler.getX() == m.getDarkroomStachelSchalterX() && spieler.getY() == m.getDarkroomStachelSchalterY2()) {
-                zf.setzeText(11, "Drücke 'E' um die Stacheln zu deaktivieren!", 220, 250, 18, Color.WHITE);
-            } else if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
-                zf.setzeText(11, "Du hast noch einen Schalter gefunden!", 220, 250, 18, Color.WHITE);
-                zf.setzeText(11, "Drücke 'E' um ihn zu betätigen", 220, 280, 18, Color.WHITE);
+                zf.setzeText(11, "Drücke 'E' um die Stacheln zu deaktivieren!", 190, 250, 18, Color.WHITE);
+            }
+        }
+
+        if (aktuellesLevel == m.darkroomFrei && !darkroomHebelUmgelegt) {
+            if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
+                zf.setzeText(11, "Du hast noch einen Schalter gefunden!", 210, 250, 18, Color.WHITE);
+                zf.setzeText(11, "Drücke 'E' um ihn zu betätigen", 210, 280, 18, Color.WHITE);
             } else zf.loeschen(11);
         }
     }
@@ -185,28 +189,28 @@ public class Steuerung implements KeyListener {
             if (e.getKeyCode() == KeyEvent.VK_W) {
                 if (aktuellesLevel[spieler.getY()-1][spieler.getX()] != 1) {
                     spieler.bewegen(0, -1, zf);
-                    if (aktuellesLevel == m.darkroom) schablone.bewegen(0, -spieler.getHoehe(), zf);
+                    if (aktuellesLevel == m.darkroom || aktuellesLevel ==  m.darkroomFrei) schablone.bewegen(0, -spieler.getHoehe(), zf);
                 }
                 checkLevel();
             }
             if (e.getKeyCode() == KeyEvent.VK_S) {
                 if (aktuellesLevel[spieler.getY()+1][spieler.getX()] != 1) {
                     spieler.bewegen(0, 1, zf);
-                    if (aktuellesLevel == m.darkroom) schablone.bewegen(0, spieler.getHoehe(), zf);
+                    if (aktuellesLevel == m.darkroom || aktuellesLevel ==  m.darkroomFrei) schablone.bewegen(0, spieler.getHoehe(), zf);
                 }
                 checkLevel();
             }
             if (e.getKeyCode() == KeyEvent.VK_A) {
                 if (aktuellesLevel[spieler.getY()][spieler.getX()-1] != 1) {
                     spieler.bewegen(-1, 0, zf);
-                    if (aktuellesLevel == m.darkroom) schablone.bewegen(-spieler.getBreite(), 0, zf);
+                    if (aktuellesLevel == m.darkroom || aktuellesLevel ==  m.darkroomFrei) schablone.bewegen(-spieler.getBreite(), 0, zf);
                 }
                 checkLevel();
             }
             if (e.getKeyCode() == KeyEvent.VK_D) {
                 if (aktuellesLevel[spieler.getY()][spieler.getX()+1] != 1) {
                     spieler.bewegen(1, 0, zf);
-                    if (aktuellesLevel == m.darkroom) schablone.bewegen(spieler.getBreite(), 0, zf);
+                    if (aktuellesLevel == m.darkroom || aktuellesLevel ==  m.darkroomFrei) schablone.bewegen(spieler.getBreite(), 0, zf);
                 }
                 checkLevel();
             }
@@ -299,6 +303,16 @@ public class Steuerung implements KeyListener {
                     }
                 }
                 if (aktuellesLevel == m.darkroom && !darkroomHebelUmgelegt) {
+                    if (spieler.getX() == m.getDarkroomStachelSchalterX() && spieler.getY() == m.getDarkroomStachelSchalterY2()) {
+                        aktuellesLevel = m.darkroomFrei;
+                        zf.loeschen(1);
+                        aktuellesLevelImg = g.getDarkroomFreiImg();
+                        zeichneSpielflaeche();
+                        zf.loeschen(11);
+                    }
+                }
+
+                if (aktuellesLevel == m.darkroomFrei && !darkroomHebelUmgelegt) {
                     if (spieler.getX() == m.getDarkroomSchalterX() && spieler.getY() == m.getDarkroomSchalterY()) {
                         zf.loeschen(darkroomHebel.getId());
                         zf.loeschen(schablone.getId());

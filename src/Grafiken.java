@@ -28,12 +28,14 @@ public class Grafiken {
     private String hauptraum;
     private String druckplattenraum;
     private String darkroom;
+    private String darkroomFrei;
     private String schablone;
     private String signal;
     private String outside;
     private Image hauptraumImg;
     private Image druckplattenraumImg;
     private Image darkroomImg;
+    private Image darkroomFreiImg;
     private Image schabloneImg;
     private Image signalImg;
     private Image outsideImg;
@@ -53,7 +55,8 @@ public class Grafiken {
         //Maps
         hauptraum = "src/img/maps/hauptraum.png";
         druckplattenraum = "src/img/maps/druckplattenraum.png";
-        darkroom = "src/img/maps/darkroomRaster.jpg";
+        darkroom = "src/img/maps/darkroom.png";
+        darkroomFrei = "src/img/maps/darkroomFrei.png";
         schablone = "src/img/maps/schablone.png";
         signal = "src/img/maps/signal.PNG";
         outside = "src/img/maps/outside.png";
@@ -73,6 +76,7 @@ public class Grafiken {
             hauptraumImg = ImageIO.read(new File(hauptraum));
             druckplattenraumImg = ImageIO.read(new File(druckplattenraum));
             darkroomImg = ImageIO.read(new File(darkroom));
+            darkroomFreiImg = ImageIO.read(new File(darkroomFrei));
             schabloneImg = ImageIO.read(new File(schablone));
             signalImg = ImageIO.read(new File(signal));
             outsideImg = ImageIO.read(new File(outside));

@@ -35,28 +35,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>10</y>
-      <w>400</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>src::Npc
---
--rnd: Random
--richtung: int
--richtungGefunden: boolean
---
-+Npc(int x, int y, int breite, int hoehe, Image grafik, int id): ctor
-+bewegen(int[][] map, ZeichenFlaeche14 zf): void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
       <x>880</x>
       <y>10</y>
       <w>300</w>
-      <h>740</h>
+      <h>680</h>
     </coordinates>
     <panel_attributes>src::Grafiken
 --
@@ -100,9 +82,25 @@
 +getDarkroomFreiImg(): Image
 +getDarkroomSchalterImg(): Image
 +getDarkroomSchalterUmgelegtImg(): Image
-+getOutsideImg(): Image
++getOutsideImg(): Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>10</y>
+      <w>400</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>src::Npc
 --
-</panel_attributes>
+-rnd: Random
+-richtung: int
+-richtungGefunden: boolean
+--
++Npc(int x, int y, int breite, int hoehe, Image grafik, int id): ctor
++bewegen(int[][] map, ZeichenFlaeche14 zf): void</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

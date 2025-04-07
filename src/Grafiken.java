@@ -59,7 +59,7 @@ public class Grafiken {
         darkroomFrei = "src/img/maps/darkroomFrei.png";
         schablone = "src/img/maps/schablone.png";
         signal = "src/img/maps/signal.PNG";
-        outside = "src/img/maps/outside.png";
+        outside = "src/img/maps/outside.jpeg";
 
         try {
             //Figuren

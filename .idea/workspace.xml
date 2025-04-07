@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="490296ba-a332-4765-90d0-80b1c80369c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dokumente/Anlagen/Klassendiagramme.uxf" beforeDir="false" afterPath="$PROJECT_DIR$/dokumente/Anlagen/Klassendiagramme.uxf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dokumente/Dokumentation.docx" beforeDir="false" afterPath="$PROJECT_DIR$/dokumente/Dokumentation.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/~$tenbank.docx" beforeDir="false" />
-    </list>
+    <list default="true" id="490296ba-a332-4765-90d0-80b1c80369c9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +131,7 @@
       <workItem from="1744020657022" duration="1494000" />
       <workItem from="1744037996195" duration="134000" />
       <workItem from="1744054663543" duration="646000" />
-      <workItem from="1744055324706" duration="1278000" />
+      <workItem from="1744055324706" duration="2248000" />
     </task>
     <servers />
   </component>

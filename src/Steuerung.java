@@ -176,8 +176,14 @@ public class Steuerung implements KeyListener {
                     zf.loeschen(1);
                     zf.loeschen(signalDruckplatte.getId());
                     zf.loeschen(spieler.getId());
+                    zf.loeschen(11);
+                    aktuellesLevel = m.outside;
                     aktuellesLevelImg = g.getOutsideImg();
+                    spieler.setX(10);
+                    spieler.setY(18);
                     zeichneSpielflaeche();
+                    spieler.zeichnen(zf);
+                    zf.setzeText(11, "Du bist entkommen", 200, 250, 32, Color.WHITE);
                 default:
             }
         }
@@ -185,7 +191,7 @@ public class Steuerung implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (aktuellesLevelImg != g.getOutsideImg()) {
+        if (aktuellesLevel != m.outside) {
             if (e.getKeyCode() == KeyEvent.VK_W) {
                 if (aktuellesLevel[spieler.getY()-1][spieler.getX()] != 1) {
                     spieler.bewegen(0, -1, zf);

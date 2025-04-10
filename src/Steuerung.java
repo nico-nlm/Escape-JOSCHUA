@@ -359,7 +359,10 @@ public class Steuerung implements KeyListener {
         public void run() {
             try {
                 while (1==1) {
-                    if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) npc.bewegen(m.druckplatte, zf);
+                    if (aktuellesLevel == m.druckplatte && (!druckplatte1 || !druckplatte2)) {
+                        npc.bewegen(m.druckplatte, zf);
+                        checkNpc();
+                    }
                     Thread.sleep(200);
                 }
             } catch (InterruptedException ex) {

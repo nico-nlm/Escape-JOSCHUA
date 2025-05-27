@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="490296ba-a332-4765-90d0-80b1c80369c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/Anlagen/Klassendiagramme.uxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/src/Steuerung$NpcTimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Escape JOSCHUA/src/Steuerung$NpcTimer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Steuerung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steuerung.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dokumente/Präsi Struktur.docx" beforeDir="false" afterPath="$PROJECT_DIR$/dokumente/Präsi Struktur.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +139,8 @@
       <workItem from="1744185094691" duration="118000" />
       <workItem from="1744297987685" duration="151000" />
       <workItem from="1744298205501" duration="24000" />
+      <workItem from="1748348153541" duration="88000" />
+      <workItem from="1748349393179" duration="2428000" />
     </task>
     <servers />
   </component>

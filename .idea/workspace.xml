@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="490296ba-a332-4765-90d0-80b1c80369c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dokumente/Präsi Struktur.docx" beforeDir="false" afterPath="$PROJECT_DIR$/dokumente/Präsi Struktur.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/Präsentation.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/Präsentation.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Escape JOSCHUA/dokumente/~$äsi Struktur.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,8 +89,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
       </set>
     </attachedChunks>
   </component>
@@ -143,6 +146,8 @@
       <workItem from="1748417849068" duration="280000" />
       <workItem from="1748542306523" duration="742000" />
       <workItem from="1749061768056" duration="1200000" />
+      <workItem from="1749065221589" duration="165000" />
+      <workItem from="1749106592393" duration="2084000" />
     </task>
     <servers />
   </component>
